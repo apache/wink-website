@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Wink - How to Build</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+                                                        
+<link rel="shortcut icon" href="images/favicon.ico"/>
+                                                        
+<style type="text/css" media="all">@import
+				url(css/site.css);</style>
+                    </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://incubator.apache.org/wink/" id="bannerLeft">
+    
+                                            <img src="images/ApacheWinkLogo.jpg" alt="" />
+    
+            </a>
+                        <a href="http://incubator.apache.org" id="bannerRight">
+    
+                                    <img src="http://incubator.apache.org/images/apache-incubator-logo.png" alt="" />
+    
+            </a>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+            
+  
+    
+            <div class="xleft">
+        Last Published: 22-07-09 11:38
+                  &nbsp;| Version: 0.1-SNAPSHOT
+                          |   
+          wink
+                        </div>
+            <div class="xright">            <a href="">Repository</a>
+            |
+                <a href="http://svn.apache.org/viewvc/incubator/wink/" class="externalLink">SVN</a>
+            |
+                <a href="http://cwiki.apache.org/confluence/display/WINK/Index" class="externalLink">Wiki</a>
+            |
+                <a href="https://issues.apache.org/jira/browse/WINK" class="externalLink">Jira</a>
+            
+  
+
+  
+    
+            
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+            
+  
+    
+                   <h5>Main</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="index.html">Introduction</a>
+          </li>
+              
+    <li class="none">
+                    <a href="downloads.html">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="documentation.html">Documentation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="community.html">Community</a>
+          </li>
+              
+    <li class="none">
+                    <a href="faqs.html">FAQ</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                                 
+                        
+                        
+            <a href="" title="" class="poweredBy">
+                            <img alt="" src="images/white.jpg" />
+            </a>
+                               
+  
+
+  
+    
+            
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2>How to Build</h2>
+<p>This page provides the information required by developers to download the Wink source files and to build the Wink from these sources.</p>
+<p>The Wink is based on Java. It uses SVN as the source control, and Maven for building the sources.</p>
+<div class="section"><h3>Java</h3>
+<p>Setup environment variable JAVA_HOME to the point where your JDK 1.5.12 or newer is installed.</p>
+</div>
+<div class="section"><h3>SVN</h3>
+<p>The Wink project is an internal open source that uses the SVN of Collabnet as its version control system. In order to retrieve the sources of the project you will have to install a SVN client. This page describes how to install the SVN client so you can checkout the SVN sources.</p>
+<div class="section"><h4>Installing SVN</h4>
+<ol type="1"><li>Download and install the <a class="externalLink" href="http://subversion.tigris.org">latest SVN client version</a></li>
+<li>Define the environment variable <tt>SVN_HOME</tt> to point to the SVN client installation directory.</li>
+<li>Add <tt>%SVN_HOME%\bin</tt> to your PATH environment variable.</li>
+</ol>
+</div>
+<div class="section"><h4>Checkout Sources</h4>
+<p>Latest sources can be downloaded from: <tt>https://svn.apache.org/viewvc/incubator/wink/trunk/</tt><br />
+To checkout the latest sources, use the following command: <tt>svn checkout https://svn.apache.org/viewvc/incubator/wink/trunk/</tt>&#160; </p>
+</div>
+<div class="section"><h4>Third-Party Clients (recommended)</h4>
+<ul><li>Subclipse (Eclipse plugin)</li>
+<li>TortoiseSVN (Windows) </li>
+</ul>
+</div>
+<div class="section"><h4>References</h4>
+<p><a class="externalLink" href="http://svnbook.red-bean.com/en/1.1/ch09.html">Subversion Complete Reference</a></p>
+</div>
+</div>
+<div class="section"><h3>Maven</h3>
+<p>The Wink project uses Maven to compile its sources. In order to compile the sources of the project Maven must be installed.</p>
+<div class="section"><h4>Installing Maven</h4>
+<ol type="1"><li>Download and install <a class="externalLink" href="http://maven.apache.org">Maven 2</a> (at least version 2.0.9)</li>
+<li>Define the environment variable <tt>M2_HOME</tt> to point to the maven installation directory.</li>
+<li>Add <tt>%M2_HOME%\bin</tt> to your PATH environment variable.</li>
+</ol>
+</div>
+<div class="section"><h4>How To Build </h4>
+<div class="section"><h5>Using Command Line</h5>
+<p>Standard compilation of the Wink project should be performed by executing the <tt>mvn clean install</tt> command The Follwing section provides some basic maven commands:</p>
+<ul><li><tt>mvn compile</tt> : compiles all sources</li>
+<li><tt>mvn clean</tt> : cleans the files and directories generated by maven during its build (under target directory)</li>
+<li><tt>mvn test</tt> : compiles the sources and runs the unit tests</li>
+<li><tt>mvn package</tt> : compiles the sources, runs the unit tests and generates the JAR files</li>
+<li><tt>mvn install</tt> : compiles the sources, runs the unit tests, generates the JAR files and add it into your local repository.</li>
+<li><tt>mvn site</tt> : compiles the sources, runs the unit tests and generates a site with reports including test results, code coverage, file history and much more.</li>
+</ul>
+<p><b>Note:</b> For each command the user can add the option -Dmaven.test.skip in order to skip the unit tests handling. e.g. <tt>mvn clean install -Dmaven.test.skip</tt></p>
+</div>
+<div class="section"><h5>Using Eclipse</h5>
+<p>The Eclipse Maven plugin is not recommended. It's easier to define an external tool to run maven:</p>
+<ol type="1"><li>Open the External Tools Dialog (Run-&gt;External Tools-&gt;Open External Tools Dialog)</li>
+<li>Add a new launch configuration to the Program configurations </li>
+<li>Name it &quot;Maven install&quot; </li>
+<li>In the &quot;Location&quot; put: <tt>$<a name="env_var:M2_HOME">env_var:M2_HOME</a>/bin/mvn.bat</tt></li>
+<li>In the &quot;Working Directory&quot; put: <tt>$<a name="container_loc">container_loc</a></tt></li>
+<li>In the &quot;Arguments&quot; put: <tt>install</tt></li>
+<li>Go to the &quot;Common&quot; tab and check the &quot;External Tools&quot; checkbox that's in the &quot;Display in favorites menu&quot; </li>
+<li>To run the maven build, select the pom.xml and go to Run-&gt;External Tools-&gt;Maven install</li>
+</ol>
+</div>
+</div>
+<div class="section"><h4>References</h4>
+<p><a class="externalLink" href="http://maven.apache.org/guides/getting-started/index.html">Maven Getting Started Guide</a></p>
+</div>
+</div>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2009
+    
+          The Apache Software Foundation
+          
+  
+
+  
+    
+            
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>
