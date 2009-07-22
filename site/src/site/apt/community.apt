@@ -38,22 +38,13 @@ Community
  
  * Contribute code, javadocs, documentation.
   
+  
  Visit the {{{http://cwiki.apache.org/confluence/display/WINK/Project+Guidelines}Project Guidelines}} for more information.
 
 * Communication
 
- The Apache Wink project uses mailing lists primarily to communicate with its members.
+ The Apache Wink project uses {{{mail-lists.html}mailing lists}} primarily to communicate with its members.\
  IRC is also used for a real-time discussions. 
-
-** Mailing Lists
-
-*------+-------+-----------+-------------+----------:
-| List | Usage | Subscribe | Unsubscribe | Archives |
-*------+-------*-----------*-------------*----------:
-| Development (wink-dev@incubator.apache.org) | Discussion about defects, new feature work and project happenings. | {{{mailto:wink-dev-subscribe@incubator.apache.org}wink-dev subscribe}} | {{{mailto:wink-dev-unsubscribe@incubator.apache.org}wink-dev unsubscribe}} |
-*------*-------*-----------*-------------*----------:
-| Commits (wink-commits-subscribe@incubator.apache.org) | Notifications of commits to the repository. | {{{mailto:wink-commits-subscribe@incubator.apache.org}wink-commits subscribe}} | {{{mailto:wink-commits-unsubscribe@incubator.apache.org}wink-commits unsubscribe}} | {{{http://mail-archives.apache.org/mod_mbox/incubator-wink-commits}Apache mod box}} |
-*------*-------*-----------*-------------*----------:
 
 ** IRC
 
@@ -61,11 +52,9 @@ Community
 
 * Issue Tracker
  
- The bug reports, improvement proposals and features requests are managed in the {{{https://issues.apache.org/jira/browse/WINK}Jira Issue Tracker}}.
-
 ** Bug Reports
 
- Found bug? Enter an issue in the Issue Tracker.
+ Found bug? Enter an issue in the {{{issue-tracking.html}Issue Tracker}}.
  
  Before submitting an issue, please:
 
@@ -81,10 +70,10 @@ Community
 ** Feature Request
  
  Enhancement requests for new features are also welcome. 
- The more concrete and rationale the request is, the greater the chance it will incorporated into future Spring releases.
+ The more concrete and rationale the request is, the greater the chance it will incorporated into future releases.
  
 * Source Code
  
- The source code is accessible via SVN: https://svn.apache.org/repos/asf/incubator/wink/
+ The project sources are accessible via the {{{source-repository.html}SVN}}. 
  
 
