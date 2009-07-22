@@ -26,8 +26,8 @@
 		<href>http://incubator.apache.org</href>
 	</bannerRight>
 	<bannerLeft>
-		<name>Wink 0.1</name>
-		<src>images/ApacheWinkLogo.jpg</src>
+		<name>Apache Wink</name>
+		<src>images/apache-incubator-wink-white.PNG</src>
 		<href>http://incubator.apache.org/wink/</href>
 	</bannerLeft>
 	<poweredBy>
