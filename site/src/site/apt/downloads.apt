@@ -23,17 +23,19 @@
 ~~ under the License.
 ~~
 
-Wink Downloads
+Apache Wink Downloads
 
  Wink is distributed in several formats for your convenience.
 		
 * Distribution Archive
 
-  {{{https://repository.apache.org/content/repositories/snapshots/org/apache/wink/wink-dist/0.1-incubating-SNAPSHOT/wink-dist-0.1-incubating-SNAPSHOT.zip}wink-dist-0.1.zip}} - contains Wink server module, client module, extensions, all 3-rd party dependencies, server and client examples, documentation.
+  {{{https://repository.apache.org/content/repositories/snapshots/org/apache/wink/wink-dist/0.1-incubating-SNAPSHOT/wink-dist-0.1-incubating-SNAPSHOT.zip}wink-dist-0.1-incubating-SNAPSHOT.zip}} - contains the Wink server module, client module, extensions, all 3-rd party dependencies, server and client examples, documentation.
 
 * Maven
 
 ** Dependencies
+
+ You can add the following dependencies to your Maven pom.xml to include the Apache Wink Client module and the Server module.
 
 *** Client
 
