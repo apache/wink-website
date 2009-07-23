@@ -24,7 +24,7 @@
 	<artifactId>wink</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Wink</name>
+	<name>Apache Wink</name>
 	<parent>
 		<groupId>org.apache</groupId>
 		<artifactId>apache</artifactId>
