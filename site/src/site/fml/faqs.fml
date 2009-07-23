@@ -99,7 +99,7 @@
 				</p> 
 			</answer> 
 		</faq>
-		<faq> 
+		<faq id="build-oom"> 
 			<question>I am getting an OutOfMemoryException when performing a full build</question> 
 			<answer> 
 				<p> 
@@ -111,7 +111,7 @@
 				</p> 
 			</answer> 
 		</faq>
-		<faq> 
+		<faq id="build-offline"> 
 			<question>Can I build the sources if I am not connected to the network?</question> 
 			<answer> 
 				<p> 
@@ -121,7 +121,7 @@
 				</p> 
 			</answer> 
 		</faq> 
-		<faq> 
+		<faq id="build-tests"> 
 			<question>Some tests fail during the build. Where can I see what happened?</question> 
 			<answer> 
 				<p> 

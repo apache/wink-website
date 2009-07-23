@@ -32,20 +32,17 @@
 		<src>images/apache-incubator-wink-white.PNG</src>
 		<href>http://incubator.apache.org/wink/</href>
 	</bannerLeft>
-	<poweredBy>
-		<logo name="" img="images/white.jpg" />
-	</poweredBy>
 	<body>
 		<head>
-			<link rel="shortcut icon" href="images/favicon.ico" />
+			<link rel="shortcut icon" href="./images/favicon.ico" />
 			<!--
 				this style is needed to enable child modules to use the main
 				site.css
 			-->
-			<style type="text/css" media="all">
+			<!-- >style type="text/css" media="all">
 				@import
 				url(css/site.css);
-            </style>
+            </style-->
 		</head>
 		<links>
 			<item name="SVN" href="${project.scm.url}" />
@@ -54,11 +51,11 @@
 			<item name="Jira" href="${project.issueManagement.url}" />
 		</links>
 		<menu name="Main">
-			<item name="Introduction" href="index.html" />
-			<item name="Downloads" href="downloads.html" />
-			<item name="Documentation" href="documentation.html" />
-			<item name="Community" href="community.html" />
-			<item name="FAQ" href="faqs.html" />
+			<item name="Introduction" href="./index.html" />
+			<item name="Downloads" href="./downloads.html" />
+			<item name="Documentation" href="./documentation.html" />
+			<item name="Community" href="./community.html" />
+			<item name="FAQ" href="./faqs.html" />
 		</menu>
 		<menu ref="reports"  />
 	</body>
