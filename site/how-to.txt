@@ -1,0 +1,50 @@
+
+Introduction
+~~~~~~~~~~~~
+
+The Apache Wink site is built using Apache Maven. This file describes how to change the content of site
+and how to deploy the site's content under http://incubator.apache.org/wink.
+
+
+Site Content
+~~~~~~~~~~~~
+Currently site content is being built using the APT, Confluence and FML file formats. In order to add
+the content to the site, create a file in one of the above formats under the proper folder and place 
+a link to a new file. Pay attention that if you file is called "index.apt" the link should be to
+"index.html".
+The menu links are added to the "site.xml" file.
+
+Building Local Site
+~~~~~~~~~~~~~~~~~~~
+Run "mvn site" and check the local site under the target folder.
+
+
+Deploying Site to Apache
+~~~~~~~~~~~~~~~~~~~~~~~~
+In order to deploy a site to Apache, follow the following steps:
+
+1. Make sure that you manage to create a local site.
+2. Check that distributionManagement.site.ssh-repository.url point to "scpexe://people.apache.org/www/incubator.apache.org/wink"
+3. Windows users should also do the following:
+3.1. Download "plink" 
+3.2. Put the following section to settings.xml:
+<settings>
+  ...
+  <servers>
+    <server>
+      <id>ssh-repository</id>
+      <username>your username in the remote system if different from local</username>
+      <privateKey>/path/to/your/private/key</privateKey> <!-- not needed if using pageant -->
+      <configuration>
+        <sshExecutable>plink</sshExecutable>
+        <scpExecutable>pscp</scpExecutable>
+        <sshArgs>other arguments you may need</sshArgs>
+      </configuration>
+    </server>
+  </servers>
+  ...
+</settings>
+3.3. Refer to http://maven.apache.org/plugins/maven-deploy-plugin/examples/deploy-ssh-external.html 
+if you have additional problems.
+4. Run "mvn clean site site-deploy"
+5. Don't forget to commit changes you did to site to the SVN repository. However, don't commit target folder!
