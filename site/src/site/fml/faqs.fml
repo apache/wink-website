@@ -20,7 +20,7 @@
 
 <faqs title="Frequently Asked Questions" toplink="false">
 	<part id="sdk"> 
-		<title>Wink 0.1</title>
+		<title>General</title>
 		<faq id="sdk-examples"> 
 			<question>Where can I find examples for using Wink?</question> 
 			<answer> 

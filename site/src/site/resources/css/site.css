@@ -20,21 +20,35 @@
 a:link {
   color:#1111ee;
 }
+
 a:visited  {
   color:#111188;
 }
+
 #navcolumn h5 {
   color: #336666;
 }
+
+#contentBox h2 {
+  font-size:1.75em
+}
+
 .xright a:link, .xright a:visited {
   color: #000099;
 }
+
 .xright a:hover, .xright a:active {
   color: #990000;
 }
+
 #banner {
-  height: 70px;
+  height: 80px;
   background: none;
   background-color: #FFFFFF
 }
 
+#bannerRight {
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-right:20px;
+}
