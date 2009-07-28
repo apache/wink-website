@@ -1,8 +1,8 @@
  -----
- Wink 0.1 Documentation
+ Wink Documentation
  -----
  -----
- June 2008
+ July 2009
 
 ~~
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -31,3 +31,11 @@ Apache Wink Documentation
   
   * {{{http://hudson.zones.apache.org/hudson/view/Wink/job/Wink-Trunk-JDK1.5/javadoc}API}} (Javadoc)
   
+* JAX-RS
+
+ * {{{http://cwiki.apache.org/confluence/display/WINK/JAX-RS}JAX-RS Guide}}
+ 
+ * {{{https://jsr311.dev.java.net}JSR 311 Development}}
+ 
+ * {{{http://jcp.org/en/jsr/detail?id=311}JSR 311 Specification}}
+   

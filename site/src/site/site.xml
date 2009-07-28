@@ -19,6 +19,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
 	<version position="none" />
+	<publishDate position="right"/>
 	<bannerRight>
 		<name>Apache Incubator</name>
 		<src>http://incubator.apache.org/images/apache-incubator-logo.png</src>
@@ -45,10 +46,17 @@
 				href="http://cwiki.apache.org/confluence/display/WINK/Index" />
 			<item name="Jira" href="${project.issueManagement.url}" />
 		</links>
+		<breadcrumbs>
+			<item name="Apache" href="http://www.apache.org"/>
+			<item name="Incubator" href="http://incubator.apache.org" />
+			<item name="Wink" href="http://incubator.apache.org/wink" />
+		</breadcrumbs>
 		<menu name="Main">
 			<item name="Introduction" href="./index.html" />
+			<item name="News" href="./news.html" />
 			<item name="Downloads" href="./downloads.html" />
 			<item name="Documentation" href="./documentation.html" />
+			<item name="Roadmap" href="./roadmap.html" />
 			<item name="Community" href="./community.html" />
 			<item name="FAQ" href="./faqs.html" />
 		</menu>

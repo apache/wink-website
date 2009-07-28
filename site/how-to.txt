@@ -46,5 +46,5 @@ In order to deploy a site to Apache, follow the following steps:
 </settings>
 3.3. Refer to http://maven.apache.org/plugins/maven-deploy-plugin/examples/deploy-ssh-external.html 
 if you have additional problems.
-4. Run "mvn clean site site-deploy"
-5. Don't forget to commit changes you did to site to the SVN repository. However, don't commit target folder!
+4. Commit all changes, the build will fail if there are local changes.
+5. Run "mvn clean site site-deploy"

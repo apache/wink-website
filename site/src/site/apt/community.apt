@@ -43,7 +43,7 @@ Apache Community
 
 * Communication
 
- The Apache Wink project uses {{{mail-lists.html}mailing lists}} primarily to communicate with its members.\
+ The Apache Wink project uses {{{./mail-lists.html}mailing lists}} primarily to communicate with its members.\
  IRC is also used for a real-time discussions. 
 
 ** IRC
@@ -54,7 +54,7 @@ Apache Community
  
 ** Bug Reports
 
- Found bug? Enter an issue in the {{{issue-tracking.html}Issue Tracker}}.
+ Found bug? Enter an issue in the {{{./issue-tracking.html}Issue Tracker}}.
  
  Before submitting an issue, please:
 
@@ -74,6 +74,6 @@ Apache Community
  
 * Source Code
  
- The project sources are accessible via the {{{source-repository.html}SVN}}. 
+ The project sources are accessible via the {{{./source-repository.html}SVN}}. 
  
 

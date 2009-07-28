@@ -33,6 +33,41 @@ a:visited  {
   font-size:1.75em
 }
 
+#contentBox h3 {
+  padding: 4px 4px 4px 6px;
+  color: #F9F9F9;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #888888;
+  background-image: none;
+}
+
+#contentBox h4 {
+  padding: 4px 4px 4px 6px;
+  color: #777;
+  background-color: #D8D8D8;
+  font-weight: bold;
+  font-size: 1.2em
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  margin-left: 10px;
+}
+
+#contentBox h5 {
+  margin-left: 10px;
+  font-size: 1.05em
+}
+
+#contentBox h6 {
+  margin-left: 10px;
+  font-size: 1em
+}
+
+.source {
+  margin-left: 15px;
+}
+
 .xright a:link, .xright a:visited {
   color: #000099;
 }
@@ -51,4 +86,8 @@ a:visited  {
   margin-top:10px;
   margin-bottom:10px;
   margin-right:20px;
+}
+
+p {
+  margin-left:12px;
 }
