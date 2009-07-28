@@ -91,3 +91,16 @@ a:visited  {
 p {
   margin-left:12px;
 }
+
+#contentBox th {
+  text-align:center;
+}
+
+td {
+  text-align:left;
+}
+
+table {
+  margin-left:12px;
+  margin-right:12px;
+}

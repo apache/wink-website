@@ -28,6 +28,9 @@
 		<version>6</version>
 	</parent>
 	<properties>
+		<downloadSnapshotName>Wink-0.1-incubating-SNAPSHOT</downloadSnapshotName>
+		<downloadSnapshotUrl>https://repository.apache.org/content/repositories/snapshots/org/apache/wink/apache-wink/0.1-incubating-SNAPSHOT</downloadSnapshotUrl>
+		<downloadSnapshotFile>apache-wink-0.1-incubating-SNAPSHOT</downloadSnapshotFile>
 	</properties>
 	<scm>
 		<connection>scm:svn:http://svn.apache.org/repos/asf/incubator/wink/trunk</connection>
