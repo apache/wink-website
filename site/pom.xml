@@ -295,6 +295,14 @@
 			</roles>
 		</developer>
 	</developers>
+	<contributors>
+		<contributor>
+			<name>Mike Rheinheimer</name>
+		</contributor>
+		<contributor>
+			<name>Shiva Kumar H R</name>
+		</contributor>
+	</contributors>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -317,12 +325,8 @@
 	<distributionManagement>
 		<site>
 			<id>ssh-repository</id>
-			<url>scpexe://people.apache.org/home/elman/public_html/wink</url>
-			<!--
-				url>scpexe://people.apache.org/www/incubator.apache.org/wink</url
-			-->
+			<url>scpexe://people.apache.org/www/incubator.apache.org/wink</url>
 		</site>
 	</distributionManagement>
 	<inceptionYear>2009</inceptionYear>
-
 </project>
