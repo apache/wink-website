@@ -173,6 +173,13 @@
 	</issueManagement>
 	<mailingLists>
 		<mailingList>
+			<name>Users</name>
+			<post>wink-user@incubator.apache.org</post>
+			<subscribe>wink-user-subsribe@incubator.apache.org</subscribe>
+			<unsubscribe>wink-user-unsubsribe@incubator.apache.org</unsubscribe>
+			<archive>http://mail-archives.apache.org/mod_mbox/incubator-wink-user/</archive>
+		</mailingList>
+		<mailingList>
 			<name>Development</name>
 			<post>wink-dev@incubator.apache.org</post>
 			<subscribe>wink-dev-subsribe@incubator.apache.org</subscribe>
