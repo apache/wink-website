@@ -42,6 +42,8 @@ h5. Server
 
 h4. Repository
 
-  https://repository.apache.org/content/repositories/snapshots/org/apache/wink/
+{code}
+https://repository.apache.org/content/repositories/snapshots
+{code}
 
 
