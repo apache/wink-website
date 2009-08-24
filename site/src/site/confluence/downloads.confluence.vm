@@ -4,7 +4,37 @@ h1. Apache Wink Downloads
 		
 h2. Release
 
- There is no release yet. 
+ The release is already here! 
+ However due to a infrastructure problems we cannot copy it to a mirror.
+ Meanwhile, it's possible to download it using Maven.
+
+h3. Maven
+
+h4. Dependencies
+
+ Add the following dependencies to your Maven pom.xml to include the Apache Wink Client module and the Server module.
+
+h5. Client
+
+{code}
+<dependency>
+    <groupId>org.apache.wink</groupId>
+    <artifactId>wink-client</artifactId>
+    <version>0.1-incubating</version>
+</dependency>
+{code}
+
+h5. Server
+
+{code}
+<dependency>
+    <groupId>org.apache.wink</groupId>
+    <artifactId>wink-server</artifactId>
+    <version>0.1-incubating</version>
+</dependency>
+{code}
+
+
 
 h2. Latest Snapshots
 		
@@ -26,7 +56,7 @@ h5. Client
 <dependency>
     <groupId>org.apache.wink</groupId>
     <artifactId>wink-client</artifactId>
-    <version>0.1-incubating-SNAPSHOT</version>
+    <version>${snapshotVersion}</version>
 </dependency>
 {code}
 
@@ -36,7 +66,7 @@ h5. Server
 <dependency>
     <groupId>org.apache.wink</groupId>
     <artifactId>wink-server</artifactId>
-    <version>0.1-incubating-SNAPSHOT</version>
+    <version>${snapshotVersion}</version>
 </dependency>
 {code}
 
