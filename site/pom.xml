@@ -28,6 +28,13 @@
 		<version>6</version>
 	</parent>
 	<properties>
+		<!-- Wink 0.1 -->
+		<download_0_1Version>0.1-incubating</download_0_1Version>
+		<download_0_1Name>Wink-${download_0_1Version}</download_0_1Name>
+		<download_0_1MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_0_1Version}</download_0_1MirrorUrl>
+		<download_0_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_0_1Version}</download_0_1DistUrl>
+		<download_0_1File>apache-wink-${download_0_1Version}</download_0_1File>
+		<!-- SNAPSHOT -->
 		<snapshotVersion>0.2-incubating-SNAPSHOT</snapshotVersion>
 		<downloadSnapshotName>Wink-${snapshotVersion}</downloadSnapshotName>
 		<downloadSnapshotUrl>https://repository.apache.org/content/repositories/snapshots/org/apache/wink/apache-wink/${snapshotVersion}</downloadSnapshotUrl>

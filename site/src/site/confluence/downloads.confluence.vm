@@ -1,18 +1,33 @@
 h1. Apache Wink Downloads
 
- Wink is distributed in several formats for your convenience.
-		
-h2. Release
+ Apache Wink is distributed in several formats for your convenience.
 
- The release is already here! 
- However due to a infrastructure problems we cannot copy it to a mirror.
- Meanwhile, it's possible to download it using Maven.
+ You will be prompted for a mirror - if the file is not found on yours, please be patient, as it may take 24 hours to reach all mirrors.
+
+ Apache Wink is distributed under the [Apache License, version 2.0|http://maven.apache.org/license.html].
+
+
+h2. Download Wink 0.1
+
+|| Name ||  Archive || MD5 || SHA-1 || Signature ||
+| ${download_0_1Name} (tar.gz) | [tar.gz|${download_0_1MirrorUrl}/${download_0_1File}.tar.gz] |  [MD5|${download_0_1DistUrl}/${download_0_1File}.tar.gz.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}.tar.gz.sha1]  | [ASC|${download_0_1DistUrl}/${download_0_1File}.tar.gz.asc] |
+| ${download_0_1Name} (zip) | [zip|${download_0_1MirrorUrl}/${download_0_1File}.zip] |  [MD5|${download_0_1DistUrl}/${download_0_1File}.zip.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}.zip.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}.zip.asc] |
+| ${download_0_1Name} (Source tar.gz) | [tar.gz|${download_0_1MirrorUrl}/${download_0_1File}-src.tar.gz] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.md5]  | [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.asc] |
+| ${download_0_1Name} (Source zip) | [zip|${download_0_1MirrorUrl}/${download_0_1File}-src.zip] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.zip.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.zip.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.zip.asc] |
+| Release Notes | [${download_0_1Version}|release\_notes\_0\_1] | | | |
+
+You can also retrieve the source files from our svn repository by typing
+{code}
+svn co http://svn.apache.org/repos/asf/incubator/wink/tags/wink-0.1-incubating/
+{code}
 
 h3. Maven
 
+ We strongly encourage our users to configure a Maven repository mirror closer to their location, please read [How to Use Mirrors for Repositories|http://maven.apache.org/guides/mini/guide-mirror-settings.html].
+
 h4. Dependencies
 
- Add the following dependencies to your Maven pom.xml to include the Apache Wink Client module and the Server module.
+ Add the following dependencies to your Maven pom.xml to include the Apache Wink Client module or the Server module.
 
 h5. Client
 
@@ -20,7 +35,7 @@ h5. Client
 <dependency>
     <groupId>org.apache.wink</groupId>
     <artifactId>wink-client</artifactId>
-    <version>0.1-incubating</version>
+    <version>${download_0_1Version}</version>
 </dependency>
 {code}
 
@@ -30,7 +45,7 @@ h5. Server
 <dependency>
     <groupId>org.apache.wink</groupId>
     <artifactId>wink-server</artifactId>
-    <version>0.1-incubating</version>
+    <version>${download_0_1Version}</version>
 </dependency>
 {code}
 
@@ -38,17 +53,17 @@ h5. Server
 
 h2. Latest Snapshots
 		
-|| Name ||  Archive || MD5 || SHA-1 || Signature ||
-| ${downloadSnapshotName} (gz) | [GZIP|${downloadSnapshotUrl}/${downloadSnapshotFile}.gz] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}.gz.md5] |  [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}.gz.sha1]  |  |
-| ${downloadSnapshotName} (zip) | [ZIP|${downloadSnapshotUrl}/${downloadSnapshotFile}.zip] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}.zip.md5] |  [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}.zip.sha1] | |
-| ${downloadSnapshotName} (Source gz) | [GZIP|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.gz] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.gz.md5]  | [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.gz.sha1] | |
-| ${downloadSnapshotName} (Source zip) | [ZIP|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.zip] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.zip.md5] |  [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.zip.sha1] | |
+|| Name ||  Archive || MD5 || SHA-1 || 
+| ${downloadSnapshotName} (gz) | [gz|${downloadSnapshotUrl}/${downloadSnapshotFile}.gz] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}.gz.md5] |  [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}.gz.sha1]  |
+| ${downloadSnapshotName} (zip) | [zip|${downloadSnapshotUrl}/${downloadSnapshotFile}.zip] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}.zip.md5] |  [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}.zip.sha1] |
+| ${downloadSnapshotName} (Source gz) | [gz|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.gz] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.gz.md5]  | [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.gz.sha1] |
+| ${downloadSnapshotName} (Source zip) | [zip|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.zip] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.zip.md5] |  [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.zip.sha1] |
 
 h3. Maven
 
 h4. Dependencies
 
- Add the following dependencies to your Maven pom.xml to include the Apache Wink Client module and the Server module.
+ Add the following dependencies to your Maven pom.xml to include the Apache Wink Client module or the Server module.
 
 h5. Client
 

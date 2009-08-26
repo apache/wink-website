@@ -1,0 +1,116 @@
+h2. Apache Wink 0.1 Release Notes
+
+h3. Overview
+ 
+This is the first official release of Apache Wink project.
+Apache Wink is a framework that helps you to produce and consume RESTful Web Services. 
+Apache Wink is TCK compliant implementation of the JAX-RS v1.0 specification. 
+The project also introduces Java API for writing clients that consume HTTP-based RESTful Web Services. 
+
+h3. Complete list of issues fixed in 0.1
+    
+h4. Bug
+    * WINK-5 - WebDAV QADefect pom.xml bug with QADefect war type dependency
+    * WINK-7 - Need to apply ASL 2.0 header on all applicable files
+    * WINK-10 - unnecessary constructor validation on subresource
+    * WINK-11 - improve error message when no resource can be found
+    * WINK-13 - Wink should not validate Location header for 201
+    * WINK-14 - Change the properties names to start with "wink" instead of "symphony"
+    * WINK-15 - Cookie failures
+    * WINK-17 - OPTIONS are not handled correctly for Sub-resource methods
+    * WINK-18 - CaseInsensitiveMultivaluedMap returns incorrect values, when using keySet() api
+    * WINK-19 - variants of the ResponseBuilderImpl set CONTENT_ENCODING headers istead of ACCEPT_ENCODING
+    * WINK-20 - URIBuilder throws exception on mailto urls
+    * WINK-21 - need to remove "com.hp" hard-coded references
+    * WINK-24 - During the creation of the MethodMetadata, the search for annotation ignores interfaces
+    * WINK-26 - Update bean names in the Spring context
+    * WINK-27 - The reference to "Symphony" in all files should be replaced with "Wink"
+    * WINK-30 - User providers should always be chosen before built-in providers
+    * WINK-31 - MessageBodyReader.readFrom throws IOException is turned into WebApplicationException but might just need to propagate out?
+    * WINK-32 - Should attempt to use Data Activation Framework according to spec
+    * WINK-33 - FlushHeadersOutputStream should override OutputStream.flush() as well
+    * WINK-35 - Entity lost when using application/x-www-form-urlencoded media type and FormParam
+    * WINK-36 - WebApplicationException thrown in annotated parameter constructor not processed correctly
+    * WINK-38 - @Encoded parameter ignored on method
+    * WINK-42 - Rename init-params, classes and files to eliminate "symphony"
+    * WINK-47 - honor media type wildcards
+    * WINK-49 - Annotations is null when searchResult is empty (i.e. when on error path)
+    * WINK-53 - MessageBodyReader.isReadable methods should do straight ==
+    * WINK-55 - Source entity parameters should also be supported according to spec
+    * WINK-70 - History sample is failing
+    * WINK-71 - getContextResolver search algorithm does not expand for text/*
+    * WINK-72 - consistent behavior for mis-quoted etag header values
+    * WINK-73 - Cannot run QADefect example on Geronimo-tomcat6
+    * WINK-74 - examples\client\GoogleDocs-client doesn't run: Main-Class specified is wrong
+    * WINK-76 - X-Method-Override and X-Http-Method-Override behavior
+    * WINK-80 - change package name to org.apache.wink.*
+    * WINK-81 - regression in search for ContextProvider
+    * WINK-82 - getContextResolver sort algorithm is incorrect
+    * WINK-83 - Singletons should be injected
+    * WINK-85 - Incoming Content-Type null should be application/octet-stream
+    * WINK-87 - Need to fix integration tests for Tomcat
+    * WINK-94 - normalize UriInfo paths
+    * WINK-95 - HttpMethod annotation behaivor
+    * WINK-96 - proposal:  enhance search for matched resources by decoding URI
+    * WINK-98 - DefaultValue also applies to methods
+    * WINK-101 - Shouldn't stop application processing if the processing of a resource/provider throws an exception
+    * WINK-102 - Changes to FlushResultHandler
+    * WINK-103 - Method invoked but no HttpMethod
+    * WINK-104 - handle q=0 on Accept http header
+    * WINK-105 - tests not getting picked up due to class name
+    * WINK-106 - return path check for q=0 Accept header
+    * WINK-111 - Write JAXB output using OutputStream instead of Writer for Atom model
+    * WINK-116 - The OpenSearch description in the QADefect example has an additional "defects" in it's path
+    * WINK-119 - Root Resources at "/" with Subresource Locators/Methods does not work
+    * WINK-123 - Error reading an Atom feed
+    * WINK-124 - Don't use empty string for override header check
+    * WINK-126 - Missing or incorrect SVN properties in https://svn.apache.org/repos/asf/incubator/wink/tags/wink-0.1-incubating/
+    * WINK-127 - Test failure with Wink 0.1 tag
+    * WINK-130 - Add LICENSE and NOTICE to root dir
+    * WINK-131 - remove JAXB source jars from source distribution
+    * WINK-132 - include licenses for all distributed dependencies
+    * WINK-133 - Wink 01. release - incorrect public kyes file (KEYS) location
+    * WINK-134 - DynamicResource methods should match @Path annotation
+    * WINK-136 - Add 3-rd parties licenses to LICENSE file
+    * WINK-138 - 0.1 Release Issues
+
+h4. Improvement
+    * WINK-6 - Use SLF4J instead of JCL for logging facade
+    * WINK-12 - Update name in pom.xml files to be more readable and show hierarchy
+    * WINK-28 - Use published org.json dependencies instead of duplicating sources
+    * WINK-37 - detection of null params to avoid NPE
+    * WINK-39 - Wink client -  add support for Apache Http Client
+    * WINK-41 - ASF Legal headers validation during Wink build process
+    * WINK-43 - Configure maven-license-plugin to run only during WInk release 
+    * WINK-50 - Add standalone jetty for running test packages individually
+    * WINK-52 - Do not report every WebApplicationException to the log as an error
+    * WINK-57 - Rename OFFactory to LifecycleManager
+    * WINK-58 - A few source files contain illegal UTF-8 characters that the compile warns about
+    * WINK-62 - Provide a suggested Eclipse code formatter
+    * WINK-63 - dos2unix all source files / source reformat before 0.1 release
+    * WINK-65 - Keep the default build test output quiet
+    * WINK-66 - Do not build source jars during default build
+    * WINK-75 - Change com.google.code.maven-license-plugin legal plugin to not be inherited
+    * WINK-77 - Drop unneeded bits from pom.xml files
+    * WINK-109 - Write JAXB output using OutputStream instead of Writer
+    * WINK-129 - Change file paths to be shorter
+
+h4. Task
+    * WINK-25 - The Symphony_SDK_2.0_Features_List.pdf and its content need to refer to Wink instead of Symphony
+    * WINK-44 - Set up the automatic build environment
+    * WINK-45 - Update the Incubator main site to include the Wink project
+    * WINK-108 - Update version in poms to use "-incubating" suffix per incubator release rules
+
+
+h4. Test
+    * WINK-16 - Drop basic framework integration tests framework
+    * WINK-23 - Change JAXBElement test for namespace attribute reordering
+    * WINK-51 - Drop JAXRS providers tests
+    * WINK-59 - Add JAX-RS Parameters Integration Tests 
+    * WINK-90 - Integration tests for targetting
+    * WINK-91 - Integration tests for validation
+
+h4. Wish
+    * WINK-64 - Update howToBuild.txt to include instructions for importing into Eclipse
+
+
