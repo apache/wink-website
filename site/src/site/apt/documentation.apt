@@ -33,6 +33,8 @@ Apache Wink Documentation
   
 * JAX-RS
 
+ * {{{https://jsr311.dev.java.net/nonav/releases/1.0/index.html}JSR-311 API}} 
+ 
  * {{{http://cwiki.apache.org/confluence/display/WINK/JAX-RS}JAX-RS Guide}}
  
  * {{{https://jsr311.dev.java.net}JSR 311 Development}}
