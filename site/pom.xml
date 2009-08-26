@@ -71,6 +71,60 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
 					<version>2.1-SNAPSHOT</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-apt</artifactId>
+							<version>1.1.1</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-xhtml</artifactId>
+							<version>1.1.1</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-sink-api</artifactId>
+							<version>1.1.1</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-decoration-model</artifactId>
+							<version>1.1.1</version>
+							<exclusions>
+								<exclusion>
+									<groupId>org.codehaus.plexus</groupId>
+									<artifactId>plexus-component-api</artifactId>
+								</exclusion>
+								<exclusion>
+									<groupId>org.codehaus.plexus</groupId>
+									<artifactId>plexus-container-default</artifactId>
+								</exclusion>
+							</exclusions>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-site-renderer</artifactId>
+							<version>1.1.1</version>
+							<exclusions>
+								<exclusion>
+									<groupId>org.codehaus.plexus</groupId>
+									<artifactId>plexus-component-api</artifactId>
+								</exclusion>
+
+								<exclusion>
+									<groupId>org.codehaus.plexus</groupId>
+									<artifactId>plexus-container-default</artifactId>
+								</exclusion>
+							</exclusions>
+						</dependency>
+
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-confluence</artifactId>
+							<version>1.1.1</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 				<!--
 					dependency> <groupId>org.apache.maven.doxia</groupId>
@@ -86,57 +140,32 @@
 			</extension>
 		</extensions>
 	</build>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.apache.maven.doxia</groupId>
-				<artifactId>doxia-module-xhtml</artifactId>
-				<version>1.1.1</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.maven.doxia</groupId>
-				<artifactId>doxia-sink-api</artifactId>
-				<version>1.1.1</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.maven.doxia</groupId>
-				<artifactId>doxia-decoration-model</artifactId>
-				<version>1.1.1</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.codehaus.plexus</groupId>
-						<artifactId>plexus-component-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.codehaus.plexus</groupId>
-						<artifactId>plexus-container-default</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.maven.doxia</groupId>
-				<artifactId>doxia-site-renderer</artifactId>
-				<version>1.1.1</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.codehaus.plexus</groupId>
-						<artifactId>plexus-component-api</artifactId>
-					</exclusion>
-
-					<exclusion>
-						<groupId>org.codehaus.plexus</groupId>
-						<artifactId>plexus-container-default</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.maven.doxia</groupId>
-				<artifactId>doxia-module-confluence</artifactId>
-				<version>1.1.1</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+	<!--
+		dependencyManagement> <dependencies> <dependency>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-module-xhtml</artifactId> <version>1.1.1</version>
+		</dependency> <dependency> <groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-sink-api</artifactId> <version>1.1.1</version>
+		</dependency> <dependency> <groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-decoration-model</artifactId>
+		<version>1.1.1</version> <exclusions> <exclusion>
+		<groupId>org.codehaus.plexus</groupId>
+		<artifactId>plexus-component-api</artifactId> </exclusion> <exclusion>
+		<groupId>org.codehaus.plexus</groupId>
+		<artifactId>plexus-container-default</artifactId> </exclusion>
+		</exclusions> </dependency> <dependency>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-site-renderer</artifactId> <version>1.1.1</version>
+		<exclusions> <exclusion> <groupId>org.codehaus.plexus</groupId>
+		<artifactId>plexus-component-api</artifactId> </exclusion> <exclusion>
+		<groupId>org.codehaus.plexus</groupId>
+		<artifactId>plexus-container-default</artifactId> </exclusion>
+		</exclusions> </dependency> <dependency>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-module-confluence</artifactId>
+		<version>1.1.1</version> </dependency> </dependencies>
+		</dependencyManagement
+	-->
 	<reporting>
 		<plugins>
 			<!--
