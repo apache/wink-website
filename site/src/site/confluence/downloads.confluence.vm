@@ -14,7 +14,7 @@ h2. Download Wink 0.1
 | ${download_0_1Name} (zip) | [zip|${download_0_1MirrorUrl}/${download_0_1File}.zip] |  [MD5|${download_0_1DistUrl}/${download_0_1File}.zip.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}.zip.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}.zip.asc] |
 | ${download_0_1Name} (Source tar.gz) | [tar.gz|${download_0_1MirrorUrl}/${download_0_1File}-src.tar.gz] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.md5]  | [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.asc] |
 | ${download_0_1Name} (Source zip) | [zip|${download_0_1MirrorUrl}/${download_0_1File}-src.zip] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.zip.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.zip.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.zip.asc] |
-| Release Notes | [${download_0_1Version}|release\_notes\_0\_1] | | | |
+| Release Notes | [${download_0_1Version}|0.1/release\_notes] | | | |
 
 You can also retrieve the source files from our svn repository by typing
 {code}
