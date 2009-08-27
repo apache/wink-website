@@ -213,6 +213,9 @@
 			<subscribe>wink-user-subsribe@incubator.apache.org</subscribe>
 			<unsubscribe>wink-user-unsubsribe@incubator.apache.org</unsubscribe>
 			<archive>http://mail-archives.apache.org/mod_mbox/incubator-wink-user/</archive>
+			<otherArchives>
+				<otherArchive>http://n2.nabble.com/Apache-Wink-Users-f3471013.html</otherArchive>
+			</otherArchives>
 		</mailingList>
 		<mailingList>
 			<name>Development</name>
@@ -220,6 +223,9 @@
 			<subscribe>wink-dev-subsribe@incubator.apache.org</subscribe>
 			<unsubscribe>wink-dev-unsubsribe@incubator.apache.org</unsubscribe>
 			<archive>http://mail-archives.apache.org/mod_mbox/incubator-wink-dev/</archive>
+			<otherArchives>
+				<otherArchive>http://n2.nabble.com/Apache-Wink-Dev-f3470905.html</otherArchive>
+			</otherArchives>
 		</mailingList>
 		<mailingList>
 			<name>Commits</name>
