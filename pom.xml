@@ -210,8 +210,8 @@
 		<mailingList>
 			<name>Users</name>
 			<post>wink-user@incubator.apache.org</post>
-			<subscribe>wink-user-subsribe@incubator.apache.org</subscribe>
-			<unsubscribe>wink-user-unsubsribe@incubator.apache.org</unsubscribe>
+			<subscribe>wink-user-subscribe@incubator.apache.org</subscribe>
+			<unsubscribe>wink-user-unsubscribe@incubator.apache.org</unsubscribe>
 			<archive>http://mail-archives.apache.org/mod_mbox/incubator-wink-user/</archive>
 			<otherArchives>
 				<otherArchive>http://n2.nabble.com/Apache-Wink-Users-f3471013.html</otherArchive>
@@ -220,8 +220,8 @@
 		<mailingList>
 			<name>Development</name>
 			<post>wink-dev@incubator.apache.org</post>
-			<subscribe>wink-dev-subsribe@incubator.apache.org</subscribe>
-			<unsubscribe>wink-dev-unsubsribe@incubator.apache.org</unsubscribe>
+			<subscribe>wink-dev-subscribe@incubator.apache.org</subscribe>
+			<unsubscribe>wink-dev-unsubscribe@incubator.apache.org</unsubscribe>
 			<archive>http://mail-archives.apache.org/mod_mbox/incubator-wink-dev/</archive>
 			<otherArchives>
 				<otherArchive>http://n2.nabble.com/Apache-Wink-Dev-f3470905.html</otherArchive>
@@ -230,8 +230,8 @@
 		<mailingList>
 			<name>Commits</name>
 			<post>wink-commits@incubator.apache.org</post>
-			<subscribe>wink-commits-subsribe@incubator.apache.org</subscribe>
-			<unsubscribe>wink-commits-unsubsribe@incubator.apache.org</unsubscribe>
+			<subscribe>wink-commits-subscribe@incubator.apache.org</subscribe>
+			<unsubscribe>wink-commits-unsubscribe@incubator.apache.org</unsubscribe>
 			<archive>http://mail-archives.apache.org/mod_mbox/incubator-wink-commits/</archive>
 		</mailingList>
 	</mailingLists>
