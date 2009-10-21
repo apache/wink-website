@@ -7,21 +7,21 @@ h1. Apache Wink Downloads
  Apache Wink is distributed under the [Apache License, version 2.0|http://maven.apache.org/license.html].
 
 
-h2. Download Wink 0.1
+h2. Download Wink 1.0
 
 || Name ||  Archive || MD5 || SHA-1 || Signature ||
-| ${download_0_1Name} (tar.gz) | [tar.gz|${download_0_1MirrorUrl}/${download_0_1File}.tar.gz] |  [MD5|${download_0_1DistUrl}/${download_0_1File}.tar.gz.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}.tar.gz.sha1]  | [ASC|${download_0_1DistUrl}/${download_0_1File}.tar.gz.asc] |
-| ${download_0_1Name} (zip) | [zip|${download_0_1MirrorUrl}/${download_0_1File}.zip] |  [MD5|${download_0_1DistUrl}/${download_0_1File}.zip.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}.zip.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}.zip.asc] |
-| ${download_0_1Name} (Source tar.gz) | [tar.gz|${download_0_1MirrorUrl}/${download_0_1File}-src.tar.gz] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.md5]  | [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.asc] |
-| ${download_0_1Name} (Source zip) | [zip|${download_0_1MirrorUrl}/${download_0_1File}-src.zip] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.zip.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.zip.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.zip.asc] |
-| Release Notes | [${download_0_1Version}|0.1/release\_notes] | | | |
+| ${download_1_0Name} (tar.gz) | [tar.gz|${download_1_0MirrorUrl}/${download_1_0File}.tar.gz] |  [MD5|${download_1_0DistUrl}/${download_1_0File}.tar.gz.md5] |  [SHA-1|${download_1_0DistUrl}/${download_1_0File}.tar.gz.sha1]  | [ASC|${download_1_0DistUrl}/${download_1_0File}.tar.gz.asc] |
+| ${download_1_0Name} (zip) | [zip|${download_1_0MirrorUrl}/${download_1_0File}.zip] |  [MD5|${download_1_0DistUrl}/${download_1_0File}.zip.md5] |  [SHA-1|${download_1_0DistUrl}/${download_1_0File}.zip.sha1] | [ASC|${download_1_0DistUrl}/${download_1_0File}.zip.asc] |
+| ${download_1_0Name} (Source tar.gz) | [tar.gz|${download_1_0MirrorUrl}/${download_1_0File}-src.tar.gz] |  [MD5|${download_1_0DistUrl}/${download_1_0File}-src.tar.gz.md5]  | [SHA-1|${download_1_0DistUrl}/${download_1_0File}-src.tar.gz.sha1] | [ASC|${download_1_0DistUrl}/${download_1_0File}-src.tar.gz.asc] |
+| ${download_1_0Name} (Source zip) | [zip|${download_1_0MirrorUrl}/${download_1_0File}-src.zip] |  [MD5|${download_1_0DistUrl}/${download_1_0File}-src.zip.md5] |  [SHA-1|${download_1_0DistUrl}/${download_1_0File}-src.zip.sha1] | [ASC|${download_1_0DistUrl}/${download_1_0File}-src.zip.asc] |
+| Release Notes | [${download_1_0Version}|1.0/release\_notes] | | | |
 
 You can also retrieve the source files from our svn repository by typing
 {code}
-svn co http://svn.apache.org/repos/asf/incubator/wink/tags/wink-0.1-incubating/
+svn co http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_0Version}/
 {code}
 
-h3. Maven
+h3. Using Maven
 
  We strongly encourage our users to configure a Maven repository mirror closer to their location, please read [How to Use Mirrors for Repositories|http://maven.apache.org/guides/mini/guide-mirror-settings.html].
 
@@ -35,7 +35,7 @@ h5. Client
 <dependency>
     <groupId>org.apache.wink</groupId>
     <artifactId>wink-client</artifactId>
-    <version>${download_0_1Version}</version>
+    <version>${download_1_0Version}</version>
 </dependency>
 {code}
 
@@ -45,11 +45,25 @@ h5. Server
 <dependency>
     <groupId>org.apache.wink</groupId>
     <artifactId>wink-server</artifactId>
-    <version>${download_0_1Version}</version>
+    <version>${download_1_0Version}</version>
 </dependency>
 {code}
 
+h2. Previous Releases
 
+h3. Wink 0.1
+
+|| Name ||  Archive || MD5 || SHA-1 || Signature ||
+| ${download_0_1Name} (tar.gz) | [tar.gz|${download_0_1MirrorUrl}/${download_0_1File}.tar.gz] |  [MD5|${download_0_1DistUrl}/${download_0_1File}.tar.gz.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}.tar.gz.sha1]  | [ASC|${download_0_1DistUrl}/${download_0_1File}.tar.gz.asc] |
+| ${download_0_1Name} (zip) | [zip|${download_0_1MirrorUrl}/${download_0_1File}.zip] |  [MD5|${download_0_1DistUrl}/${download_0_1File}.zip.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}.zip.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}.zip.asc] |
+| ${download_0_1Name} (Source tar.gz) | [tar.gz|${download_0_1MirrorUrl}/${download_0_1File}-src.tar.gz] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.md5]  | [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.asc] |
+| ${download_0_1Name} (Source zip) | [zip|${download_0_1MirrorUrl}/${download_0_1File}-src.zip] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.zip.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.zip.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.zip.asc] |
+| Release Notes | [${download_0_1Version}|0.1/release\_notes] | | | |
+
+You can also retrieve the source files from our svn repository by typing
+{code}
+svn co http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_0_1Version}/
+{code}
 
 h2. Latest Snapshots
 		

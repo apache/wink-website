@@ -28,6 +28,12 @@
 		<version>6</version>
 	</parent>
 	<properties>
+        <!-- Wink 1.0 -->
+        <download_1_0Version>1.0-incubating</download_1_0Version>
+        <download_1_0Name>Wink-${download_1_0Version}</download_1_0Name>
+        <download_1_0MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_0Version}</download_1_0MirrorUrl>
+        <download_1_0DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_0Version}</download_1_0DistUrl>
+        <download_1_0File>apache-wink-${download_1_0Version}</download_1_0File>
 		<!-- Wink 0.1 -->
 		<download_0_1Version>0.1-incubating</download_0_1Version>
 		<download_0_1Name>Wink-${download_0_1Version}</download_0_1Name>
@@ -144,6 +150,7 @@
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
 				<artifactId>wagon-ssh-external</artifactId>
+                <version>1.0-beta-6</version>
 			</extension>
 		</extensions>
 	</build>

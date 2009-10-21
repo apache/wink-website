@@ -25,11 +25,11 @@
 
 Apache Wink Documentation
 
-* Wink 0.1 
+* Wink 1.0 
 
-  * User Guide {{{./0.1/Apache_Wink_User_Guide.htm}HTML}} / {{{./0.1/Apache_Wink_User_Guide.pdf}PDF}} 
+  * User Guide {{{./1.0/Apache_Wink_User_Guide.htm}HTML}} / {{{./1.0/Apache_Wink_User_Guide.pdf}PDF}} 
   
-  * {{{./0.1/api/index.html}API}} (Javadoc)
+  * {{{./1.0/api/index.html}API}} (Javadoc)
   
 * JAX-RS
 
@@ -40,4 +40,12 @@ Apache Wink Documentation
  * {{{https://jsr311.dev.java.net}JSR 311 Development}}
  
  * {{{http://jcp.org/en/jsr/detail?id=311}JSR 311 Specification}}
+
+* Previous Releases
+
+** Wink 0.1 
+
+  * User Guide {{{./0.1/Apache_Wink_User_Guide.htm}HTML}} / {{{./0.1/Apache_Wink_User_Guide.pdf}PDF}} 
+  
+  * {{{./0.1/api/index.html}API}} (Javadoc)
    
