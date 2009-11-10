@@ -1,0 +1,98 @@
+h2. Apache Wink 1.0 Release Notes
+
+h3. Overview
+ 
+This is the second official release of Apache Wink project.
+Apache Wink is a framework that helps you to produce and consume RESTful Web Services. 
+Apache Wink is TCK compliant implementation of the JAX-RS v1.0 specification. 
+The project also introduces Java API for writing clients that consume HTTP-based RESTful Web Services. 
+
+h3. Complete list of issues fixed in 1.0
+    
+h4. New Feature
+    * WINK-69 - Consider an Abdera Provider
+    * WINK-112 - Support for reading/writing of RSS Feeds
+    * WINK-137 - MultiPart support
+    * WINK-142 - Provider support for Jettison
+    * WINK-154 - Add Jackson provider under wink-providers
+    * WINK-155 - Deploy Wink as a servlet filter
+    * WINK-160 - Consider content-type additional params in the resouce matching process
+    * WINK-181 - Autoregistration of external providers
+
+h4. Bug
+    * WINK-86 - Empty incoming body content
+    * WINK-107 - Need to agree on what Request.selectVariant() should do
+    * WINK-117 - Missing "/" before sub resource in the Admin Console 
+    * WINK-120 - RequestProcessor.PROPERTY_ROOT_RESOURCE refers to wink.searchPolicyContinuedSearch
+    * WINK-121 - Multiple Accept* headers
+    * WINK-122 - PathParams lost when using sub resource locators
+    * WINK-143 - javadoc in HelloWorld sample is wrong 
+    * WINK-144 - Client should use application/octet-stream when no Content-Type specified
+    * WINK-153 - Jackson calls getContextResolver(type, null)
+    * WINK-164 - Client should load common providers from wink-providers 
+    * WINK-165 - wink-providers of the server side are not loaded 
+    * WINK-167 - The sort algorithm in ProvidersRegistry.getProvidersByWildcardMediaType ignores priority
+    * WINK-168 - Move AtomJaxbUtils to internal
+    * WINK-169 - Cleanup Atom related providers
+    * WINK-172 - Improve invalid media type toleration
+    * WINK-183 - wink-providers must be included in the distribution archive
+    * WINK-187 - org.apache.wink.common.internal.utils.FileLoader is not able to open a stream to existing File.
+    * WINK-188 - org.apache.wink.server.internal.contexts.HttpHeadersImpl#getRequestHeaderInternal(String) should check for invalid values.
+    * WINK-191 - ClientConfig's loadWinkApplications always true
+    * WINK-201 - Fix precedence on custom type conversion
+    * WINK-204 - wink-providers module should appear before wink-examples module in the main pom.xml
+    * WINK-208 - Fix issue with UriEncoder with internationalized characters
+    * WINK-214 - UriTemplateMatcher should tolerate empty @PathParam segments
+    * WINK-215 - Build fails with missing license header when checking out to eclipse directory
+    * WINK-217 - runtime should tolerate @Path("") and @Path("/")
+
+h4. Improvement
+    * WINK-34 - Externalize strings for logging messages above debug
+    * WINK-60 - Make a better way to debug integration tests
+    * WINK-113 - Cache reflective calls for JAXB bean annotations
+    * WINK-114 - Cache parsed Accept header content where possible
+    * WINK-115 - Add caching to MediaTypeMap.getProvidersbyMediaType() 
+    * WINK-150 - Include JAX-RS API Javadoc on website
+    * WINK-151 - Make deployment configuration public
+    * WINK-161 - Make SyndContent/AtomContent support Object values instead of String
+    * WINK-162 - The client should send appropriate accept header when no accept specified
+    * WINK-173 - Delay a few calls during initialization unless absolutely required
+    * WINK-175 - Change ProvidersRegistry MediaTypeMap to allow gets to be faster
+    * WINK-180 - Change package names of wink-providers to org.apache.wink.providers
+    * WINK-182 - Move json.org support to a separate module
+    * WINK-185 - Should add some servicability to common paths
+    * WINK-186 - Support JAX-RS 1.1 E012
+    * WINK-189 - Change for continuedSearchPolicy and caching of root resources in registry
+    * WINK-190 - Performance change for SoftConcurrentMap
+    * WINK-193 - JAX-RS 1.1 support:  C004
+    * WINK-194 - JAX-RS 1.1 support:  C006
+    * WINK-202 - Change XmlFormattingOptions to not do anything by default
+    * WINK-203 - Apache HTTP Client change InputStream behavior
+    * WINK-206 - Make MediaTypeMapper public
+    * WINK-209 - Request.selectVariant() should take into account Accept-Charset
+    * WINK-210 - Output of ProvidersRegistry$MediaTypeMap.toString() should be more readable
+    * WINK-211 - minor serviceability improvement
+
+h4. Sub-task
+    * WINK-145 - Create JAXB classes for RSS
+    * WINK-146 - Add unit tests for the RSS object model
+    * WINK-147 - Add an Apache Wink client example to demonstrate consuming of RSS feeds
+    * WINK-148 - Add JAX-RS Provider to support HTTP header type="application/rss+xml"
+    * WINK-171 - JAXBElementXmlProvider ignores charset during unmarsheling
+    * WINK-177 - Use ContextResolver to receive XmlFormattingOptions 
+
+
+h4. Task
+    * WINK-118 - Adding documentation regarding the Wink Admin console 
+    * WINK-176 - Apache Wink 1.0 Developer Guide Documentation
+
+
+h4. Test
+    * WINK-178 - adding Jackson provider test
+    * WINK-198 - JAX-RS 1.1 support:  E009
+    * WINK-199 - JAX-RS 1.1 support:  E010
+    * WINK-200 - JAX-RS 1.1 support:  E011
+
+h4. Wish
+    * WINK-179 - test to ensure map types in ProvidersRegistry
+
