@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : 5.8 Link Builder</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : 5.8 Link Builder
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 12, 2009 by <font color="#0050B2">bluk</font>.
+				    </div>
+
+				    <h1><a name="5.8LinkBuilder-LinkBuilders"></a>Link Builders</h1>
+
+<p>The LinkBuilders interface enables access to two types of links builders, the SystemLinksBuilder and the SingleLinkBuilder. An instance of LinkBuilders is injected into a class field or method parameter using the @Context annotation.</p>
+
+<p>Upon creation, the LinkBuilders automatically detects if the target method being invoked is a resource method or a sub-resource method. The "resource" and "subResource" properties of the builder are initialized accordingly. The link builder interfaces reside in the org.apache.wink.server.utils package.</p>
+
+
+<h2><a name="5.8LinkBuilder-LinkBuildersOverview"></a>Link Builders Overview</h2>
+
+<p>The JAX-RS specification defines the UriBuilder interface used to construct a URI from a template, but does not specify any mechanism that can automatically generate all resource links.<br/>
+Apache Wink provides the SystemLinksBuilder for automatic generation of all the alternate links to a resource, one link per every supported media type. For example, this is useful for an application that produces Atom feeds to include in the feed all the alternate representations of the resource.</p>
+
+
+<p>Apache Wink provides a mechanism for defining if the generated links should be absolute links or relative to a base URI. For example, links embedded in an Atom feed should be as short as possible in order to optimize the payload size.</p>
+
+
+<h3><a name="5.8LinkBuilder-The%22alt%22QueryParameter"></a>The "alt" Query Parameter</h3>
+
+<p>Apache Wink supports the special query parameter "alt" that is used to override the value of the request Accept header. When the link builders generate a link that specifies the "type" attribute, then the "alt" query parameter is automatically added to the generated link. This is controlled by setting the wink.addAltParam key of the configuration properties file or by calling the LinksBuilder#addAltParam() method.</p>
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Reference</b><br />For more information on the Configuration Properties File refer to section <a href="5.1 Registration and Configuration.html#5.1RegistrationandConfiguration-ProviderPriorities">5.1 Registration and Configuration</a>.</td></tr></table></div>
+
+<h2><a name="5.8LinkBuilder-SystemLinksBuilder"></a>System Links Builder</h2>
+
+<p>The SystemLinksBuilder interface enables the generation of all, or a subset of, the system links to a resource or its sub-resources. The links are generated as absolute URIs or as relative to the base URI according to the SystemLinksBuilder state, request information or the application configuration.</p>
+
+<h3><a name="5.8LinkBuilder-Example"></a>Example</h3>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-xml">
+@Path(<span class="code-quote">"defects/{id}"</span>)
+public class DefectResource {
+@GET
+@Produces(<span class="code-quote">"application/atom+xml"</span>)
+public SyndEntry getAtom() {     ...   }
+@GET
+@Produces(<span class="code-quote">"application/json"</span>)
+public JSONObject getJson() {    ...  }
+}
+@GET
+@Produces(<span class="code-quote">"application/xml"</span>)
+public Defect getXml(@Context LinkBuilders linkBuilders) {     SystemLinksBuilder builder = linkBuilders.systemLinksBuilder();     ListsystemLinks = builder.build(null);     ...   }
+}
+</pre>
+</div></div>
+
+<h3><a name="5.8LinkBuilder-Explanation"></a>Explanation</h3>
+
+<p>The DefectResource#getXml() method is invoked when a GET request for application/xml is made to /defects/3. The Apache Wink runtime injects an instance of LinkBuilders to the linkBuilder parameter and a new instance of a SystemLinksBuilder is created by invoking the systemLinksBuilder() method.<br/>
+The call to the build() method of the SystemLinksBuilder generates three alternate links to the DefectResource and the self link:</p>
+
+
+<ul>
+	<li>&lt;link rel="self" href="/defects/3"/&gt;</li>
+</ul>
+
+
+<ul>
+	<li>&lt;link rel="alternate" type="application/json" href="/defects/3"/&gt;</li>
+</ul>
+
+
+<ul>
+	<li>&lt;link rel="alternate" type="application/xml" href="/defects/3"/&gt;</li>
+</ul>
+
+
+<ul>
+	<li>&lt;link rel="alternate" type="application/xtom+xml" href="/defects/3"/&gt;</li>
+</ul>
+
+
+<h2><a name="5.8LinkBuilder-SingleLinkBuilder"></a>Single Link Builder</h2>
+
+<p>The SingleLinkBuilder interface enables the generation of a single link referencing a resource or a sub-resource, allowing the specification of the 'rel' and 'type' attributes of the generated link. The links are generated as absolute URIs or as relative to the base URI according to the SingleLinkBuilder state, request information or the application configuration.<br/>
+Generating Absolute or Relative Links<br/>
+The link builders generate absolute or relative links based on the following algorithm:</p>
+
+<ol>
+	<li>Use the value that was passed to the relativize() method of the builder.</li>
+	<li>If the relativize() method was not called, then use the value of the "relative-urls" query parameter from the request. The value must be either true or false.</li>
+	<li>If the request does not contain the "<b>relative-urls</b>" query parameter, then use the value of the wink.defaultUrisRelative key set in the application configuration properties file. The value must be either true or false.</li>
+	<li>If the configuration key does not exist, then use true.</li>
+</ol>
+
+
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Reference</b><br />For more information on the Configuration Properties File refer to section <a href="5.1 Registration and Configuration.html#5.1RegistrationandConfiguration-ProviderPriorities">5.1 Registration and Configuration</a>.</td></tr></table></div>
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>
