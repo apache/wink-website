@@ -276,6 +276,7 @@
 		<developer>
 			<id>cjblythe</id>
 			<name>Christopher James Blythe</name>
+			<organization>IBM</organization>
 			<roles>
 				<role>committer</role>
 			</roles>
@@ -283,6 +284,7 @@
 		<developer>
 			<id>damrhei</id>
 			<name>Dustin Amrhein</name>
+			<organization>IBM</organization>
 			<roles>
 				<role>committer</role>
 			</roles>
@@ -313,6 +315,7 @@
 		<developer>
 			<id>jramos</id>
 			<name>Jesse A. Ramos</name>
+			<organization>IBM</organization>
 			<roles>
 				<role>committer</role>
 			</roles>
@@ -341,6 +344,14 @@
 				<role>committer</role>
 			</roles>
 		</developer>
+        	<developer>
+			<id>rott</id>
+			<name>Mike Rheinheimer</name>
+			<organization>IBM</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
 		<developer>
 			<id>tomershadi</id>
 			<name>Tomer Shadi</name>
@@ -351,9 +362,6 @@
 		</developer>
 	</developers>
 	<contributors>
-		<contributor>
-			<name>Mike Rheinheimer</name>
-		</contributor>
 		<contributor>
 			<name>Shiva Kumar H R</name>
 		</contributor>
