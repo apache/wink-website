@@ -30,7 +30,13 @@ Apache Wink Documentation
   * User Guide {{{./1.0/html/Apache Wink Developer Guide.html}HTML}} / {{{./1.0/Apache_Wink_User_Guide.pdf}PDF}} 
   
   * {{{./1.0/api/index.html}API}} (Javadoc)
-  
+
+* Wiki
+
+  *  {{{http://cwiki.apache.org/WINK/}Apache Wink Wiki}}
+
+  *  {{{http://cwiki.apache.org/WINK/apache-wink-developer-guide.html}User Guide in Wiki}}
+
 * JAX-RS
 
  * {{{https://jsr311.dev.java.net/nonav/releases/1.0/index.html}JSR-311 API}} 
