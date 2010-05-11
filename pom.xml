@@ -28,23 +28,35 @@
 		<version>6</version>
 	</parent>
 	<properties>
-        <!-- Wink 1.0 -->
-        <download_1_0Version>1.0-incubating</download_1_0Version>
-        <download_1_0Name>Wink-${download_1_0Version}</download_1_0Name>
-        <download_1_0MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_0Version}</download_1_0MirrorUrl>
-        <download_1_0DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_0Version}</download_1_0DistUrl>
-        <download_1_0File>apache-wink-${download_1_0Version}</download_1_0File>
+       	<!-- Wink 1.1 -->
+       	<download_1_1Version>1.1-incubating</download_1_1Version>
+       	<download_1_1Name>Wink-${download_1_1Version}</download_1_1Name>
+       	<download_1_1MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_1Version}</download_1_1MirrorUrl>
+       	<download_1_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_1Version}</download_1_1DistUrl>
+       	<download_1_1File>apache-wink-${download_1_1Version}</download_1_1File>
+       	<download_1_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_1Version}</download_1_1TagUrl>
+        	<!-- Wink 1.0 -->
+        	<download_1_0Version>1.0-incubating</download_1_0Version>
+        	<download_1_0Name>Wink-${download_1_0Version}</download_1_0Name>
+        	<download_1_0MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_0Version}</download_1_0MirrorUrl>
+        	<download_1_0DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_0Version}</download_1_0DistUrl>
+        	<download_1_0File>apache-wink-${download_1_0Version}</download_1_0File>
+        	<download_1_0TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_0Version}</download_1_0TagUrl>
 		<!-- Wink 0.1 -->
 		<download_0_1Version>0.1-incubating</download_0_1Version>
 		<download_0_1Name>Wink-${download_0_1Version}</download_0_1Name>
 		<download_0_1MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_0_1Version}</download_0_1MirrorUrl>
 		<download_0_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_0_1Version}</download_0_1DistUrl>
 		<download_0_1File>apache-wink-${download_0_1Version}</download_0_1File>
+        	<download_0_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_0_1Version}</download_0_1TagUrl>
+
 		<!-- SNAPSHOT -->
+<!-- NOT generally linked from a project's home page
 		<snapshotVersion>0.2-incubating-SNAPSHOT</snapshotVersion>
 		<downloadSnapshotName>Wink-${snapshotVersion}</downloadSnapshotName>
 		<downloadSnapshotUrl>https://repository.apache.org/content/repositories/snapshots/org/apache/wink/apache-wink/${snapshotVersion}</downloadSnapshotUrl>
 		<downloadSnapshotFile>apache-wink-${snapshotVersion}</downloadSnapshotFile>
+-->
 	</properties>
 	<scm>
 		<connection>scm:svn:http://svn.apache.org/repos/asf/incubator/wink/trunk</connection>
@@ -76,34 +88,34 @@
 						<dependency>
 							<groupId>org.apache.maven.doxia</groupId>
 							<artifactId>doxia-module-confluence</artifactId>
-							<version>1.1.1</version>
+							<version>1.1.2</version>
 						</dependency>
 					</dependencies>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<version>2.1-SNAPSHOT</version>
+					<version>2.1</version>
 					<dependencies>
 						<dependency>
 							<groupId>org.apache.maven.doxia</groupId>
 							<artifactId>doxia-module-apt</artifactId>
-							<version>1.1.1</version>
+							<version>1.1.2</version>
 						</dependency>
 						<dependency>
 							<groupId>org.apache.maven.doxia</groupId>
 							<artifactId>doxia-module-xhtml</artifactId>
-							<version>1.1.1</version>
+							<version>1.1.2</version>
 						</dependency>
 						<dependency>
 							<groupId>org.apache.maven.doxia</groupId>
 							<artifactId>doxia-sink-api</artifactId>
-							<version>1.1.1</version>
+							<version>1.1.2</version>
 						</dependency>
 						<dependency>
 							<groupId>org.apache.maven.doxia</groupId>
 							<artifactId>doxia-decoration-model</artifactId>
-							<version>1.1.1</version>
+							<version>1.1.2</version>
 							<exclusions>
 								<exclusion>
 									<groupId>org.codehaus.plexus</groupId>
@@ -118,7 +130,7 @@
 						<dependency>
 							<groupId>org.apache.maven.doxia</groupId>
 							<artifactId>doxia-site-renderer</artifactId>
-							<version>1.1.1</version>
+							<version>1.1.2</version>
 							<exclusions>
 								<exclusion>
 									<groupId>org.codehaus.plexus</groupId>
@@ -135,7 +147,7 @@
 						<dependency>
 							<groupId>org.apache.maven.doxia</groupId>
 							<artifactId>doxia-module-confluence</artifactId>
-							<version>1.1.1</version>
+							<version>1.1.2</version>
 						</dependency>
 					</dependencies>
 				</plugin>

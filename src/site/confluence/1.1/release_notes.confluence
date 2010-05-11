@@ -1,0 +1,73 @@
+h2. Apache Wink 1.1 Release Notes
+
+h3. Overview
+ 
+This is the third official release of Apache Wink project.
+Apache Wink is a framework that helps you to produce and consume RESTful Web Services. 
+Apache Wink is TCK compliant implementation of the JAX-RS v1.0 specification. 
+The project also introduces Java API for writing clients that consume HTTP-based RESTful Web Services. 
+
+h3. Complete list of issues fixed in 1.1
+    
+h4. Sub-task
+    * [WINK-241] - Add Documentation regarding client side Basic Authentication handler
+    * [WINK-271] - Add code for mapping RSS into Syndication Object Model
+    * [WINK-272] - Add an unit-test to verify RSS to Synd mapping
+    * [WINK-273] - Add an Apache Wink Client example to demonstrate RSS to Synd mapping
+    * [WINK-274] - Create documentation for RSS to Synd mapping
+
+h4. Bug
+    * [WINK-226] - need fallback for Class.forName in J2EE environments
+    * [WINK-227] - need fallback for Class.forName in J2EE environments
+    * [WINK-229] - JAXBXmlProvider should tolerate user jaxb contexts
+    * [WINK-230] - NullPointerException occures when Content type in MultiPart isn't sent
+    * [WINK-235] - Fix issue with using Locale objects inside ResponseBuilder
+    * [WINK-243] - Unable to inject fields once ResourceInstance is initialized
+    * [WINK-244] - Wrong log during servlet startup
+    * [WINK-247] - Fix issue with wrong informational message given when no Response entity and wrong class used when trying to find media type if not specified
+    * [WINK-248] - Fix warning about methods when more methods used.
+    * [WINK-249] - Fix issue in UriBuilder where not throwing IllegalArgumentException
+    * [WINK-251] - Handling http error 405 correctly 
+    * [WINK-253] - Typo in documentation for Wink 1.0 from Apache incubator website (it has ScopeType.SINGELTON instead of ScopeType.SINGLETON)
+    * [WINK-254] - AtomEntrySyndEntry content unavailable in Wink client
+    * [WINK-255] - Iterator over map of SoftReferences susceptible to ConcurrentModificationException
+    * [WINK-262] - Content-Type of HTTP Response contains no charset.
+    * [WINK-264] - Problem to construct a link using the LinkBuilders for a resource with a path param that contains ":"
+    * [WINK-265] - wink-client-apache-httpclient/pom.xml has duplicate junit def, causing mvn3 to puke
+
+h4. Improvement
+    * [WINK-67] - Use the maven-assembly-plugin to generate release distributions
+    * [WINK-128] - Add Wink quick start guide
+    * [WINK-195] - JAX-RS 1.1 support:  C007
+    * [WINK-196] - JAX-RS 1.1 support:  C008
+    * [WINK-212] - Need to look into handling of Collection types of objects
+    * [WINK-216] - tolerate empty path segments to support empty PathParams
+    * [WINK-223] - reduce log output on 404s
+    * [WINK-224] - Need to set custom ID Resolver for JaxB unmarshaller.
+    * [WINK-225] - Reduce logging the ProvidersRegistry
+    * [WINK-228] - sweep code for java2security compatibility
+    * [WINK-234] - improve debug and return code for unfound writer
+    * [WINK-240] - Change logging to be less noisy
+    * [WINK-245] - Annotations on interfaces - should they work?
+    * [WINK-257] - allow Application subclass to control provider priority
+    * [WINK-259] - add support for injection into Application subclass
+    * [WINK-260] - Add JVM system properties to read from for setting client connection/read timeouts
+    * [WINK-261] - Add way to be able to capture logging warnings in unit tests so we can correctly identify when messages are correctly being emitted
+    * [WINK-263] - Add OSGi metadata to JARs
+    * [WINK-266] - RestServlet constants should be publicily consumable
+    * [WINK-268] - Configure versions for all plugins to avoid Maven 3 complaints
+    * [WINK-270] - Honor Accept-Charset when returning text based content
+    * [WINK-277] - Mention about ext\MultiPart sample in examples\readme.txt
+    * [WINK-278] - Consistent naming convention for Wink distributions
+
+h4. New Feature
+    * [WINK-149] - Map RSS to Syndication Object Model
+    * [WINK-237] - Add a basic auth client handler
+    * [WINK-238] - Select the Content-Type automatically on client
+    * [WINK-250] - Experimental feature for Google Guice injection
+
+h4. Task
+    * [WINK-99] - Use Wink Client instead of Apaceh Http Client in integration tests
+
+h4. Test
+    * [WINK-97] - new integration tests:  context, uriinfo, etc

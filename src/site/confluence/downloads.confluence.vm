@@ -15,10 +15,20 @@ h2. Download Wink 1.0
 | ${download_1_0Name} (Source tar.gz) | [tar.gz|${download_1_0MirrorUrl}/${download_1_0File}-src.tar.gz] |  [MD5|${download_1_0DistUrl}/${download_1_0File}-src.tar.gz.md5]  | [SHA-1|${download_1_0DistUrl}/${download_1_0File}-src.tar.gz.sha1] | [ASC|${download_1_0DistUrl}/${download_1_0File}-src.tar.gz.asc] |
 | ${download_1_0Name} (Source zip) | [zip|${download_1_0MirrorUrl}/${download_1_0File}-src.zip] |  [MD5|${download_1_0DistUrl}/${download_1_0File}-src.zip.md5] |  [SHA-1|${download_1_0DistUrl}/${download_1_0File}-src.zip.sha1] | [ASC|${download_1_0DistUrl}/${download_1_0File}-src.zip.asc] |
 | Release Notes | [${download_1_0Version}|1.0/release\_notes] | | | |
+| KEYS for {$download_1_0Name} | [KEYS|${download_1_0TagUrl}/KEYS] | | | |
+
+Instructions for checking hashes and signatures is indicated on the [Verifying Apache Software Foundation Releases|http://www.apache.org/info/verification.html] page.
 
 You can also retrieve the source files from our svn repository by typing
 {code}
-svn co http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_0Version}/
+svn co ${download_1_0TagUrl}/
+{code}
+
+Instructions for checking hashes and signatures is indicated on the [Verifying Apache Software Foundation Releases|http://www.apache.org/info/verification.html] page.
+
+You can also retrieve the source files from our svn repository by typing
+{code}
+svn co ${download_1_0TagUrl}/
 {code}
 
 h3. Using Maven
@@ -29,23 +39,23 @@ h4. Dependencies
 
  Add the following dependencies to your Maven pom.xml to include the Apache Wink Client module or the Server module.
 
-h5. Client
-
-{code}
-<dependency>
-    <groupId>org.apache.wink</groupId>
-    <artifactId>wink-client</artifactId>
-    <version>${download_1_0Version}</version>
-</dependency>
-{code}
-
 h5. Server
 
 {code}
 <dependency>
     <groupId>org.apache.wink</groupId>
     <artifactId>wink-server</artifactId>
-    <version>${download_1_0Version}</version>
+    <version>${download_1_1Version}</version>
+</dependency>
+{code}
+
+h5. Client
+
+{code}
+<dependency>
+    <groupId>org.apache.wink</groupId>
+    <artifactId>wink-client</artifactId>
+    <version>${download_1_1Version}</version>
 </dependency>
 {code}
 
@@ -59,50 +69,11 @@ h3. Wink 0.1
 | ${download_0_1Name} (Source tar.gz) | [tar.gz|${download_0_1MirrorUrl}/${download_0_1File}-src.tar.gz] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.md5]  | [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.tar.gz.asc] |
 | ${download_0_1Name} (Source zip) | [zip|${download_0_1MirrorUrl}/${download_0_1File}-src.zip] |  [MD5|${download_0_1DistUrl}/${download_0_1File}-src.zip.md5] |  [SHA-1|${download_0_1DistUrl}/${download_0_1File}-src.zip.sha1] | [ASC|${download_0_1DistUrl}/${download_0_1File}-src.zip.asc] |
 | Release Notes | [${download_0_1Version}|0.1/release\_notes] | | | |
+| KEYS for ${download_0_1Name} | [KEYS|${download_0_1TagUrl}/KEYS] | | | |
+
+Instructions for checking hashes and signatures is indicated on the [Verifying Apache Software Foundation Releases|http://www.apache.org/info/verification.html] page.
 
 You can also retrieve the source files from our svn repository by typing
 {code}
-svn co http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_0_1Version}/
+svn co ${download_0_1TagUrl}/
 {code}
-
-h2. Latest Snapshots
-		
-|| Name ||  Archive || MD5 || SHA-1 || 
-| ${downloadSnapshotName} (gz) | [gz|${downloadSnapshotUrl}/${downloadSnapshotFile}.gz] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}.gz.md5] |  [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}.gz.sha1]  |
-| ${downloadSnapshotName} (zip) | [zip|${downloadSnapshotUrl}/${downloadSnapshotFile}.zip] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}.zip.md5] |  [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}.zip.sha1] |
-| ${downloadSnapshotName} (Source gz) | [gz|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.gz] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.gz.md5]  | [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.gz.sha1] |
-| ${downloadSnapshotName} (Source zip) | [zip|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.zip] |  [MD5|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.zip.md5] |  [SHA-1|${downloadSnapshotUrl}/${downloadSnapshotFile}-src.zip.sha1] |
-
-h3. Maven
-
-h4. Dependencies
-
- Add the following dependencies to your Maven pom.xml to include the Apache Wink Client module or the Server module.
-
-h5. Client
-
-{code}
-<dependency>
-    <groupId>org.apache.wink</groupId>
-    <artifactId>wink-client</artifactId>
-    <version>${snapshotVersion}</version>
-</dependency>
-{code}
-
-h5. Server
-
-{code}
-<dependency>
-    <groupId>org.apache.wink</groupId>
-    <artifactId>wink-server</artifactId>
-    <version>${snapshotVersion}</version>
-</dependency>
-{code}
-
-h4. Repository
-
-{code}
-https://repository.apache.org/content/repositories/snapshots
-{code}
-
-
