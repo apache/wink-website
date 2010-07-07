@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : JAX-RS Request and Response Entities</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : JAX-RS Request and Response Entities
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 14, 2009 by <font color="#0050B2">michael</font>.
+				    </div>
+
+				    <h1><a name="JAX-RSRequestandResponseEntities-RequestandResponseEntities"></a>Request and Response Entities</h1>
+
+<p>Request and response entities represent the main part of an HTTP request.  Entities are also refered to as the "<b>message body</b>" or "<b>payload</b>".  Entities are sent via a request, usually an HTTP POST and PUT method are used or they are returned in a response, this is relevant for all HTTP methods.</p>
+
+<p>Unlike other distributed systems technologies, there is generally no wrapper around an entity.  For example, if a request is made for a binary PNG image represented here, <a href="http://example.com/user/abcd/portrait.png">http://example.com/user/abcd/portrait.png</a> , the response entity is only the PNG image binary data.</p>
+
+<p>Resource methods have a single entity parameter that represents the main entity body.  It is the <b>only unannotated parameter allowed</b> in a resource method.</p>
+
+<p>When using JAX-RS, request and response entites are mapped to and from Java types by Entity Providers that implement the JAX-RS interfaces, MessageBodyReader and MessageBodyWriter.  Applications may provide their own MessageBodyReaders and MessageBodyWriters that take precedent over the runtime provided ones.</p>
+
+<p><a name="JAX-RSRequestandResponseEntities-MediaType"></a></p>
+
+<h3><a name="JAX-RSRequestandResponseEntities-MediaTypes%28MIME%29andjavax.ws.rs.core.MediaType"></a>Media Types (MIME) and javax.ws.rs.core.MediaType</h3>
+
+<p>The request and response entity can be any form of data, a way of identifying what the entities bits and bytes represent is needed.  In requests and responses, the <b>Content-Type</b> HTTP header is used to indicate the type of entity currently being sent. The Content-Type value comes from a well known <a href="http://www.iana.org/assignments/media-types/">media type as registered in IANA</a>.</p>
+
+<p>Common content types include "text/plain", "text/xml", "text/html", and "application/json".</p>
+
+<p>Correct Content-Type values are essential for clients and servers.  "<b>Unusual</b>" behavior by clients such as browsers can be attributed to wrong content types.</p>
+
+<p>Media Types are also used in a request <b>Accept</b> header to indicate what type of resource representation the client wants to receive.  Clients could indicate a preference as well, such as JSON before XML.</p>
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Reference</b><br />Refer to the HTTP spec regarding the Accept header and the Content Negotiation topic.</td></tr></table></div>
+
+
+<p>javax.ws.rs.core.MediaType has functionality and representations related to Media Types.</p>
+
+<p><a name="JAX-RSRequestandResponseEntities-ConsumesAndProduces"></a></p>
+
+<h3><a name="JAX-RSRequestandResponseEntities-@Consumesand@ProducesAnnotations"></a>@Consumes and @Produces Annotations</h3>
+
+
+<p>Annotating a class or a resource method with @Consumes and @Produces will help the JAX-RS runtime identify the appropriate methods to invoke for requests.  For example:</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">@Path(<span class="code-quote">"/example"</span>)
+<span class="code-keyword">public</span> RootResource {
+    @POST
+    @Consumes(<span class="code-quote">"text/xml"</span>)
+    @Produces(<span class="code-quote">"text/xml"</span>)
+    <span class="code-keyword">public</span> Response getOnlyXML(<span class="code-object">String</span> incomingXML) {
+        <span class="code-keyword">return</span> Response.ok(<span class="code-quote">"only xml"</span>).type(<span class="code-quote">"text/xml"</span>).build();
+    }
+
+    @GET
+    @Produces(<span class="code-quote">"text/html"</span>, <span class="code-quote">"text/plain"</span>)
+    <span class="code-keyword">public</span> <span class="code-object">String</span> getText() {
+        <span class="code-keyword">return</span> <span class="code-quote">"text representation"</span>;
+    }
+}
+</pre>
+</div></div>
+<p>In the previous code example, if a HTTP POST to "/example" was issued with a Content-Type header of "text/xml" and an Accept header of "text/xml", then the RootResource#getOnlyXML method would be invoked.  If the same POST request was issued with an Accept header of "text/plain", then a 406 Not Acceptable response would be generated by the JAX-RS runtime and the method would not be invoked.</p>
+
+<p>It is a good practice to return a javax.ws.rs.core.Response with a .type() or .variant() call since it would guarantee a return content type.  Notice that the above getText() code supports multiple data types.  A javax.ws.rs.core.Response object returned must have a single concrete Content-Type value.  In orer to select the best acceptable representation in the resource method, use either the <b>@Context HttpHeaders#getAcceptableMediaTypes()</b> or a <b>@Context Request#selectVariant()</b> method.</p>
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Reference</b><br />Refer to the Context topic page for more information.</td></tr></table></div>
+
+<p>While resource methods may consume one media type for example XML and produce another such as JSON, most user requests expect the same media type that was sent in the request to be returned in the response.</p>
+
+<p>If the Content-Type header is empty and there is an entity, then the JAX-RS runtime will make the Content-Type be "<b>application/octet-stream</b>".  If an Accept header is empty, then according to the HTTP specification, the Accept header is equivalent to &#42;/&#42; which is a wildcard that matches anything.</p>
+
+<div class='panelMacro'><table class='tipMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/check.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Important Note</b><br />Note that the resource method ultimately has control over the response content. If a javax.ws.rs.core.Response is returned, then the developer can return whatever Content-Type is desired. The @Consumes and @Produces is primarily useful only when processing request information and determining which resource method is possible to invoke. If a specific Response content type is not specified via a returned javax.ws.rs.core.Response object, the response media type is determined by a combination of the @Produces annotation values and the available MessageBodyWriters for the response entity's Java type. This can lead to undesired results if there is no @Produces annotation or if the @Produces annotation has multiple media types listed.</td></tr></table></div>
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Reference</b><br />Refer to the JAX-RS specification for the effective algorithm used.</td></tr></table></div>
+
+<p><a name="JAX-RSRequestandResponseEntities-JAXRSStandardEntityProviders"></a></p>
+
+<h3><a name="JAX-RSRequestandResponseEntities-JAXRSStandardEntityParameterTypes"></a>JAX-RS Standard Entity Parameter Types</h3>
+
+<p>JAX-RS requires certain parameters to be supported for virtually any content type.  The following table lists the supported content types:</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Java Type </th>
+<th class='confluenceTh'> Content Type Supported </th>
+<th class='confluenceTh'> Special Notes </th>
+</tr>
+<tr>
+<td class='confluenceTd'> java.lang.String </td>
+<td class='confluenceTd'> &#42;/&#42; </td>
+</tr>
+<tr>
+<td class='confluenceTd'> byte[] </td>
+<td class='confluenceTd'> &#42;/&#42; </td>
+</tr>
+<tr>
+<td class='confluenceTd'> java.io.InputStream </td>
+<td class='confluenceTd'> &#42;/&#42; </td>
+</tr>
+<tr>
+<td class='confluenceTd'> java.io.Reader </td>
+<td class='confluenceTd'> &#42;/&#42; </td>
+</tr>
+<tr>
+<td class='confluenceTd'> java.io.File </td>
+<td class='confluenceTd'> &#42;/&#42; </td>
+</tr>
+<tr>
+<td class='confluenceTd'> javax.activation.DataSource </td>
+<td class='confluenceTd'> &#42;/&#42; </td>
+</tr>
+<tr>
+<td class='confluenceTd'> javax.xml.transform.Source </td>
+<td class='confluenceTd'> text/xml, application/xml, application/*+xml </td>
+</tr>
+<tr>
+<td class='confluenceTd'> javax.xml.bind.JAXBElement<br clear="all" />
+ and JAXB classes </td>
+<td class='confluenceTd'> text/xml, application/xml, application/*+xml </td>
+</tr>
+<tr>
+<td class='confluenceTd'> javax.ws.rs.core<br clear="all" />
+ .MultivaluedMap<br clear="all" />
+ &lt;String, String&gt; </td>
+<td class='confluenceTd'> application/x-www-form-urlencoded </td>
+</tr>
+<tr>
+<td class='confluenceTd'> javax.ws.rs<br clear="all" />
+ .core.StreamingOutput </td>
+<td class='confluenceTd'> &#42;/&#42; </td>
+<td class='confluenceTd'> As a writer only </td>
+</tr>
+</tbody></table>
+
+<p>Developers can use the previous Java types as entity parameters for requests and responses.</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">@Path(<span class="code-quote">"/example"</span>)
+<span class="code-keyword">public</span> class RootResource {
+
+    @GET
+    @Produces(<span class="code-quote">"text/xml"</span>)
+    <span class="code-keyword">public</span> Response getInfo() {
+        <span class="code-object">byte</span>[] entity = /* get the entity into a <span class="code-object">byte</span> array */
+        <span class="code-keyword">return</span> Response.ok(entity).type(<span class="code-quote">"text/xml"</span>).build();
+    }
+
+    @POST
+    @Consumes(<span class="code-quote">"application/json"</span>)
+    @Produces(<span class="code-quote">"application/json"</span>)
+    <span class="code-keyword">public</span> StreamingOutput createItem(InputStream requestBodyStream) {
+        /* read the requestBodyStream like a normal input stream */
+        <span class="code-keyword">return</span> <span class="code-keyword">new</span> StreamingOutput() {
+
+            <span class="code-keyword">public</span> void write(OutputStream output) <span class="code-keyword">throws</span> IOException, WebApplicationException {
+                <span class="code-object">byte</span>[] out = /* get some bytes to write */
+                output.write(out);
+            }
+        })
+    }
+}
+</pre>
+</div></div>
+<p><a name="JAX-RSRequestandResponseEntities-TransferEncoding"></a></p>
+
+<h3><a name="JAX-RSRequestandResponseEntities-TransferEncoding"></a>Transfer Encoding</h3>
+
+<p>Transfer or "<b>chunked</b>" encoding is handled by the container for incoming requests.  The container or the application must do any transfer encoding for outgoing responses.</p>
+
+<p><a name="JAX-RSRequestandResponseEntities-ContentEncoding"></a></p>
+
+<h3><a name="JAX-RSRequestandResponseEntities-ContentEncoding"></a>Content Encoding</h3>
+
+<p>Content for example "<b>gzip</b>" and or "<b>deflate</b>" encoding is handled by the application.  However, some containers handle content encoding for developers and will uncompress content automatically or will with various configuration set.  Check the  container documentation.</p>
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>
