@@ -28,7 +28,7 @@ Apache Wink
   Apache Wink is a simple yet solid framework for building RESTful Web services. It is comprised of a Server module and a Client module
   for developing and consuming RESTful Web services.
 
-  The <<Wink Server>> module is a complete implementation of the JAX-RS v1.0 specification. On top of this implementation, 
+  The <<Wink Server>> module is a complete implementation of the JAX-RS v1.1 specification. On top of this implementation, 
   the Wink Server module provides a set of additional features that were designed to facilitate
    the development of RESTful Web services.
   

@@ -7,28 +7,28 @@ h1. Apache Wink Downloads
  Apache Wink is distributed under the [Apache License, version 2.0|http://maven.apache.org/license.html].
 
 
-h2. Download Wink 1.1.1
+h2. Download Wink 1.1.2
 
 || Name ||  Archive || MD5 || SHA-1 || Signature ||
-| ${download_1_1_1Name} (tar.gz) | [tar.gz|${download_1_1_1MirrorUrl}/${download_1_1_1File}.tar.gz] |  [MD5|${download_1_1_1DistUrl}/${download_1_1_1File}.tar.gz.md5] |  [SHA-1|${download_1_1_1DistUrl}/${download_1_1_1File}.tar.gz.sha1]  | [ASC|${download_1_1_1DistUrl}/${download_1_1_1File}.tar.gz.asc] |
-| ${download_1_1_1Name} (zip) | [zip|${download_1_1_1MirrorUrl}/${download_1_1_1File}.zip] |  [MD5|${download_1_1_1DistUrl}/${download_1_1_1File}.zip.md5] |  [SHA-1|${download_1_1_1DistUrl}/${download_1_1_1File}.zip.sha1] | [ASC|${download_1_1_1DistUrl}/${download_1_1_1File}.zip.asc] |
-| ${download_1_1_1Name} (Source tar.gz) | [tar.gz|${download_1_1_1MirrorUrl}/${download_1_1_1File}-src.tar.gz] |  [MD5|${download_1_1_1DistUrl}/${download_1_1_1File}-src.tar.gz.md5]  | [SHA-1|${download_1_1_1DistUrl}/${download_1_1_1File}-src.tar.gz.sha1] | [ASC|${download_1_1_1DistUrl}/${download_1_1_1File}-src.tar.gz.asc] |
-| ${download_1_1_1Name} (Source zip) | [zip|${download_1_1_1MirrorUrl}/${download_1_1_1File}-src.zip] |  [MD5|${download_1_1_1DistUrl}/${download_1_1_1File}-src.zip.md5] |  [SHA-1|${download_1_1_1DistUrl}/${download_1_1_1File}-src.zip.sha1] | [ASC|${download_1_1_1DistUrl}/${download_1_1_1File}-src.zip.asc] |
-| Release Notes | [${download_1_1_1Version}|1.1.1/release\_notes] | | | |
-| KEYS for {$download_1_1_1Name} | [KEYS|${download_1_1_1TagUrl}/KEYS] | | | |
+| ${download_1_1_2Name} (tar.gz) | [tar.gz|${download_1_1_2MirrorUrl}/${download_1_1_2File}.tar.gz] |  [MD5|${download_1_1_2DistUrl}/${download_1_1_2File}.tar.gz.md5] |  [SHA-1|${download_1_1_2DistUrl}/${download_1_1_2File}.tar.gz.sha1]  | [ASC|${download_1_1_2DistUrl}/${download_1_1_2File}.tar.gz.asc] |
+| ${download_1_1_2Name} (zip) | [zip|${download_1_1_2MirrorUrl}/${download_1_1_2File}.zip] |  [MD5|${download_1_1_2DistUrl}/${download_1_1_2File}.zip.md5] |  [SHA-1|${download_1_1_2DistUrl}/${download_1_1_2File}.zip.sha1] | [ASC|${download_1_1_2DistUrl}/${download_1_1_2File}.zip.asc] |
+| ${download_1_1_2Name} (Source tar.gz) | [tar.gz|${download_1_1_2MirrorUrl}/${download_1_1_2File}-src.tar.gz] |  [MD5|${download_1_1_2DistUrl}/${download_1_1_2File}-src.tar.gz.md5]  | [SHA-1|${download_1_1_2DistUrl}/${download_1_1_2File}-src.tar.gz.sha1] | [ASC|${download_1_1_2DistUrl}/${download_1_1_2File}-src.tar.gz.asc] |
+| ${download_1_1_2Name} (Source zip) | [zip|${download_1_1_2MirrorUrl}/${download_1_1_2File}-src.zip] |  [MD5|${download_1_1_2DistUrl}/${download_1_1_2File}-src.zip.md5] |  [SHA-1|${download_1_1_2DistUrl}/${download_1_1_2File}-src.zip.sha1] | [ASC|${download_1_1_2DistUrl}/${download_1_1_2File}-src.zip.asc] |
+| Release Notes | [${download_1_1_2Version}|1.1.2/release\_notes] | | | |
+| KEYS for {$download_1_1_2Name} | [KEYS|${download_1_1_2TagUrl}/KEYS] | | | |
 
 Instructions for checking hashes and signatures is indicated on the [Verifying Apache Software Foundation Releases|http://www.apache.org/info/verification.html] page.
 
 You can also retrieve the source files from our svn repository by typing
 {code}
-svn co ${download_1_1_1TagUrl}/
+svn co ${download_1_1_2TagUrl}/
 {code}
 
 Instructions for checking hashes and signatures is indicated on the [Verifying Apache Software Foundation Releases|http://www.apache.org/info/verification.html] page.
 
 You can also retrieve the source files from our svn repository by typing
 {code}
-svn co ${download_1_1_1TagUrl}/
+svn co ${download_1_1_2TagUrl}/
 {code}
 
 h3. Using Maven
@@ -45,7 +45,7 @@ h5. Server
 <dependency>
     <groupId>org.apache.wink</groupId>
     <artifactId>wink-server</artifactId>
-    <version>${download_1_1_1Version}</version>
+    <version>${download_1_1_2Version}</version>
 </dependency>
 {code}
 
@@ -55,11 +55,21 @@ h5. Client
 <dependency>
     <groupId>org.apache.wink</groupId>
     <artifactId>wink-client</artifactId>
-    <version>${download_1_1_1Version}</version>
+    <version>${download_1_1_2Version}</version>
 </dependency>
 {code}
 
 h2. Previous Releases
+
+h3. Wink 1.1.1
+
+|| Name ||  Archive || MD5 || SHA-1 || Signature ||
+| ${download_1_1_1Name} (tar.gz) | [tar.gz|${download_1_1_1MirrorUrl}/${download_1_1_1File}.tar.gz] |  [MD5|${download_1_1_1DistUrl}/${download_1_1_1File}.tar.gz.md5] |  [SHA-1|${download_1_1_1DistUrl}/${download_1_1_1File}.tar.gz.sha1]  | [ASC|${download_1_1_1DistUrl}/${download_1_1_1File}.tar.gz.asc] |
+| ${download_1_1_1Name} (zip) | [zip|${download_1_1_1MirrorUrl}/${download_1_1_1File}.zip] |  [MD5|${download_1_1_1DistUrl}/${download_1_1_1File}.zip.md5] |  [SHA-1|${download_1_1_1DistUrl}/${download_1_1_1File}.zip.sha1] | [ASC|${download_1_1_1DistUrl}/${download_1_1_1File}.zip.asc] |
+| ${download_1_1_1Name} (Source tar.gz) | [tar.gz|${download_1_1_1MirrorUrl}/${download_1_1_1File}-src.tar.gz] |  [MD5|${download_1_1_1DistUrl}/${download_1_1_1File}-src.tar.gz.md5]  | [SHA-1|${download_1_1_1DistUrl}/${download_1_1_1File}-src.tar.gz.sha1] | [ASC|${download_1_1_1DistUrl}/${download_1_1_1File}-src.tar.gz.asc] |
+| ${download_1_1_1Name} (Source zip) | [zip|${download_1_1_1MirrorUrl}/${download_1_1_1File}-src.zip] |  [MD5|${download_1_1_1DistUrl}/${download_1_1_1File}-src.zip.md5] |  [SHA-1|${download_1_1_1DistUrl}/${download_1_1_1File}-src.zip.sha1] | [ASC|${download_1_1_1DistUrl}/${download_1_1_1File}-src.zip.asc] |
+| Release Notes | [${download_1_1_1Version}|1.1.1/release\_notes] | | | |
+| KEYS for {$download_1_1_1Name} | [KEYS|${download_1_1_1TagUrl}/KEYS] | | | |
 
 h3. Wink 1.1
 

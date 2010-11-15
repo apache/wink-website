@@ -19,7 +19,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.apache.wink</groupId>
 	<artifactId>wink</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>1.1.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Apache Wink</name>
 	<parent>
@@ -27,7 +27,16 @@
 		<artifactId>apache</artifactId>
 		<version>6</version>
 	</parent>
+
     <properties>
+        <!-- Wink 1.1.2 -->
+       	<download_1_1_2Version>1.1.2-incubating</download_1_1_2Version>
+       	<download_1_1_2Name>Wink-${download_1_1_2Version}</download_1_1_2Name>
+       	<download_1_1_2MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_1_2Version}</download_1_1_2MirrorUrl>
+       	<download_1_1_2DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_1_2Version}</download_1_1_2DistUrl>
+       	<download_1_1_2File>apache-wink-${download_1_1_2Version}</download_1_1_2File>
+       	<download_1_1_2TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_1_2Version}</download_1_1_2TagUrl>
+
         <!-- Wink 1.1.1 -->
        	<download_1_1_1Version>1.1.1-incubating</download_1_1_1Version>
        	<download_1_1_1Name>Wink-${download_1_1_1Version}</download_1_1_1Name>
@@ -35,6 +44,7 @@
        	<download_1_1_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_1_1Version}</download_1_1_1DistUrl>
        	<download_1_1_1File>apache-wink-${download_1_1_1Version}</download_1_1_1File>
        	<download_1_1_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_1_1Version}</download_1_1_1TagUrl>
+
        	<!-- Wink 1.1 -->
        	<download_1_1Version>1.1-incubating</download_1_1Version>
        	<download_1_1Name>Wink-${download_1_1Version}</download_1_1Name>
@@ -42,27 +52,29 @@
        	<download_1_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_1Version}</download_1_1DistUrl>
        	<download_1_1File>apache-wink-${download_1_1Version}</download_1_1File>
        	<download_1_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_1Version}</download_1_1TagUrl>
-        	<!-- Wink 1.0 -->
-        	<download_1_0Version>1.0-incubating</download_1_0Version>
-        	<download_1_0Name>Wink-${download_1_0Version}</download_1_0Name>
-        	<download_1_0MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_0Version}</download_1_0MirrorUrl>
-        	<download_1_0DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_0Version}</download_1_0DistUrl>
-        	<download_1_0File>apache-wink-${download_1_0Version}</download_1_0File>
-        	<download_1_0TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_0Version}</download_1_0TagUrl>
-		<!-- Wink 0.1 -->
-		<download_0_1Version>0.1-incubating</download_0_1Version>
-		<download_0_1Name>Wink-${download_0_1Version}</download_0_1Name>
-		<download_0_1MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_0_1Version}</download_0_1MirrorUrl>
-		<download_0_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_0_1Version}</download_0_1DistUrl>
-		<download_0_1File>apache-wink-${download_0_1Version}</download_0_1File>
-        	<download_0_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_0_1Version}</download_0_1TagUrl>
 
-		<!-- SNAPSHOT -->
-<!-- NOT generally linked from a project's home page
-		<snapshotVersion>0.2-incubating-SNAPSHOT</snapshotVersion>
-		<downloadSnapshotName>Wink-${snapshotVersion}</downloadSnapshotName>
-		<downloadSnapshotUrl>https://repository.apache.org/content/repositories/snapshots/org/apache/wink/apache-wink/${snapshotVersion}</downloadSnapshotUrl>
-		<downloadSnapshotFile>apache-wink-${snapshotVersion}</downloadSnapshotFile>
+       	<!-- Wink 1.0 -->
+       	<download_1_0Version>1.0-incubating</download_1_0Version>
+       	<download_1_0Name>Wink-${download_1_0Version}</download_1_0Name>
+       	<download_1_0MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_0Version}</download_1_0MirrorUrl>
+       	<download_1_0DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_0Version}</download_1_0DistUrl>
+       	<download_1_0File>apache-wink-${download_1_0Version}</download_1_0File>
+       	<download_1_0TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_0Version}</download_1_0TagUrl>
+
+	<!-- Wink 0.1 -->
+	<download_0_1Version>0.1-incubating</download_0_1Version>
+	<download_0_1Name>Wink-${download_0_1Version}</download_0_1Name>
+	<download_0_1MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_0_1Version}</download_0_1MirrorUrl>
+	<download_0_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_0_1Version}</download_0_1DistUrl>
+	<download_0_1File>apache-wink-${download_0_1Version}</download_0_1File>
+       	<download_0_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_0_1Version}</download_0_1TagUrl>
+
+	<!-- SNAPSHOT -->
+	<!-- NOT generally linked from a project's home page
+	<snapshotVersion>0.2-incubating-SNAPSHOT</snapshotVersion>
+	<downloadSnapshotName>Wink-${snapshotVersion}</downloadSnapshotName>
+	<downloadSnapshotUrl>https://repository.apache.org/content/repositories/snapshots/org/apache/wink/apache-wink/${snapshotVersion}</downloadSnapshotUrl>
+	<downloadSnapshotFile>apache-wink-${snapshotVersion}</downloadSnapshotFile>
 -->
 	</properties>
 	<scm>
