@@ -25,10 +25,18 @@
 	<parent>
 		<groupId>org.apache</groupId>
 		<artifactId>apache</artifactId>
-		<version>6</version>
+		<version>8</version>
 	</parent>
 
     <properties>
+        <!-- Wink 1.1.3 -->
+       	<download_1_1_3Version>1.1.3-incubating</download_1_1_3Version>
+       	<download_1_1_3Name>Wink-${download_1_1_3Version}</download_1_1_3Name>
+       	<download_1_1_3MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_1_3Version}</download_1_1_3MirrorUrl>
+       	<download_1_1_3DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_1_3Version}</download_1_1_3DistUrl>
+       	<download_1_1_3File>apache-wink-${download_1_1_3Version}</download_1_1_3File>
+       	<download_1_1_3TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_1_3Version}</download_1_1_3TagUrl>
+
         <!-- Wink 1.1.2 -->
        	<download_1_1_2Version>1.1.2-incubating</download_1_1_2Version>
        	<download_1_1_2Name>Wink-${download_1_1_2Version}</download_1_1_2Name>
@@ -61,21 +69,21 @@
        	<download_1_0File>apache-wink-${download_1_0Version}</download_1_0File>
        	<download_1_0TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_0Version}</download_1_0TagUrl>
 
-	<!-- Wink 0.1 -->
-	<download_0_1Version>0.1-incubating</download_0_1Version>
-	<download_0_1Name>Wink-${download_0_1Version}</download_0_1Name>
-	<download_0_1MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_0_1Version}</download_0_1MirrorUrl>
-	<download_0_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_0_1Version}</download_0_1DistUrl>
-	<download_0_1File>apache-wink-${download_0_1Version}</download_0_1File>
+		<!-- Wink 0.1 -->
+        <download_0_1Version>0.1-incubating</download_0_1Version>
+        <download_0_1Name>Wink-${download_0_1Version}</download_0_1Name>
+        <download_0_1MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_0_1Version}</download_0_1MirrorUrl>
+        <download_0_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_0_1Version}</download_0_1DistUrl>
+        <download_0_1File>apache-wink-${download_0_1Version}</download_0_1File>
        	<download_0_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_0_1Version}</download_0_1TagUrl>
 
-	<!-- SNAPSHOT -->
-	<!-- NOT generally linked from a project's home page
-	<snapshotVersion>0.2-incubating-SNAPSHOT</snapshotVersion>
-	<downloadSnapshotName>Wink-${snapshotVersion}</downloadSnapshotName>
-	<downloadSnapshotUrl>https://repository.apache.org/content/repositories/snapshots/org/apache/wink/apache-wink/${snapshotVersion}</downloadSnapshotUrl>
-	<downloadSnapshotFile>apache-wink-${snapshotVersion}</downloadSnapshotFile>
--->
+        <!-- SNAPSHOT -->
+        <!-- NOT generally linked from a project's home page
+        <snapshotVersion>0.2-incubating-SNAPSHOT</snapshotVersion>
+        <downloadSnapshotName>Wink-${snapshotVersion}</downloadSnapshotName>
+        <downloadSnapshotUrl>https://repository.apache.org/content/repositories/snapshots/org/apache/wink/apache-wink/${snapshotVersion}</downloadSnapshotUrl>
+        <downloadSnapshotFile>apache-wink-${snapshotVersion}</downloadSnapshotFile>
+        -->
 	</properties>
 	<scm>
 		<connection>scm:svn:http://svn.apache.org/repos/asf/incubator/wink/trunk</connection>
@@ -352,6 +360,14 @@
 			</roles>
 		</developer>
 		<developer>
+			<id>lresende</id>
+			<name>Luciano Resende</name>
+			<organization>Shutterfly</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
 			<id>martins</id>
 			<name>Martin Snitkovsky</name>
 			<organization>HP</organization>
@@ -375,7 +391,15 @@
 				<role>committer</role>
 			</roles>
 		</developer>
-        	<developer>
+		<developer>
+			<id>rfeng</id>
+			<name>Raymond Feng</name>
+			<organization>Shutterfly</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>		
+		<developer>
 			<id>rott</id>
 			<name>Mike Rheinheimer</name>
 			<organization>IBM</organization>
