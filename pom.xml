@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Licensed to the Apache Software Foundation (ASF) under one or more
+		contributor license agreements. See the NOTICE file distributed with
+		this work for additional information regarding copyright ownership.
+		The ASF licenses this file to you under the Apache License, Version
+		2.0 (the "License"); you may not use this file except in compliance
+		with the License. You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License.
+	-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.wink</groupId>
+	<artifactId>wink</artifactId>
+	<version>1.1.3-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Apache Wink</name>
+	<parent>
+		<groupId>org.apache</groupId>
+		<artifactId>apache</artifactId>
+		<version>8</version>
+	</parent>
+
+    <properties>
+        <!-- Wink 1.1.3 -->
+       	<download_1_1_3Version>1.1.3-incubating</download_1_1_3Version>
+       	<download_1_1_3Name>Wink-${download_1_1_3Version}</download_1_1_3Name>
+       	<download_1_1_3MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_1_3Version}</download_1_1_3MirrorUrl>
+       	<download_1_1_3DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_1_3Version}</download_1_1_3DistUrl>
+       	<download_1_1_3File>apache-wink-${download_1_1_3Version}</download_1_1_3File>
+       	<download_1_1_3TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_1_3Version}</download_1_1_3TagUrl>
+
+        <!-- Wink 1.1.2 -->
+       	<download_1_1_2Version>1.1.2-incubating</download_1_1_2Version>
+       	<download_1_1_2Name>Wink-${download_1_1_2Version}</download_1_1_2Name>
+       	<download_1_1_2MirrorUrl>http://archive.apache.org/dist/incubator/wink/${download_1_1_2Version}</download_1_1_2MirrorUrl>
+       	<download_1_1_2DistUrl>http://archive.apache.org/dist/incubator/wink/${download_1_1_2Version}</download_1_1_2DistUrl>
+       	<download_1_1_2File>apache-wink-${download_1_1_2Version}</download_1_1_2File>
+       	<download_1_1_2TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_1_2Version}</download_1_1_2TagUrl>
+
+        <!-- Wink 1.1.1 -->
+       	<download_1_1_1Version>1.1.1-incubating</download_1_1_1Version>
+       	<download_1_1_1Name>Wink-${download_1_1_1Version}</download_1_1_1Name>
+       	<download_1_1_1MirrorUrl>http://archive.apache.org/dist/incubator/wink/${download_1_1_1Version}</download_1_1_1MirrorUrl>
+       	<download_1_1_1DistUrl>http://archive.apache.org/dist/incubator/wink/${download_1_1_1Version}</download_1_1_1DistUrl>
+       	<download_1_1_1File>apache-wink-${download_1_1_1Version}</download_1_1_1File>
+       	<download_1_1_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_1_1Version}</download_1_1_1TagUrl>
+
+       	<!-- Wink 1.1 -->
+       	<download_1_1Version>1.1-incubating</download_1_1Version>
+       	<download_1_1Name>Wink-${download_1_1Version}</download_1_1Name>
+       	<download_1_1MirrorUrl>http://archive.apache.org/dist/incubator/wink/${download_1_1Version}</download_1_1MirrorUrl>
+       	<download_1_1DistUrl>http://archive.apache.org/dist/incubator/wink/${download_1_1Version}</download_1_1DistUrl>
+       	<download_1_1File>apache-wink-${download_1_1Version}</download_1_1File>
+       	<download_1_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_1Version}</download_1_1TagUrl>
+
+       	<!-- Wink 1.0 -->
+       	<download_1_0Version>1.0-incubating</download_1_0Version>
+       	<download_1_0Name>Wink-${download_1_0Version}</download_1_0Name>
+       	<download_1_0MirrorUrl>http://archive.apache.org/dist/incubator/wink/${download_1_0Version}</download_1_0MirrorUrl>
+       	<download_1_0DistUrl>http://archive.apache.org/dist/incubator/wink/${download_1_0Version}</download_1_0DistUrl>
+       	<download_1_0File>apache-wink-${download_1_0Version}</download_1_0File>
+       	<download_1_0TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_0Version}</download_1_0TagUrl>
+
+		<!-- Wink 0.1 -->
+        <download_0_1Version>0.1-incubating</download_0_1Version>
+        <download_0_1Name>Wink-${download_0_1Version}</download_0_1Name>
+        <download_0_1MirrorUrl>http://archive.apache.org/dist/incubator/wink/${download_0_1Version}</download_0_1MirrorUrl>
+        <download_0_1DistUrl>http://archive.apache.org/dist/incubator/wink/${download_0_1Version}</download_0_1DistUrl>
+        <download_0_1File>apache-wink-${download_0_1Version}</download_0_1File>
+       	<download_0_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_0_1Version}</download_0_1TagUrl>
+
+        <!-- SNAPSHOT -->
+        <!-- NOT generally linked from a project's home page
+        <snapshotVersion>0.2-incubating-SNAPSHOT</snapshotVersion>
+        <downloadSnapshotName>Wink-${snapshotVersion}</downloadSnapshotName>
+        <downloadSnapshotUrl>https://repository.apache.org/content/repositories/snapshots/org/apache/wink/apache-wink/${snapshotVersion}</downloadSnapshotUrl>
+        <downloadSnapshotFile>apache-wink-${snapshotVersion}</downloadSnapshotFile>
+        -->
+	</properties>
+	<scm>
+		<connection>scm:svn:http://svn.apache.org/repos/asf/incubator/wink/trunk</connection>
+		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/incubator/wink/trunk</developerConnection>
+		<url>http://svn.apache.org/viewvc/incubator/wink/trunk</url>
+	</scm>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check-local-modification</goal>
+						</goals>
+						<phase>post-site</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-pdf-plugin</artifactId>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-confluence</artifactId>
+							<version>1.1.2</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>2.1</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-apt</artifactId>
+							<version>1.1.2</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-xhtml</artifactId>
+							<version>1.1.2</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-sink-api</artifactId>
+							<version>1.1.2</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-decoration-model</artifactId>
+							<version>1.1.2</version>
+							<exclusions>
+								<exclusion>
+									<groupId>org.codehaus.plexus</groupId>
+									<artifactId>plexus-component-api</artifactId>
+								</exclusion>
+								<exclusion>
+									<groupId>org.codehaus.plexus</groupId>
+									<artifactId>plexus-container-default</artifactId>
+								</exclusion>
+							</exclusions>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-site-renderer</artifactId>
+							<version>1.1.2</version>
+							<exclusions>
+								<exclusion>
+									<groupId>org.codehaus.plexus</groupId>
+									<artifactId>plexus-component-api</artifactId>
+								</exclusion>
+
+								<exclusion>
+									<groupId>org.codehaus.plexus</groupId>
+									<artifactId>plexus-container-default</artifactId>
+								</exclusion>
+							</exclusions>
+						</dependency>
+
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-confluence</artifactId>
+							<version>1.1.2</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<!--
+					dependency> <groupId>org.apache.maven.doxia</groupId>
+					<artifactId>doxia-module-rtf</artifactId> <version>1.1.1</version>
+					</dependency
+				-->
+			</plugins>
+		</pluginManagement>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+                <version>1.0-beta-6</version>
+			</extension>
+		</extensions>
+	</build>
+	<!--
+		dependencyManagement> <dependencies> <dependency>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-module-xhtml</artifactId> <version>1.1.1</version>
+		</dependency> <dependency> <groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-sink-api</artifactId> <version>1.1.1</version>
+		</dependency> <dependency> <groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-decoration-model</artifactId>
+		<version>1.1.1</version> <exclusions> <exclusion>
+		<groupId>org.codehaus.plexus</groupId>
+		<artifactId>plexus-component-api</artifactId> </exclusion> <exclusion>
+		<groupId>org.codehaus.plexus</groupId>
+		<artifactId>plexus-container-default</artifactId> </exclusion>
+		</exclusions> </dependency> <dependency>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-site-renderer</artifactId> <version>1.1.1</version>
+		<exclusions> <exclusion> <groupId>org.codehaus.plexus</groupId>
+		<artifactId>plexus-component-api</artifactId> </exclusion> <exclusion>
+		<groupId>org.codehaus.plexus</groupId>
+		<artifactId>plexus-container-default</artifactId> </exclusion>
+		</exclusions> </dependency> <dependency>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-module-confluence</artifactId>
+		<version>1.1.1</version> </dependency> </dependencies>
+		</dependencyManagement
+	-->
+	<reporting>
+		<plugins>
+			<!--
+				plugin> <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-changes-plugin</artifactId> <configuration>
+				<fixVersionIds>0.1</fixVersionIds> </configuration> </plugin
+			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<!-- >report>index</report -->
+							<!-- <report>dependencies</report> -->
+							<!-- report>dependency-convergence</report -->
+							<report>project-team</report>
+							<report>license</report>
+							<report>scm</report>
+							<report>mailing-list</report>
+							<!-- report>cim</report-->
+							<report>issue-tracking</report>
+							<!-- report>summary</report-->
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+	<issueManagement>
+		<system>JIRA</system>
+		<url>http://issues.apache.org/jira/browse/WINK</url>
+	</issueManagement>
+	<mailingLists>
+		<mailingList>
+			<name>Users</name>
+			<post>wink-user@incubator.apache.org</post>
+			<subscribe>wink-user-subscribe@incubator.apache.org</subscribe>
+			<unsubscribe>wink-user-unsubscribe@incubator.apache.org</unsubscribe>
+			<archive>http://mail-archives.apache.org/mod_mbox/incubator-wink-user/</archive>
+			<otherArchives>
+				<otherArchive>http://n2.nabble.com/Apache-Wink-Users-f3471013.html</otherArchive>
+			</otherArchives>
+		</mailingList>
+		<mailingList>
+			<name>Development</name>
+			<post>wink-dev@incubator.apache.org</post>
+			<subscribe>wink-dev-subscribe@incubator.apache.org</subscribe>
+			<unsubscribe>wink-dev-unsubscribe@incubator.apache.org</unsubscribe>
+			<archive>http://mail-archives.apache.org/mod_mbox/incubator-wink-dev/</archive>
+			<otherArchives>
+				<otherArchive>http://n2.nabble.com/Apache-Wink-Dev-f3470905.html</otherArchive>
+			</otherArchives>
+		</mailingList>
+		<mailingList>
+			<name>Commits</name>
+			<post>wink-commits@incubator.apache.org</post>
+			<subscribe>wink-commits-subscribe@incubator.apache.org</subscribe>
+			<unsubscribe>wink-commits-unsubscribe@incubator.apache.org</unsubscribe>
+			<archive>http://mail-archives.apache.org/mod_mbox/incubator-wink-commits/</archive>
+		</mailingList>
+	</mailingLists>
+	<developers>
+		<developer>
+			<id>dims</id>
+			<name>Davanum Srinivas</name>
+			<roles>
+				<role>mentor</role>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>kevan</id>
+			<name>Kevan Miller</name>
+			<roles>
+				<role>mentor</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>stevel</id>
+			<name>Steve Loughran</name>
+			<roles>
+				<role>mentor</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>bluk</id>
+			<name>Bryant Luk</name>
+			<organization>IBM</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>cjblythe</id>
+			<name>Christopher James Blythe</name>
+			<organization>IBM</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>damrhei</id>
+			<name>Dustin Amrhein</name>
+			<organization>IBM</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>elib</id>
+			<name>Eli Baram</name>
+			<organization>HP</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>elman</id>
+			<name>Michael Elman</name>
+			<organization>HP</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>jdillon</id>
+			<name>Jason Dillon</name>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>jramos</id>
+			<name>Jesse A. Ramos</name>
+			<organization>IBM</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>lresende</id>
+			<name>Luciano Resende</name>
+			<organization>Shutterfly</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>martins</id>
+			<name>Martin Snitkovsky</name>
+			<organization>HP</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>nfischer</id>
+			<name>Nadav Fischer</name>
+			<organization>HP</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>ngallardo</id>
+			<name>Nicholas L. Gallardo</name>
+			<organization>IBM</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>rfeng</id>
+			<name>Raymond Feng</name>
+			<organization>Shutterfly</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>		
+		<developer>
+			<id>rott</id>
+			<name>Mike Rheinheimer</name>
+			<organization>IBM</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>tomershadi</id>
+			<name>Tomer Shadi</name>
+			<organization>HP</organization>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Shiva Kumar H R</name>
+		</contributor>
+	</contributors>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>apache-snapshots</id>
+			<url>https://repository.apache.org/content/repositories/snapshots</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<repositories>
+		<repository>
+			<id>apache-snapshots</id>
+			<url>https://repository.apache.org/content/repositories/snapshots</url>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<site>
+			<id>ssh-repository</id>
+			<url>scpexe://people.apache.org/www/incubator.apache.org/wink</url>
+		</site>
+	</distributionManagement>
+	<inceptionYear>2009</inceptionYear>
+</project>
