@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : Appendix B - Google App Engine</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : Appendix B - Google App Engine
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 14, 2009 by <font color="#0050B2">michael</font>.
+				    </div>
+
+				    <h2><a name="AppendixB-GoogleAppEngine-GoogleAppEngine"></a>Google App Engine</h2>
+
+<p>Apache Wink can be run using <a href="https://appengine.google.com/">Google App Engine</a> as the core functionality is fully compatible. However, due to some of the App Engine limitations, a number of the additional functions may not work correctly.</p>
+
+<h3><a name="AppendixB-GoogleAppEngine-KnownLimitations"></a>Known Limitations</h3>
+
+<p><b>JAXB</b> &#45; Google App Engine doesn't support JAXB. Therefore, the built-in JAXB, Atom and JSON providers will not work.</p>
+
+<h3><a name="AppendixB-GoogleAppEngine-Logging"></a>Logging</h3>
+
+<p>Google uses java.util.logging, also referred to as the JDK 1.4 logging. Apache Wink uses <a href="http://slf4j.org">slf4j</a>. In order to enable Wink's logging function, replace the <tt>slf4j-simple-&lt;version&gt;.jar</tt> with the <tt>slf4j-jdk14-&lt;version&gt;.jar</tt>.</p>
+
+<p>In order to view all of Wink's messages place the following property in the logging.properties file:</p>
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>org.apache.wink.level=ALL</pre>
+</div></div>
+
+
+<p>Everything that the servlet writes to the standard output stream (System.out) and standard error stream (System.err) is captured by the App Engine and then recorded in the application logs. </p>
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Useful Tip</b><br />In order to gain an in depth understanding refer to <a href="http://code.google.com/appengine/docs/java/runtime.html#Logging">Logging</a>.</td></tr></table></div> 
+
+
+
+<div class='panelMacro'><table class='tipMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/check.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td>When running with <a href="http://www.springsource.org/">Spring</a>, make sure that you have <tt>jcl-over-slf4j-&lt;version&gt;.jar</tt> in the classpath. This jar is needed, since Spring uses commons-logging.</td></tr></table></div>
+
+<h3><a name="AppendixB-GoogleAppEngine-AdditionalIssues"></a>Additional Issues</h3>
+
+<p>The following section contains "<b>additional Issues</b>" that maybe experience while trying to run custom developer code in the Google App Engine. It is advantageous to read the relevant documentation as it provides important information, that will save valuable developer time that is required to ascertain why the application behaves differently in comparison to a regular servlet container.</p>
+
+<h4><a name="AppendixB-GoogleAppEngine-ContextPath"></a>Context Path</h4>
+
+<p>Usually the URI in a servlet container looks like this:
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>requestURI = contextPath + servletPath + pathInfo</pre>
+</div></div>while in most servlet containers context path is a war name (or it can be configured), in App Engine it's just empty.<br/>
+So if your servlet is mapped to "rest", access <div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>http://host:port/rest</pre>
+</div></div>.</p>
+
+<h3><a name="AppendixB-GoogleAppEngine-References"></a>References</h3>
+
+<ul>
+	<li><a href="http://code.google.com/appengine/docs/java/overview.html">App Engine Java Overview</a></li>
+	<li><a href="http://groups.google.com/group/google-appengine-java/web/will-it-play-in-app-engine">Will it play in App Engine</a></li>
+</ul>
+
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:58</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+h2. Apache Wink 1.1.1 Release Notes
+
+h3. Overview
+ 
+This is the fourth official release of Apache Wink project.
+Apache Wink is a framework that helps you to produce and consume RESTful Web Services. 
+Apache Wink is TCK compliant implementation of the JAX-RS v1.0 specification. 
+The project also introduces Java API for writing clients that consume HTTP-based RESTful Web Services. 
+
+h3. Complete list of issues fixed in 1.1.1
+    
+h4. Bug
+    * WINK-281 - ResourceImpl log doesn't generate the message properly
+    * WINK-289 - URISyntaxException when using "[" brackets in query string
+    * WINK-290 - DeploymentConfiguration is not propertly initialized when the servlet doesn't create the RequestProcessor
+    * WINK-291 - DTD expansion should be disabled
+    * WINK-293 - Merge trunk into 1.1 branch
+
+h4. Improvement
+    * WINK-288 - Change the pom.xml to not include slf4j-jdk during compile
+
+h4. New Feature
+    * WINK-152 - Automatic content encoding
+
