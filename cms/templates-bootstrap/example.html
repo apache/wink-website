@@ -1,0 +1,40 @@
+{% extends "basic.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="span8">
+        <small>{{ breadcrumbs|safe }}</small><br>
+    </div>
+    <div class="span8">
+    </div>
+</div>
+&nbsp;
+<div class="page-header">
+<h1>{{ headers.title }}
+
+    <div style="float: right; position: relative; bottom: -10px; ">
+        <a onclick="javascript:gpshare()" class="gp-share sprite" title="share on Google+">share [gp]</a>
+        <a onclick="javascript:fbshare()" class="fb-share sprite" title="share on Facebook">share [fb]</a>
+        <a onclick="javascript:twshare()" class="tw-share sprite" title="share on Twitter">share [tw]</a>
+    </div>
+</h1>
+</div>
+
+{{ content|markdown }}
+
+<div class="page-header">&nbsp;</div>
+<h4>APIs Used</h4>
+{{ apis|safe }}
+
+<h3>Source</h3>
+  <ul>
+      <li>Apache <a href="http://svn.apache.org/repos/asf/openejb/{{ repo|safe }}">{{ example|safe }}</a></li>
+      <li>Github <a href="https://github.com/apache/openejb/tree/{{ repo|safe }}">{{ example|safe }}</a></li>
+  </ul>
+<pre>
+svn co http://svn.apache.org/repos/asf/openejb/{{ repo|safe }}
+cd {{example|safe}}
+mvn clean install
+</pre>
+{% endblock %}
