@@ -38,7 +38,7 @@ Deploying Site to Apache
 In order to deploy a site to Apache, follow the following steps:
 
 1. Make sure that you manage to create a local site.
-2. Check that distributionManagement.site.ssh-repository.url in the pom.xml points to "scpexe://people.apache.org/www/incubator.apache.org/wink"
+3. Check that distributionManagement.site.ssh-repository.url in the pom.xml points to "scpexe://people.apache.org/www/incubator.apache.org/content/wink"
 3. Windows users should also do the following:
 3.1. Download "plink" and "pscp"
 3.2. Put the following section to settings.xml:
