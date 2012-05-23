@@ -19,16 +19,24 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.apache.wink</groupId>
 	<artifactId>wink</artifactId>
-	<version>1.1.3-SNAPSHOT</version>
+	<version>1.3.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Apache Wink</name>
 	<parent>
 		<groupId>org.apache</groupId>
 		<artifactId>apache</artifactId>
-		<version>8</version>
+		<version>10</version>
 	</parent>
 
     <properties>
+        <!-- Wink 1.2.0 -->
+       	<download_1_2_0Version>1.2.0-incubating</download_1_2_0Version>
+       	<download_1_2_0Name>Wink-${download_1_2_0Version}</download_1_2_0Name>
+       	<download_1_2_0MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_2_0Version}</download_1_2_0MirrorUrl>
+       	<download_1_2_0DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_2_0Version}</download_1_2_0DistUrl>
+       	<download_1_2_0File>apache-wink-${download_1_2_0Version}</download_1_2_0File>
+       	<download_1_2_0TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_2_0Version}</download_1_2_0TagUrl>
+
         <!-- Wink 1.1.3 -->
        	<download_1_1_3Version>1.1.3-incubating</download_1_1_3Version>
        	<download_1_1_3Name>Wink-${download_1_1_3Version}</download_1_1_3Name>
