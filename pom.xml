@@ -451,7 +451,7 @@
 	<distributionManagement>
 		<site>
 			<id>ssh-repository</id>
-			<url>scpexe://people.apache.org/www/incubator.apache.org/wink</url>
+			<url>scpexe://people.apache.org/www/incubator.apache.org/content/wink</url>
 		</site>
 	</distributionManagement>
 	<inceptionYear>2009</inceptionYear>
