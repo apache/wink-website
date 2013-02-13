@@ -29,6 +29,14 @@
 	</parent>
 
     <properties>
+        <!-- Wink 1.2.1 -->
+       	<download_1_2_1Version>1.2.1-incubating</download_1_2_1Version>
+       	<download_1_2_1Name>Wink-${download_1_2_1Version}</download_1_2_1Name>
+       	<download_1_2_1MirrorUrl>http://www.apache.org/dyn/closer.cgi/incubator/wink/${download_1_2_1Version}</download_1_2_1MirrorUrl>
+       	<download_1_2_1DistUrl>http://www.apache.org/dist/incubator/wink/${download_1_2_1Version}</download_1_2_1DistUrl>
+       	<download_1_2_1File>apache-wink-${download_1_2_1Version}</download_1_2_1File>
+       	<download_1_2_1TagUrl>http://svn.apache.org/repos/asf/incubator/wink/tags/wink-${download_1_2_1Version}</download_1_2_1TagUrl>
+
         <!-- Wink 1.2.0 -->
        	<download_1_2_0Version>1.2.0-incubating</download_1_2_0Version>
        	<download_1_2_0Name>Wink-${download_1_2_0Version}</download_1_2_0Name>
