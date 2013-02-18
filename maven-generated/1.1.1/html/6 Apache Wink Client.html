@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : 6 Apache Wink Client</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : 6 Apache Wink Client
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 14, 2009 by <font color="#0050B2">michael</font>.
+				    </div>
+
+				    <h1><a name="6ApacheWinkClient-ApacheWinkClient"></a>Apache Wink Client</h1>
+
+<p>The following section describes the Apache Wink Client and provides a detailed description of the Apache Wink Client component and its functionality.</p>
+
+<h3><a name="6ApacheWinkClient-"></a></h3>
+
+
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'><h3><a name="6ApacheWinkClient-Contents"></a>Contents </h3></th>
+</tr>
+<tr>
+<td class='confluenceTd'> <a href="6.1 Getting Started with Apache Wink Client.html" title="6.1 Getting Started with Apache Wink Client">6.1 Getting Started with Apache Wink Client</a><br clear="all" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <a href="6.2 Configuring the Apache Wink Client.html" title="6.2 Configuring the Apache Wink Client">6.2 Configuring the Apache Wink Client</a><br clear="all" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <a href="6.3 Input and Output Stream Adapters.html" title="6.3 Input and Output Stream Adapters">6.3 Input and Output Stream Adapters</a><br clear="all" /> </td>
+</tr>
+</tbody></table>
+
+
+
+
+<h2><a name="6ApacheWinkClient-ApacheWinkClientOverview"></a>Apache Wink Client Overview</h2>
+
+<p>The Apache Wink Client is an easy-to-use client, providing a high level Java API for writing clients that consume HTTP-based RESTful Web Services. The Apache Wink Client utilizes JAX-RS concepts, encapsulates Rest standards and protocols and maps Rest principles concepts to Java classes, which facilitates the development of clients for any HTTP-based Rest Web Services.</p>
+
+<p>The Apache Wink Client also provides a Handlers mechanism that enables the manipulation of HTTP request/response messages.</p>
+
+<h2><a name="6ApacheWinkClient-MainFeatures"></a>Main Features</h2>
+
+<p>The Apache Wink Clients main features are as follows:</p>
+
+
+
+
+<ul>
+	<li>Utilizes JAX-RS Providers for resource serialization and deserialization</li>
+	<li>Provides Java object models for Atom, Json, RSS, APP, CSV, Multipart and OpenSearch along with providers to serialize and deserialize these models</li>
+	<li>Uses the JDK HttpUrlConnection as the underlying Http transport</li>
+	<li>Allows for the easy replacement of the underlying Http transport</li>
+	<li>Provides a Handlers mechanism for manipulation of HTTP request and response messages</li>
+</ul>
+
+
+<h3><a name="6ApacheWinkClient-Supports"></a>Supports</h3>
+
+
+<ul>
+	<li>Http proxy</li>
+	<li>SSL</li>
+</ul>
+
+
+<h2><a name="6ApacheWinkClient-"></a></h2>
+
+
+<h3><a name="6ApacheWinkClient-ApacheWinkHighLevelClientArchitectureOverview"></a>Apache Wink High Level Client Architecture Overview</h3>
+
+<p>The following diagram illustrates the high-level architecture of the Apache Wink Client.</p>
+
+<h3><a name="6ApacheWinkClient-"></a></h3>
+
+<p><img src="attachments/2851055/3112983.jpg" align="absmiddle" border="0"/></p>
+
+<p>The RestClient class is the Apache Wink Client entry point and is responsible for holding different configuration options and the provider registry.</p>
+
+
+
+
+<p>The RestClient is used to create instances of the Resource class. The Resource class represents a web resource associated with a specific URI and is used to perform uniform interface operations on the resource it represents. Every method invocation goes through a user defined handlers chain that enables for manipulation of the request and response.</p>
+
+				    					    <br/>
+                        <div class="tabletitle">
+                            <a name="attachments">Attachments:</a>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2851055/3112970.jpg">Wink Logo.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2851055/3112983.jpg">Symphony 2.0 Client Diagram.jpg</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>
