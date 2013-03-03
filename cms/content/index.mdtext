@@ -1,6 +1,27 @@
-# Welcome
+Title: Index
 
-Welcome to the Apache CMS.  Please see the following resources for further help:
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+    <h1>Apache Wink</h1>
+    <div class="row">
+        <div class="span8">
+            Apache Wink is a simple yet solid framework for building RESTful Web services. It is comprised of a Server module and a Client module for developing and consuming RESTful Web services.
+        </div>
+        </br>
+        <div class="span4">
+            <button class="btn btn-large btn-block btn-primary" type="button">Download &raquo;</button>
+        </div>
+    </div>
 
- - [http://www.apache.org/dev/cmsref.html](http://www.apache.org/dev/cmsref.html)
- - [http://wiki.apache.org/general/ApacheCms2010](http://wiki.apache.org/general/ApacheCms2010)
+</div>
+
+<div class="row">
+    <div class="span6">
+        <h2>Apache Wink Server</h2>
+        <p>The Wink Server module is a complete implementation of the JAX-RS v1.1 specification. On top of this implementation, the Wink Server module provides a set of additional features that were designed to facilitate the development of RESTful Web services.</p>
+    </div>
+    <div class="span6">
+          <h2>Apache Wink Client</h2>
+           <p>The Wink Client module is a Java based framework that provides functionality for communicating with RESTful Web services. The framework is built on top of the JDK HttpURLConnection and adds essential features that facilitate the development of such client applications. </p>
+    </div>
+</div>
