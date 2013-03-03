@@ -1,17 +1,92 @@
 Title: News
 
 
+<h2>Latest Apache Wink News</h2>
 
-<div class="span12">
-    <h2>Apache Wink News</h2>
-    <ul>
-        <li>2011-05-09 - Wink-1.1.3 released.</li>
-        <li>2010-11-15 - Wink 1.1.2 released.</li>
-        <li>2010-07-07 - Wink 1.1.1 released.</li>
-        <li>2010-05-14 - Wink 1.1 released.</li>
-        <li>2009-11-09 - Wink 1.0 released.</li>
-        <li>2009-08-26 - Wink 0.1 released.</li>
-        <li>2009-07-01 - Wink is JAX-RS 1.0 compliant.</li>
-        <li>2009-05-27 - Wink enters incubation.</li>
-    </ul>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2012-12-19  - Apache Wink graduates as an Apache Top Level Project.
+	</div>
 </div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2012-08-21 - Apache Wink 1.2.1 released.</br>
+   	Find more information in the project <a href="documentation.html">Documentation</a> page.
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2012-05-21 - Wink 1.2.0 released.</br>
+   	Find more information in the project <a href="documentation.html">Documentation</a> page.
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2011-05-09 - Apache Wink 1.1.3 released.</br>
+   	Find more information in the project <a href="documentation.html">Documentation</a> page.
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2010-11-15 - Apache Wink 1.1.2 released.</br>
+   	Find more information in the project <a href="documentation.html">Documentation</a> page.
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2010-07-07 - Apache Wink 1.1.1 released.</br>
+   	Find more information in the project <a href="documentation.html">Documentation</a> page.
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2010-05-14 - Apache Wink 1.1 released.</br>
+   	Find more information in the project <a href="documentation.html">Documentation</a> page.
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2009-11-09 - Apache Wink 1.0 released.</br>
+   	Find more information in the project <a href="documentation.html">Documentation</a> page.
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2009-08-26 - Apache Wink 0.1 released.</br>
+   	Find more information in the project <a href="documentation.html">Documentation</a> page.
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	009-07-01 - Apache Wink is JAX-RS 1.0 compliant.
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="span12">   
+	2009-05-27 - Apache Wink enters incubation.
+	</div>
+</div>
+<hr>
+
