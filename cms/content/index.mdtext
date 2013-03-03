@@ -9,7 +9,7 @@ Title: Index
         </div>
         </br>
         <div class="span4">
-            <button class="btn btn-large btn-block btn-primary" type="button">Download &raquo;</button>
+        	<a class="btn btn-large btn-block btn-primary" href="downloads.html">Download &raquo;</a>
         </div>
     </div>
 

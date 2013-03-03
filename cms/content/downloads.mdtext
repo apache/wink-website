@@ -1,0 +1,62 @@
+Title: Downloads
+
+
+<h2>Apache Wink Downloads</h2>
+
+<hr>
+
+<div class="row">
+    <div class="span10">
+       <p>Apache Wink is distributed in several formats for your convenience.</p>
+       <p>You will be prompted for a mirror - if the file is not found on yours, please be patient, as it may take 24 hours to reach all mirrors.</p>
+       <p>Apache Wink is distributed under the <a href="http://maven.apache.org/license.html">Apache License, version 2.0</a>.</p>
+    </div>
+</div>
+
+<hr>
+
+<h4>Download Apache Wink 1.2.1</h4>
+
+
+<div class="row">
+    <div class="span10">
+    	<table class="table table-hover">
+    	<tr>
+    	  <th><b>Name</b></th><th><b>Archive</b></th><th><b>MD5</b></th><th><b>SHA-1</b></th><th><b>Signature</b></th>
+    	</tr>
+
+    	<tr>
+    		<td>Wink-1.2.1-incubating (tar.gz)</td><td><a href="http://www.apache.org/dyn/closer.cgi/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating.tar.gz">tar.gz</a></td><td><a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating.tar.gz.md5">MD5</a> </td><td>  <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating.tar.gz.sha1">SHA-1</a>  </td><td> <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating.tar.gz.asc">ASC</a> </td>
+    	</tr>
+
+    	<tr>
+    		<td> Wink-1.2.1-incubating (zip) </td><td> <a href="http://www.apache.org/dyn/closer.cgi/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating.zip">zip</a> </td><td>  <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating.zip.md5">MD5</a> </td><td>  <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating.zip.sha1">SHA-1</a> </td><td> <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating.zip.asc">ASC</a> </td>
+    	</tr>
+
+    	<tr>
+    		<td> Wink-1.2.1-incubating (Source tar.gz) </td><td> <a href="http://www.apache.org/dyn/closer.cgi/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating-src.tar.gz">tar.gz</a> </td><td>  <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating-src.tar.gz.md5">MD5</a>  </td><td> <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating-src.tar.gz.sha1">SHA-1</a> </td><td> <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating-src.tar.gz.asc">ASC</a> </td>
+    	</tr>
+
+    	<tr>
+    		<td> Wink-1.2.1-incubating (Source zip) </td><td> <a href="http://www.apache.org/dyn/closer.cgi/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating-src.zip">zip</a> </td><td>  <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating-src.zip.md5">MD5</a> </td><td>  <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating-src.zip.sha1">SHA-1</a> </td><td> <a href="http://www.apache.org/dist/incubator/wink/1.2.1-incubating/apache-wink-1.2.1-incubating-src.zip.asc">ASC</a> </td>
+    	</tr>
+
+    	<tr>
+    		<td> Release Notes </td><td> <a href="1.2.1/release_notes.html">1.2.1-incubating</a> </td><td> </td><td> </td><td> </td></tr><tr class="a"><td> KEYS for {Wink-1.2.1-incubating} </td><td> <a href="http://svn.apache.org/repos/asf/incubator/wink/tags/wink-1.2.1-incubating/KEYS">KEYS</a> </td><td> </td><td> </td><td> </td>
+    	</tr>
+    	</table>
+
+		<p>Instructions for checking hashes and signatures is indicated on the Verifying Apache Software Foundation Releases page.</p>
+		<p>You can also retrieve the source files from our svn repository by typing :</p>
+
+		<pre>svn co http://svn.apache.org/repos/asf/wink/tags/wink-1.2.1-incubating/</pre>
+
+		<p>Instructions for checking hashes and signatures is indicated on the Verifying Apache Software Foundation Releases page.</p>
+
+		<p>You can also retrieve the source files from our svn repository by typing :</p>
+
+		<pre>svn co http://svn.apache.org/repos/asf/wink/tags/wink-1.2.1-incubating/</pre>
+
+    </div>
+</div>
+
