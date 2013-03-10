@@ -1,0 +1,105 @@
+Title: Community
+
+<h1>Apache Wink Community<a name="Apache_Community"></a></h1>
+
+<hr>
+
+<div class="row">
+    <div class="span10">
+        <p>Every volunteer project obtains its strength from the people involved in it. We invite you to participate as much or as little as you choose.</p>
+    	<p>You can:</p>
+    	<ul>
+        	<li>Use our project and provide a feedback.</li>
+        	<li>Provide us with the use-cases.</li>
+        	<li>Report bugs and submit patches.</li>
+        	<li>Contribute code, javadocs, documentation.</li>
+        </ul>
+        <p>Visit the <a href="http://cwiki.apache.org/confluence/display/WINK/Project+Guidelines">Project Guidelines</a> for more information.</p>
+    </div>
+</div>
+
+<hr>
+
+
+<h3>Communication<a name="Communication"></a></h3>
+<div class="row">
+    <div class="span10">
+
+    	<h4>Mailing Lists<a name="mailing_list"></a></h4>
+
+        <p>The Apache Wink project uses mailing lists primarily to communicate with its members.</p>
+        <p>These are the mailing lists that have been established for this project. For each list, there is a subscribe, unsubscribe, and an archive link.</p>
+
+		<table class="table table-hover">
+	    	<tr class="a">
+	        	<th>Name</th>
+	        	<th>Subscribe</th>
+	        	<th>Unsubscribe</th>
+	        	<th>Post</th>
+	        	<th>Archive</th>
+	        	<th>Other Archives</th>
+	    	</tr>
+	    	<tr>
+	        	<td>Users</td>
+	        	<td><a href="mailto:wink-user-subscribe@incubator.apache.org">Subscribe</a></td>
+	        	<td><a href="mailto:wink-user-unsubscribe@incubator.apache.org">Unsubscribe</a></td>
+	        	<td><a href="mailto:wink-user@incubator.apache.org">Post</a></td>
+	        	<td><a href="http://mail-archives.apache.org/mod_mbox/incubator-wink-user/">mail-archives.apache.org</a></td>
+	        	<td><a href="http://n2.nabble.com/Apache-Wink-Users-f3471013.html">n2.nabble.com</a></td>
+	    	</tr>
+	    	<tr>
+	        	<td>Development</td>
+	        	<td><a href="mailto:wink-dev-subscribe@incubator.apache.org">Subscribe</a></td>
+	        	<td><a href="mailto:wink-dev-unsubscribe@incubator.apache.org">Unsubscribe</a></td>
+	        	<td><a href="mailto:wink-dev@incubator.apache.org">Post</a></td>
+	        	<td><a href="http://mail-archives.apache.org/mod_mbox/incubator-wink-dev/">mail-archives.apache.org</a></td>
+	        	<td><a href="http://n2.nabble.com/Apache-Wink-Dev-f3470905.html">n2.nabble.com</a></td>
+	    	</tr>
+		    <tr>
+		        <td>Commits</td>
+		        <td><a href="mailto:wink-commits-subscribe@incubator.apache.org">Subscribe</a></td>
+		        <td><a href="mailto:wink-commits-unsubscribe@incubator.apache.org">Unsubscribe</a></td>
+		        <td><a href="mailto:wink-commits@incubator.apache.org">Post</a></td>
+		        <td><a href="http://mail-archives.apache.org/mod_mbox/incubator-wink-commits/">mail-archives.apache.org</a></td>
+		        <td>-</td>
+		    </tr>
+		</table>
+
+
+		<h4>IRC<a name="IRC"></a></h4>
+
+        <p>IRC is also used for a real-time discussions. </p>
+        <p>Log into #apache-wink on Freenode or use a <a class="externalLink" href="http://webchat.freenode.net/?channels=apache-wink">Web Client</a></p>
+    </div>
+</div>
+
+<hr>
+
+<h3>Issue Tracker<a name="Issue_Tracker"></a></h3>
+
+<div class="row">
+    <div class="span10">
+        <h4>Bug Reports<a name="Bug_Reports"></a></h4>
+        <p>Found bug? Enter an issue in the <a href="./issue-tracking.html">Issue Tracker</a>.</p>
+        <p>Before submitting an issue, please:</p>
+        <ul>
+            <li>Verify that the bug does in fact exist.</li>
+            <li>Search the issue tracker to verify there is no existing issue reporting the bug you've found.</li>
+            <li>Consider tracking down the bug yourself in the Wink's source and submitting a patch along with your bug report. This is a great time saver for the Wink developers and helps ensure the bug will be fixed quickly. </li>
+        </ul>
+
+        <br/>
+
+        <h4>Feature Request<a name="Feature_Request"></a></h4>
+        <p>Enhancement requests for new features are also welcome. The more concrete and rationale the request is, the greater the chance it will incorporated into future releases.</p>
+    </div>
+</div>
+
+<h3>Source Code<a name="Source_Code"></a></h3>
+
+
+<div class="row">
+    <div class="span10">
+        <p>The project sources are accessible via the <a href="./source-repository.html">SVN</a>.</p>
+    </div>
+</div>
