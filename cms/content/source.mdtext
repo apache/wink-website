@@ -1,0 +1,76 @@
+Title: Source Repository
+
+<h1>Apache Wink Source Repository<a name="source_repository"></a></h1>
+
+<hr>
+
+<h3>Overview<a name="Overview"></a></h3>
+<div class="row">
+    <div class="span10">
+        
+        <p>This project uses <a class="externalLink" href="http://subversion.apache.org/">Subversion</a> to manage its source code. Instructions on Subversion use can be found at <a class="externalLink" href="http://svnbook.red-bean.com/">http://svnbook.red-bean.com/</a>.</p>
+    </div>
+</div>
+
+<hr>
+
+<h3>Web Access<a name="web_access"></a></h3>
+<div class="row">
+    <div class="span10">
+        <p>The following is a link to the online source repository.</p>
+        <pre><a class="externalLink" href="http://svn.apache.org/viewvc/incubator/wink/trunk">http://svn.apache.org/viewvc/incubator/wink/trunk</a></pre>
+    </div>
+</div>
+
+<hr>
+
+
+<h3>Anonymous Access<a name="anonymous_access"></a></h3>
+<div class="row">
+    <div class="span10">
+        <p>The source can be checked out anonymously from SVN with this command:</p>
+        <pre>$ svn checkout http://svn.apache.org/repos/asf/incubator/wink/trunk wink</pre>
+    </div>
+</div>
+
+<hr>
+
+<h3>Developer Access<a name="developer_access"></a></h3>
+<div class="row">
+    <div class="span10">
+        <p>Everyone can access the Subversion repository via HTTP, but Committers must checkout the Subversion repository via HTTPS.</p>
+        <pre>$ svn checkout https://svn.apache.org/repos/asf/incubator/wink/trunk wink</pre>
+        <p>To commit changes to the repository, execute the following command to commit your changes (svn will prompt you for your password)</p>
+        <pre>$ svn commit --username your-username -m &quot;A message&quot;</pre>
+    </div>
+</div>
+
+<hr>
+
+
+<h3>Access from behind a firewall<a name="access_from_behind_a_firewall"></a></h3>
+<div class="row">
+    <div class="span10">
+        <p>For those users who are stuck behind a corporate firewall which is blocking HTTP access to the Subversion repository, you can try to access it via the developer connection:</p>
+        <pre>$ svn checkout https://svn.apache.org/repos/asf/incubator/wink/trunk wink</pre>
+    </div>
+</div>
+
+<hr>
+
+
+<h3>Access through a proxy<a name="access_through_a_proxy"></a></h3>
+<div class="row">
+    <div class="span10">
+        <p>The Subversion client can go through a proxy, if you configure it to do so. First, edit your &quot;servers&quot; configuration file to indicate which proxy to use. The file's location depends on your operating system. On Linux or Unix it is located in the directory &quot;~/.subversion&quot;. On Windows it is in &quot;%APPDATA%\Subversion&quot;. (Try &quot;echo %APPDATA%&quot;, note this is a hidden directory.)</p>
+        <br/>
+        <p>There are comments in the file explaining what to do. If you don't have that file, get the latest Subversion client and run any command; this will cause the configuration directory and template files to be created.</p>
+        <p>Example: Edit the 'servers' file and add something like:</p>
+
+        <pre>[global]
+http-proxy-host = your.proxy.name
+http-proxy-port = 3128</pre>
+    </div>
+</div>
+
+<hr>
