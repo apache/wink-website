@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : 7.2 APP</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : 7.2 APP
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 13, 2009 by <font color="#0050B2">michael</font>.
+				    </div>
+
+				    <h2><a name="7.2APP-AtomPublishingProtocol%28AtomPub%29Overview"></a>Atom Publishing Protocol (AtomPub) Overview</h2>
+
+<p>The Atom Publishing Protocol (AtomPub) is an application-level protocol for publishing and editing Web resources.  The protocol is based on HTTP transport of Atom-formatted representations. The Atom format is documented in the Atom Syndication Format.</p>
+
+<h3><a name="7.2APP-DataModel"></a>Data Model</h3>
+
+<p>Apache Wink provides an Atom Publishing Protocol data model for producing Service Documents (application/atomsvc+xml) and Categories Documents (application/atomcat+xml). All of the model classes are located under the org.apache.wink.common.model.app package.</p>
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Important Note</b><br />The APP data model can also be used to produce Service and Categories documents in HTML (text/html) and JSON (application/json) formats. For more details regarding HTML see section HTML (TBD). For JSON format see section (TBD)</td></tr></table></div>
+
+<h4><a name="7.2APP-APPServiceDocumentSupport"></a>APP Service Document Support</h4>
+
+<p>The following table shows the APP service document data models and the representations in which it can be serialized and de-serialized.</p>
+
+
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>&nbsp;</th>
+<th class='confluenceTh'> Supported </th>
+<th class='confluenceTh'> Media Types <br clear="all" /> </th>
+<th class='confluenceTh'> Data Model <br clear="all" /> </th>
+<th class='confluenceTh'> Provider Registration <br clear="all" /> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Read <br clear="all" /> </td>
+<td class='confluenceTd'> Yes <br clear="all" /> </td>
+<td class='confluenceTd'> application/atomsvc+xml </td>
+<td class='confluenceTd'> org.apache.wink.common<br clear="all" />
+ .model.app.AppService </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Write <br clear="all" /> </td>
+<td class='confluenceTd'> Yes </td>
+<td class='confluenceTd'> application/atomsvc+xml <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink.common<br clear="all" />
+ .model.app.AppService </td>
+<td class='confluenceTd'> Not required. Registered by default </td>
+</tr>
+</tbody></table>
+
+
+
+
+
+<h4><a name="7.2APP-APPCategoriesDocumentSupport"></a>APP Categories Document Support</h4>
+
+<p>The following table shows the APP Catagories document data models and the representations in which it can be serialized and de-serialized.</p>
+
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>&nbsp;</th>
+<th class='confluenceTh'> Supported </th>
+<th class='confluenceTh'> Media Types <br clear="all" /> </th>
+<th class='confluenceTh'> Data Model <br clear="all" /> </th>
+<th class='confluenceTh'> Provider Registration <br clear="all" /> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Read <br clear="all" /> </td>
+<td class='confluenceTd'> Yes <br clear="all" /> </td>
+<td class='confluenceTd'> application/atomcat+xml </td>
+<td class='confluenceTd'> org.apache.wink.common<br clear="all" />
+ .model.app.AppCategories </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Write <br clear="all" /> </td>
+<td class='confluenceTd'> Yes </td>
+<td class='confluenceTd'> application/atomcat+xml <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink.common<br clear="all" />
+ .model.app.AppCategories </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+</tbody></table>
+
+
+
+
+
+<h3><a name="7.2APP-"></a></h3>
+
+
+<h3><a name="7.2APP-ProducinganAPPServiceDocumentExample"></a>Producing an APP Service Document Example</h3>
+
+<p>The following code example demonstrates the creation of an APP Service Document.</p>
+
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">   @GET
+    @Produces(MediaTypeUtils.ATOM_SERVICE_DOCUMENT)
+    <span class="code-keyword">public</span> AppService getServiceDocument() {
+        AppService serviceDocument = <span class="code-keyword">new</span> AppService();
+        List&lt;AppWorkspace&gt; workspaces = serviceDocument.getWorkspace();
+        AppWorkspace workspace1 =  <span class="code-keyword">new</span> AppWorkspace();
+        workspace1.setTitle(<span class="code-keyword">new</span> AtomText(<span class="code-quote">"Workspace1"</span>));
+        List&lt;AppCollection&gt; collections = workspace1.getCollection();
+        AppCollection collection = <span class="code-keyword">new</span> AppCollection();
+        collection.setTitle(<span class="code-keyword">new</span> AtomText(<span class="code-quote">"Collection1"</span>));
+
+        collections.add(collection);
+        workspaces.add(workspace1);
+        ...
+        <span class="code-keyword">return</span> serviceDocument;
+    }
+</pre>
+</div></div>
+
+<h5><a name="7.2APP-Explanation"></a>Explanation</h5>
+
+<p>AppService class is JAXB annotated POJO. An instance of an AppService class is created, populated and returned by the resource. A generic JAXB provider is used to serializes this class into an XML representation. </p>
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>

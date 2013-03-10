@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : 5.6 WebDAV Extension</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : 5.6 WebDAV Extension
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 13, 2009 by <font color="#0050B2">michael</font>.
+				    </div>
+
+				    <h1><a name="5.6WebDAVExtension-WebDAVExtension"></a>WebDAV Extension</h1>
+
+<p>Apache Wink provides an extension module for supporting the WebDAV protocol. The extension contains the complete WebDAV XML model and a WebDAV response builder for easing the process of creating a WebDAV multistatus response.</p>
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Usful Information</b><br />The WebDAV extension is a single jar wink-webdav-&lt;version&gt;.jar, and it has no special dependencies.</td></tr></table></div> 
+
+
+
+<h2><a name="5.6WebDAVExtension-WebDAVDataModel"></a>WebDAV Data Model</h2>
+
+<p>The WebDAV extension provides a Java data model that reflects the WebDAV XMLs defined in the WebDAV RFC. All classes of the data model are located in the org.apache.wink.webdav.model package.</p>
+
+<h2><a name="5.6WebDAVExtension-WebDAVClasses"></a>WebDAV Classes</h2>
+
+<p>The WebDAV extension provides several classes that applications can use in order to receive basic support for common WebDAV methods.</p>
+
+<h3><a name="5.6WebDAVExtension-WebDAVModelHelper"></a>WebDAVModelHelper</h3>
+
+<p>The WebDAVModelHelper class provides helper methods for XML marshaling and unmarshaling of the WebDAV data model classes. It also provides helper methods for creating generic properties as DOM element classes to populate the WebDAV Prop element.</p>
+
+<h3><a name="5.6WebDAVExtension-WebDAVResponseBuilder"></a>WebDAVResponseBuilder</h3>
+
+<p>The WebDAVResponseBuilder class is used in order to create responses to WebDAV PROPFIND requests. It takes a SyndEntry or SyndFeed as input in order to create the response.</p>
+
+<h2><a name="5.6WebDAVExtension-ResourceMethodDefinition"></a>Resource Method Definition</h2>
+
+<p>A resource method is defined to handle the desired WebDAV method by annotating it with one of the WebDAV method designators defined in the WebDAVMethod enum.<br/>
+The supported WebDAV Http methods are as follows:</p>
+<ul>
+	<li>PROPFIND</li>
+</ul>
+
+
+<ul>
+	<li>PROPPATCH</li>
+</ul>
+
+
+<ul>
+	<li>MKCOL</li>
+</ul>
+
+
+<ul>
+	<li>COPY</li>
+</ul>
+
+
+<ul>
+	<li>MOVE</li>
+</ul>
+
+
+<ul>
+	<li>LOCK</li>
+</ul>
+
+
+<ul>
+	<li>UNLOCK.</li>
+</ul>
+
+
+<h2><a name="5.6WebDAVExtension-CreatingaMultistatusResponse"></a>Creating a Multistatus Response</h2>
+
+<p>In order to create a <b>MULTISTATUS</b> response to a <b>PROPFIND</b> request the user can use the <b>WebDAVResponseBuilder</b> class, or create the response manually.</p>
+
+<h3><a name="5.6WebDAVExtension-UsingWebDAVResponseBuilder"></a>Using WebDAVResponseBuilder</h3>
+
+<p>In order to create a multistatus response using the <b>WebDAVResponseBuilder</b> class, call one of the propfind() methods.</p>
+
+<p>The <b>WebDAVResponseBuilder</b> class also enables the user to provide the properties to include in the response by extending the PropertyProvider class, overriding the setPropertyValue() method and passing the property provider instance to the response builder propfind() method.</p>
+
+<h3><a name="5.6WebDAVExtension-WebDAVResponseBuilderExample"></a>WebDAVResponseBuilder Example</h3>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-xml">
+@Path(<span class="code-quote">"defects/{defect}"</span>)
+public class DefectResource {
+  @WebDAVMethod.PROPFIND
+  @Consumes(<span class="code-quote">"application/xml"</span>)
+  @Produces(application/xml")
+  public Response propfindDefect(@PathParam(<span class="code-quote">"defect"</span>) String defected) {
+    SyndFeed feed = ...
+    return WebDAVResponseBuilder.propfind(feed);
+  }
+}
+</pre>
+</div></div>
+<p>The propfindDefect() method is associated with the PROPFIND WebDAV Http method using the @WebDAVMethod.PROPFIND annotation.</p>
+
+<p>When the propfindDefect() method is invoked, an instance of a  org.apache.wink.common.model.synd.SyndFeed is created and passed to the WebDAVResponseBuilder.propfind() method in order to create the actual response.</p>
+
+<h3><a name="5.6WebDAVExtension-ManualCreation"></a>Manual Creation</h3>
+
+<p>In order to create a Multistatus response manually, perform the following steps:</p>
+
+<ol>
+	<li>Create a new org.apache.wink.webdav.model.Multistatus instance and set its fields according to the application logic.</li>
+	<li>Create a new javax.ws.rs.core.Response instance, set the response code to MULTI_STATUS (207), and set its entity to be the Multistatus instance.</li>
+</ol>
+
+
+
+<p>Return the Response instance from the resource method</p>
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>
