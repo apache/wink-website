@@ -34,48 +34,39 @@ Title: Documentation
 
 <div class="row">
     <div class="span10">
-
     	<table class="table table-hover">
     	<tr>
     		<th><b>Release</b></th><th><b>User Guide</b></th><th><b>API</b></th>
     	</tr>
     	<tr>
     		<td>Wink 1.2.0</td>
-    		<td><a href="./1.2.0/Apache_Wink_User_Guide.pdf">PDF</a></td>
-    		<td><a href="./1.2.0/api/index.html">API Javadoc</a></td>
+    		<td><a href="./documentation/1.2.0/Apache_Wink_User_Guide.pdf">PDF</a></td>
+    		<td><a href="./documentation/1.2.0/api/index.html">API Javadoc</a></td>
     	</tr>
-
     	<tr>
     		<td>Wink 1.1.2</td>
-    		<td><a href="./1.1.2/Apache_Wink_User_Guide.pdf">PDF</a></td>
-    		<td><a href="./1.1.2/api/index.html">API Javadoc</a></td>
+    		<td><a href="./documentation/1.1.2/Apache_Wink_User_Guide.pdf">PDF</a></td>
+    		<td><a href="./documentation/1.1.2/api/index.html">API Javadoc</a></td>
     	</tr>
-
-
     	<tr>
     		<td>Wink 1.1.1</td>
-    		<td><a href="./1.1.1/html/Apache Wink Developer Guide.html">HTML</a> | <a href="./1.1/Apache_Wink_User_Guide.pdf">PDF</a></td>
-    		<td><a href="./1.1.1/api/index.html">API Javadoc</a></td>
+    		<td><a href="./documentation/1.1.1/html/Apache Wink Developer Guide.html">HTML</a> | <a href="./1.1/Apache_Wink_User_Guide.pdf">PDF</a></td>
+    		<td><a href="./documentation/1.1.1/api/index.html">API Javadoc</a></td>
     	</tr>
-
     	<tr>
     		<td>Wink 1.1</td>
-    		<td><a href="./1.1/html/Apache Wink Developer Guide.html">HTML</a> | <a href="./1.1/Apache_Wink_User_Guide.pdf">PDF</a></td>
-    		<td><a href="./1.1/api/index.html">API Javadoc</a></td>
+    		<td><a href="./documentation/1.1/html/Apache Wink Developer Guide.html">HTML</a> | <a href="./1.1/Apache_Wink_User_Guide.pdf">PDF</a></td>
+    		<td><a href="./documentation/1.1/api/index.html">API Javadoc</a></td>
     	</tr>    	
-
-
     	<tr>
     		<td>Wink 1.0</td>
-    		<td><a href="./1.0/html/Apache Wink Developer Guide.html">HTML</a> | <a href="./1.0/Apache_Wink_User_Guide.pdf">PDF</a></td>
-    		<td><a href="./1.0/api/index.html">API Javadoc</a></td>
+    		<td><a href="./documentation/1.0/html/Apache Wink Developer Guide.html">HTML</a> | <a href="./1.0/Apache_Wink_User_Guide.pdf">PDF</a></td>
+    		<td><a href="./documentation/1.0/api/index.html">API Javadoc</a></td>
     	</tr>    	
-
-
     	<tr>
     		<td>Wink 0.1</td>
-    		<td><a href="./0.1/Apache_Wink_User_Guide.htm">HTML</a> | <a href="./0.1/Apache_Wink_User_Guide.pdf">PDF</a></td>
-    		<td><a href="./0.1/api/index.html">API Javadoc</a></td>
+    		<td><a href="./documentation/0.1/Apache_Wink_User_Guide.htm">HTML</a> | <a href="./0.1/Apache_Wink_User_Guide.pdf">PDF</a></td>
+    		<td><a href="./documentation/0.1/api/index.html">API Javadoc</a></td>
     	</tr>    	
     	</table>
 
