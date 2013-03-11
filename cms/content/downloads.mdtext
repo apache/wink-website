@@ -66,22 +66,18 @@ Title: Downloads
         <p>Add the following dependencies to your Maven pom.xml to include the Apache Wink Client module or the Server module.</p>
 
         <strong>Server:</strong>
-        <pre>
-            &lt;dependency&gt;
-                &lt;groupId&gt;org.apache.wink&lt;/groupId&gt;
-                &lt;artifactId&gt;wink-server&lt;/artifactId&gt;
-                &lt;version&gt;1.2.1-incubating&lt;/version&gt;
-            &lt;/dependency&gt;
-        </pre>
+        <pre>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.wink&lt;/groupId&gt;
+    &lt;artifactId&gt;wink-server&lt;/artifactId&gt;
+    &lt;version&gt;1.2.1-incubating&lt;/version&gt;
+&lt;/dependency&gt;</pre>
 
         <strong>Client:</strong>
-        <pre>
-            &lt;dependency&gt;
-                &lt;groupId&gt;org.apache.wink&lt;/groupId&gt;
-                &lt;artifactId&gt;wink-client&lt;/artifactId&gt;
-                &lt;version&gt;1.2.1-incubating&lt;/version&gt;
-            &lt;/dependency&gt;
-        </pre>
+        <pre>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.wink&lt;/groupId&gt;
+    &lt;artifactId&gt;wink-client&lt;/artifactId&gt;
+    &lt;version&gt;1.2.1-incubating&lt;/version&gt;
+&lt;/dependency&gt;</pre>
     </div>
 </div>
 
