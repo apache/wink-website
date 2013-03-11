@@ -1,0 +1,137 @@
+Title: Frequently Asked Questions
+
+
+<h1>Frequently Asked Questions</h1>
+
+<hr>
+
+<div class="row">
+    <div class="span10">
+        <p><strong>General</strong></p>
+        <ol>
+            <li><a href="#sdk-examples">Where can I find examples for using Wink?</a></li>
+            <li><a href="#sdk-spring">Does Wink have an integration with spring? Can I expose my REST services using Spring Remoting?</a></li>
+            <li><a href="#sdk-struts">Is there an integration with Struts?</a></li>
+            <li><a href="#sdk-struts-usage">Can Wink be used in the same WAR with Struts?</a></li>
+            <li><a href="#sdk-tested-with-other-clients">Have you tested consuming REST resources developed using Wink from a REST client developed using other tools?</a></li>
+            <li><a href="#sdk-query-parameters">Does Wink support query parameters?</a></li>
+            <li><a href="#sdk-ide-plugin">Are there any plans for developing an IDE plugin wrapper for Wink?</a></li>
+        </ol>
+
+        <p><strong>Building Apache Wink</strong></p>
+        <ol>
+            <li><a href="#maven-version">What version of Maven is used to build Wink?</a></li>
+            <li><a href="#maven-sources">Where can I read about Maven?</a></li>
+            <li><a href="#build-oom">I am getting an OutOfMemoryException when performing a full build</a></li>
+            <li><a href="#build-offline">Can I build the sources if I am not connected to the network?</a></li>
+            <li><a href="#build-tests">Some tests fail during the build. Where can I see what happened?</a></li>
+        </ol>
+    </div>
+</div>
+
+<hr>
+
+
+
+<h3>General<a name="General"></a></h3>
+
+<div class="row">
+    <div class="span10">
+       
+        <p><strong><a name="sdk-examples">Where can I find examples for using Wink?</a></strong></p>
+        <p> 
+            Wink distributions comes bundled with several examples ilustarting how to use the server and client.<br/>
+            All the examples are located in the <tt>Wink/examples</tt> directory of the distribution zip.
+        </p>
+        <hr/>
+
+        <p><strong><a name="sdk-spring">Does Wink have an integration with spring? Can I expose my REST services using Spring Remoting?</a></strong></p>
+        <p> 
+            Yes, it provides an extension module with the Spring integration. 
+            However, Wink doesn't use Spring Remoting.
+        </p>
+        <hr/>
+
+        <p><strong><a name="sdk-struts">Is there an integration with Struts?</a></strong></p>
+        <p> 
+            Wink does not have an integration with struts.
+        </p>
+        <hr/>
+
+
+        <p><strong><a name="sdk-struts-usage">Can Wink be used in the same WAR with Struts?</a></strong></p>
+        <p> 
+            Yes, Wink and the code you develop over it can be used inside any WAR.
+        </p>
+        <hr/>
+
+        <p><strong><a name="sdk-tested-with-other-clients">Have you tested consuming REST resources developed using Wink from a REST client developed using other tools?</a></strong></p>
+        <p> 
+            Sure. We have tested it from variety of clients including IE, Firefox, Outlook, Apache Abdera, Sun Rome, etc.
+        </p>
+        <hr/>
+
+        <p><strong><a name="sdk-query-parameters">Does Wink support query parameters?</a></strong></p>
+        <p> 
+            Absolutely.
+        </p>
+        <hr />
+
+        <p><strong><a name="sdk-ide-plugin">Are there any plans for developing an IDE plugin wrapper for Wink?</a></strong></p>
+        <p> 
+            We are considering this option for the Eclipse IDE.
+        </p>
+
+    </div>
+</div>
+
+<hr>
+
+
+<h3>Building the Apache Wink<a name="building_the_apache_wink"></a></h3>
+
+<div class="row">
+    <div class="span10">
+        <p><strong><a name="maven-version">What version of Maven is used to build Wink?</a></strong></p>
+        <p> 
+            Wink is built using Maven 2, version 2.0.9.
+        </p>
+        <hr/>
+        
+        <p><strong><a name="maven-sources">Where can I read about Maven?</a></strong></p>
+        <p> 
+            Maven site: <a class="externalLink" href="http://maven.apache.org">http://maven.apache.org</a><br /></br>
+            Maven FAQ: <a class="externalLink" href="http://docs.codehaus.org/display/MAVENUSER/FAQs-1">http://docs.codehaus.org/display/MAVENUSER/FAQs-1</a>
+        </p>
+        <hr/>
+        
+        <p><strong><a name="build-oom">I am getting an OutOfMemoryException when performing a full build</a></strong></p>
+        <p> 
+            If you are getting OutOfMemoryException when attempting a full
+            build, you may try increasing the max heap and the PermGen space sizes. 
+            Either export a MAVEN_OPTS variable in your shell or add it to the original mvn script. 
+            <br /></br>
+        </p>
+        <pre>MAVEN_OPTS=-Xmx512m -XX:MaxPermSize=256m</pre>
+        <hr/>
+        
+        <p><strong><a name="build-offline">Can I build the sources if I am not connected to the network?</a></strong></p>
+        <p> 
+            If you know your downloads are up-to-date, you can use the offline option 
+            which may speed up your build considerably depending on network latency:
+        </p>
+        <pre>mvn -o</pre>
+        <hr/>
+        
+        <p><strong><a name="build-tests">Some tests fail during the build. Where can I see what happened?</a></strong></p>
+        <p> 
+            Surefire, which is the default Maven test runner, outputs all tests reports
+            as a set of xml and text files to the <tt>target/surefire-reports</tt> directory. 
+            Any test failure details and stack traces end up in those files, and not in the console. 
+            The output can be temporarily redirected to the console by adding the following option:
+        </p>
+        <pre>mvn -Dsurefire.useFile=false</pre>
+    </div>
+</div>
+
+
