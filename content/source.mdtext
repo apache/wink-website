@@ -18,7 +18,7 @@ Title: Source Repository
 <div class="row">
     <div class="span10">
         <p>The following is a link to the online source repository.</p>
-        <pre><a class="externalLink" href="http://svn.apache.org/viewvc/incubator/wink/trunk">http://svn.apache.org/viewvc/incubator/wink/trunk</a></pre>
+        <pre><a class="externalLink" href="http://svn.apache.org/viewvc/wink/trunk">http://svn.apache.org/viewvc/wink/trunk</a></pre>
     </div>
 </div>
 
@@ -29,7 +29,7 @@ Title: Source Repository
 <div class="row">
     <div class="span10">
         <p>The source can be checked out anonymously from SVN with this command:</p>
-        <pre>$ svn checkout http://svn.apache.org/repos/asf/incubator/wink/trunk wink</pre>
+        <pre>$ svn checkout http://svn.apache.org/repos/asf/wink/trunk wink</pre>
     </div>
 </div>
 
@@ -39,7 +39,7 @@ Title: Source Repository
 <div class="row">
     <div class="span10">
         <p>Everyone can access the Subversion repository via HTTP, but Committers must checkout the Subversion repository via HTTPS.</p>
-        <pre>$ svn checkout https://svn.apache.org/repos/asf/incubator/wink/trunk wink</pre>
+        <pre>$ svn checkout https://svn.apache.org/repos/asf/wink/trunk wink</pre>
         <p>To commit changes to the repository, execute the following command to commit your changes (svn will prompt you for your password)</p>
         <pre>$ svn commit --username your-username -m &quot;A message&quot;</pre>
     </div>
@@ -52,7 +52,7 @@ Title: Source Repository
 <div class="row">
     <div class="span10">
         <p>For those users who are stuck behind a corporate firewall which is blocking HTTP access to the Subversion repository, you can try to access it via the developer connection:</p>
-        <pre>$ svn checkout https://svn.apache.org/repos/asf/incubator/wink/trunk wink</pre>
+        <pre>$ svn checkout https://svn.apache.org/repos/asf/wink/trunk wink</pre>
     </div>
 </div>
 
