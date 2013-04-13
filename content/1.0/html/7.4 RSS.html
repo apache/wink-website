@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : 7.4 RSS</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : 7.4 RSS
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 15, 2009 by <font color="#0050B2">michael</font>.
+				    </div>
+
+				    <h2><a name="7.4RSS-RSSDataModel"></a>RSS Data Model</h2>
+
+
+<p>RSS (Really Simple Syndication) is an XML-based document format for the syndication of web content such as weblogs and news headlines to Web sites as well as directly to user agents. Apache Wink supports the RSS 2.0 specification.</p>
+
+<h3><a name="7.4RSS-"></a></h3>
+
+
+<h3><a name="7.4RSS-%28ReallySimpleSyndication%29RSSDataModelOverview"></a>(Really Simple Syndication) RSS Data Model Overview</h3>
+
+<p>Apache Wink provides an RSS data model for consuming and producing RSS Feeds (application/xml). All of the model classes are located under <b>org.apache.wink.common.model.rss</b> package.</p>
+
+<h4><a name="7.4RSS-RSSFeedSupport"></a>RSS Feed Support</h4>
+
+<p>The following table shows the RSS Feed data models and the representations in which it can be serialized and de-serialized.</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>&nbsp;</th>
+<th class='confluenceTh'> Supported </th>
+<th class='confluenceTh'> Media Types </th>
+<th class='confluenceTh'> Data Model </th>
+<th class='confluenceTh'> Provider registration </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Read </td>
+<td class='confluenceTd'> Yes </td>
+<td class='confluenceTd'> application/xml </td>
+<td class='confluenceTd'> org.apache.wink<br clear="all" />
+ .common.model<br clear="all" />
+ .rss.RssFeed </td>
+<td class='confluenceTd'> Not required. Registered by default </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Write </td>
+<td class='confluenceTd'> Yes </td>
+<td class='confluenceTd'> application/xml </td>
+<td class='confluenceTd'> org.apache<br clear="all" />
+ .wink.common<br clear="all" />
+ .model.rss<br clear="all" />
+ .RssFeed </td>
+<td class='confluenceTd'> Not required. Registered by default </td>
+</tr>
+</tbody></table>
+
+<h3><a name="7.4RSS-Examples"></a>Examples</h3>
+
+<p>The following code example demonstrates reading and writing of RSS Feeds.</p>
+
+<h4><a name="7.4RSS-ProducingRSSFeed"></a>Producing RSS Feed</h4>
+
+<p>The following code example demonstrates the creation of an RSS Feed.</p>
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">    @GET
+    @Produces(MediaType.APPLICATION_XML)
+    <span class="code-keyword">public</span> RssFeed getFeed() {
+        RssFeed rss = <span class="code-keyword">new</span> RssFeed();
+
+        RssChannel channel = <span class="code-keyword">new</span> RssChannel();
+        channel.setTitle(<span class="code-quote">"Liftoff News"</span>);
+        channel.setLink(<span class="code-quote">"http:<span class="code-comment">//liftoff.msfc.nasa.gov"</span>);
+</span>        channel.setDescription(<span class="code-quote">"Liftoff to Space Exploration."</span>);
+        channel.setPubDate(<span class="code-keyword">new</span> Date().toString());
+
+        RssItem item = <span class="code-keyword">new</span> RssItem();
+        item.setTitle(<span class="code-quote">"Star City"</span>);
+        item.setLink(<span class="code-quote">"http:<span class="code-comment">//liftoff.msfc.nasa.gov/news/2003/news-starcity.asp"</span>);
+</span>        item.setDescription(<span class="code-quote">"How <span class="code-keyword">do</span> Americans get ready to work with Russians aboard the International Space Station?"</span>);
+        channel.getItems().add(item);
+
+        ...
+
+        rss.setChannel(channel);
+        <span class="code-keyword">return</span> rss;
+    }
+}
+</pre>
+</div></div>
+
+<h4><a name="7.4RSS-ConsumingRSSFeed"></a>Consuming RSS Feed</h4>
+
+<p>The following code example demonstrates the consumption of an RSS Feed.</p>
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">    @POST
+    @Consumes(MediaType.APPLICATION_XML)
+    <span class="code-keyword">public</span> void setFeed(RssFeed feed) {
+        ...
+
+        <span class="code-keyword">return</span>;
+    }
+</pre>
+</div></div>
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : 7.6 CSV</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : 7.6 CSV
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 14, 2009 by <font color="#0050B2">michael</font>.
+				    </div>
+
+				    <h2><a name="7.6CSV-CommaSeparatedValues%28CSV%29Providers"></a>Comma Separated Values (CSV) Providers</h2>
+
+<p>Apache Wink provides a CSV data model and providers for producing and consuming CSV (text/csv). The model is based on a Serialization and a Deserialization interface, in addition to a simple CSV Table class. All of the model classes are located under the org.apache.wink.common.model.csv package.</p>
+
+
+<p>The following tables list the providers that provide this functionality.</p>
+
+
+
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>&nbsp;</th>
+<th class='confluenceTh'> Supported </th>
+<th class='confluenceTh'> Media Types <br clear="all" /> </th>
+<th class='confluenceTh'> Data Model <br clear="all" /> </th>
+<th class='confluenceTh'> Provider registration <br clear="all" /> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Read <br clear="all" /> </td>
+<td class='confluenceTd'> Yes <br clear="all" /> </td>
+<td class='confluenceTd'> text/csv <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .csv.CsvDeserializer <br clear="all" />
+<br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .csv.CsvTable <br clear="all" />
+<br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .csv.MultiCsvTable <br clear="all" /> </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Write <br clear="all" /> </td>
+<td class='confluenceTd'> Yes </td>
+<td class='confluenceTd'> text/csv <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .csv.CsvSerializer <br clear="all" />
+<br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .csv.CsvTable <br clear="all" />
+<br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .csv.MultiCsvTable <br clear="all" /> </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+</tbody></table>
+
+
+<h3><a name="7.6CSV-Examples"></a>Examples</h3>
+
+<p>The following code example demonstrates the reading and writing of CSV documents.</p>
+
+
+
+<h4><a name="7.6CSV-ProducingCSV"></a>Producing CSV</h4>
+
+<p>The following code example demonstrates the creation of a CSV document.</p>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">@GET
+@Produces(<span class="code-quote">"text/csv"</span>)
+<span class="code-keyword">public</span> CsvTable getJohns() {
+    CsvTable cvs = <span class="code-keyword">new</span> CsvTable(<span class="code-quote">"Id"</span>, <span class="code-quote">"First Name"</span>, <span class="code-quote">"Last Name"</span>, <span class="code-quote">"Email"</span>);
+    cvs.addRow(<span class="code-quote">"1"</span>,<span class="code-quote">"John"</span>,<span class="code-quote">"Kennedy"</span>,<span class="code-quote">"john@Kennedy.org"</span>);
+    cvs.addRow(<span class="code-quote">"2"</span>,<span class="code-quote">"John"</span>,<span class="code-quote">"Lennon"</span>,<span class="code-quote">"john@Lennon.org"</span>);
+    cvs.addRow(<span class="code-quote">"3"</span>,<span class="code-quote">"John"</span>,<span class="code-quote">"Malkovich"</span>,<span class="code-quote">"john@malkovich.org"</span>);
+    cvs.addRow(<span class="code-quote">"4"</span>,<span class="code-quote">"John"</span>,<span class="code-quote">"McCain"</span>,<span class="code-quote">"john@McCain.org"</span>);
+    <span class="code-keyword">return</span> cvs;
+}
+</pre>
+</div></div>
+
+
+<h5><a name="7.6CSV-"></a></h5>
+
+
+<h4><a name="7.6CSV-ConsumingCSV"></a>Consuming CSV</h4>
+
+<p>The following code example demonstrates the consumption of a CSV document.</p>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">@POST
+@Consumes(<span class="code-quote">"text/csv"</span>)
+<span class="code-keyword">public</span> void postCsv(CsvTable csv) {
+    <span class="code-keyword">for</span> (<span class="code-object">String</span>[] row : csv.getRows()) {
+        <span class="code-keyword">for</span>(<span class="code-object">String</span> cell: row){
+            <span class="code-object">System</span>.out.print(cell + <span class="code-quote">" ,"</span>);
+        }
+        <span class="code-object">System</span>.out.print(<span class="code-quote">"\n"</span>);
+    }
+}
+</pre>
+</div></div>
+
+<h5><a name="7.6CSV-"></a></h5>
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>

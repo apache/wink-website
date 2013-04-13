@@ -1,0 +1,648 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : Appendix A - Feeds Support</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : Appendix A - Feeds Support
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 15, 2009 by <font color="#0050B2">shivakumar</font>.
+				    </div>
+
+				    <h1><a name="AppendixA-FeedsSupport-MigrationfromApacheAbderatoApacheWink"></a>Migration from Apache Abdera to Apache Wink</h1>
+
+<p>Apache Wink is an excellent solution for consuming and producing Atom, APP and RSS documents. The following section describes how to migrate from Apache Abdera to Apache Wink by providing a set of examples that cover most use cases.</p>
+
+<h3><a name="AppendixA-FeedsSupport-AdvantagesofApacheWinkoverApacheAbdera"></a>Advantages of Apache Wink over Apache Abdera</h3>
+<ul>
+	<li>Standardized APIs (using JAX-RS and JAXB)</li>
+	<li>Support for handling XML and JSON more easily</li>
+	<li>Support for handling RSS and ATOM more easily</li>
+</ul>
+
+
+<h3><a name="AppendixA-FeedsSupport-Thissectioncontainsthefollowingtopics%3A"></a>This section contains the following topics:</h3>
+<ul>
+	<li><a href="#AppendixA-FeedsSupport-1%29ConsumingAtomDocuments">1&#41; Consuming Atom Documents</a></li>
+	<li><a href="#AppendixA-FeedsSupport-2%29a%29ProducingAtomDocuments">2&#41; a&#41; Producing Atom Documents</a></li>
+	<li><a href="#AppendixA-FeedsSupport-2%29b%29ProducingAtomDocumentstheJAXRSway">2&#41; b&#41; Producing Atom Documents &#45; the JAX&#45;RS way</a></li>
+	<li><a href="#AppendixA-FeedsSupport-3%29ConsumingRSSDocuments">3&#41; Consuming RSS Documents</a></li>
+	<li><a href="#AppendixA-FeedsSupport-4%29ProducingRSSDocuments">4&#41; Producing RSS Documents</a></li>
+	<li><a href="#AppendixA-FeedsSupport-5%29WritingAtomPublishingProtocol%28APP%29Server">5&#41; Writing Atom Publishing Protocol &#40;APP&#41; Server</a></li>
+	<li><a href="#AppendixA-FeedsSupport-6%29WritingAtomPublishingProtocol%28APP%29Client">6&#41; Writing Atom Publishing Protocol &#40;APP&#41; Client</a></li>
+</ul>
+
+
+<hr />
+<h3><a name="AppendixA-FeedsSupport-1%29ConsumingAtomDocuments"></a>1) Consuming Atom Documents</h3>
+<p>The following code example demonstrates the consumption of Atom documents using Apache Abdera.</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Apache Abdera - Click on link to Download - <a href="attachments/2852765/3113129.java">ConsumeAtomUsingAbdera.java</a> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+Abdera abdera = <span class="code-keyword">new</span> Abdera();
+Parser parser = abdera.getParser();
+URL url = <span class="code-keyword">new</span> URL(<span class="code-quote">"http:<span class="code-comment">//alexharden.org/blog/atom.xml"</span>);
+</span>Document&lt;Feed&gt; doc = parser.parse(url.openStream());
+Feed feed = doc.getRoot();
+<span class="code-object">System</span>.out.println(feed.getTitle());
+<span class="code-keyword">for</span> (Entry entry : feed.getEntries()) {
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"\t"</span> + entry.getTitle());
+}
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+</tbody></table>
+
+<p>The following code example demonstrates the consumption of Atom documents using Apache Wink.</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Apache Wink  - Click on link to Download - <a href="attachments/2852765/3113127.java">ConsumeAtomUsingWink.java</a> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+RestClient client = <span class="code-keyword">new</span> RestClient();
+Resource resource = client.resource(<span class="code-quote">"http:<span class="code-comment">//alexharden.org/blog/atom.xml"</span>);
+</span>AtomFeed feed = resource.accept(MediaType.APPLICATION_ATOM_XML).get(AtomFeed.class);
+<span class="code-object">System</span>.out.println(feed.getTitle().getValue());
+<span class="code-keyword">for</span> (AtomEntry entry : feed.getEntries()) {
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"\t"</span> + entry.getTitle().getValue());
+}
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+</tbody></table>
+
+<hr />
+<h3><a name="AppendixA-FeedsSupport-2%29a%29ProducingAtomDocuments"></a>2) a) Producing Atom Documents</h3>
+<p>The following code example demonstrates the production of Atom documents using Apache Abdera.</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Apache Abdera  - Click on links to Download - <a href="attachments/2852765/3113130.java">ProduceAtomUsingAbdera.java</a> <a href="attachments/2852765/3113128.xml">ProduceAtomUsingAbdera_web.xml</a> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+<span class="code-keyword">protected</span> void doGet(HttpServletRequest request, HttpServletResponse response)
+    <span class="code-keyword">throws</span> ServletException, IOException {
+    Abdera abdera = <span class="code-keyword">new</span> Abdera();
+    Feed feed = abdera.newFeed();
+
+    feed.setId(<span class="code-quote">"tag:example.org,2007:/foo"</span>);
+    feed.setTitle(<span class="code-quote">"Test Feed"</span>);
+    feed.setSubtitle(<span class="code-quote">"Feed subtitle"</span>);
+    feed.setUpdated(<span class="code-keyword">new</span> Date());
+    feed.addAuthor(<span class="code-quote">"Shiva HR"</span>);
+    feed.addLink(<span class="code-quote">"http:<span class="code-comment">//example.com"</span>);
+</span>    feed.addLink(<span class="code-quote">"http:<span class="code-comment">//example.com/foo"</span>, <span class="code-quote">"self"</span>);
+</span>
+    Entry entry = feed.addEntry();
+    entry.setId(<span class="code-quote">"tag:example.org,2007:/foo/entries/1"</span>);
+    entry.setTitle(<span class="code-quote">"Entry title"</span>);
+    entry.setSummaryAsHtml(<span class="code-quote">"&lt;p&gt;This is the entry title&lt;/p&gt;"</span>);
+    entry.setUpdated(<span class="code-keyword">new</span> Date());
+    entry.setPublished(<span class="code-keyword">new</span> Date());
+    entry.addLink(<span class="code-quote">"http:<span class="code-comment">//example.com/foo/entries/1"</span>);
+</span>
+    feed.getDocument().writeTo(response.getWriter());
+} </pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+</tbody></table>
+
+
+<p>The following code example demonstrates the production of Atom documents using Apache Wink.</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Apache Wink  - Click on links to Download - <a href="attachments/2852765/3113134.java">ProduceAtomUsingWink.java</a> <a href="attachments/2852765/3113132.xml">ProduceAtomUsingWink_web.xml</a> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+<span class="code-keyword">protected</span> void doGet(HttpServletRequest request, HttpServletResponse response)
+    <span class="code-keyword">throws</span> ServletException, IOException {
+    AtomFeed feed = <span class="code-keyword">new</span> AtomFeed();
+    feed.setId(<span class="code-quote">"tag:example.org,2007:/foo"</span>);
+    feed.setTitle(<span class="code-keyword">new</span> AtomText(<span class="code-quote">"Test Feed"</span>));
+    feed.setSubtitle(<span class="code-keyword">new</span> AtomText(<span class="code-quote">"Feed subtitle"</span>));
+    feed.setUpdated(<span class="code-keyword">new</span> Date());
+
+    AtomPerson person = <span class="code-keyword">new</span> AtomPerson();
+    person.setName(<span class="code-quote">"Shiva HR"</span>);
+    feed.getAuthors().add(person);
+
+    AtomLink link1 = <span class="code-keyword">new</span> AtomLink();
+    link1.setHref(<span class="code-quote">"http:<span class="code-comment">//example.com"</span>);
+</span>    feed.getLinks().add(link1);
+
+    AtomLink link2 = <span class="code-keyword">new</span> AtomLink();
+    link2.setHref(<span class="code-quote">"http:<span class="code-comment">//example.com/foo"</span>);
+</span>    link2.setRel(<span class="code-quote">"self"</span>);
+    feed.getLinks().add(link2);
+
+    AtomEntry entry = <span class="code-keyword">new</span> AtomEntry();
+    entry.setId(<span class="code-quote">"tag:example.org,2007:/foo/entries/1"</span>);
+    entry.setTitle(<span class="code-keyword">new</span> AtomText(<span class="code-quote">"Entry title"</span>));
+
+    AtomText summary = <span class="code-keyword">new</span> AtomText();
+    summary.setType(AtomTextType.html);
+    summary.setValue(<span class="code-quote">"&lt;p&gt;This is the entry title&lt;/p&gt;"</span>);
+    entry.setSummary(summary);
+
+    entry.setUpdated(<span class="code-keyword">new</span> Date());
+    entry.setPublished(<span class="code-keyword">new</span> Date());
+
+    AtomLink link3 = <span class="code-keyword">new</span> AtomLink();
+    link3.setHref(<span class="code-quote">"http:<span class="code-comment">//example.com/foo/entries/1"</span>);
+</span>    entry.getLinks().add(link3);
+
+    feed.getEntries().add(entry);
+
+    AtomFeed.marshal(feed, response.getOutputStream());
+}
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+</tbody></table>
+
+
+<h3><a name="AppendixA-FeedsSupport-2%29b%29ProducingAtomDocumentstheJAXRSway"></a>2) b) Producing Atom Documents - the JAX-RS way</h3>
+<p>A more elegant way of producing Atom documents using Apache Wink is the JAX-RS way as described below:</p>
+
+<h4><a name="AppendixA-FeedsSupport-"></a></h4>
+
+<ol>
+	<li>Open the Eclipse development environment and create a "Dynamic Web Project".</li>
+	<li>Add Apache Wink &amp; its dependent JARs under Java EE Module Dependencies.</li>
+	<li>Create a POJO class and a method that creates Atom feed document. Annotate the class &amp; its methods with the required JAX-RS annotations as below:<br/>
+<a href="attachments/2852765/3113135.java">ProduceAtom.java</a></li>
+	<li>Add org.apache.wink.server.internal.servlet.RestServlet into web.xml and specify the path of above Resource class in it's init-param.<br/>
+See <a href="attachments/2852765/3113133.xml">ProduceAtomWinkElegant_web.xml</a> and <a href="attachments/2852765/3113131">application</a></li>
+	<li>Deploy the web-application and access it using the url <a href="http://localhost:8080/ProduceAtom_Wink_Elegant/rest/getAtom">http://localhost:8080/ProduceAtom_Wink_Elegant/rest/getAtom</a></li>
+	<li>Final WAR &#45;&gt; <a href="attachments/2852765/3113138.zip">ProduceAtom_Wink_Elegant.zip</a> (add Wink &amp; its dependent JARs under ProduceAtom_Wink_Elegant\WEB-INF\lib and re-zip it as WAR).</li>
+</ol>
+
+
+<hr />
+<h3><a name="AppendixA-FeedsSupport-3%29ConsumingRSSDocuments"></a>3) Consuming RSS Documents</h3>
+
+<p>The following code example demonstrates the consuming of RSS documents using Apache Abdera.</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Apache Abdera  - Click on link to Download - <a href="attachments/2852765/3113136.java">ConsumeRssUsingAbdera.java</a> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+<span class="code-keyword">public</span> <span class="code-keyword">static</span> void main(<span class="code-object">String</span>[] args) <span class="code-keyword">throws</span> ParseException, IOException {
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"Consuming RSS Documents using Abdera...\n"</span>);
+    Abdera abdera = <span class="code-keyword">new</span> Abdera();
+    Parser parser = abdera.getParser();
+    URL url = <span class="code-keyword">new</span> URL(<span class="code-quote">"http:<span class="code-comment">//www.rssboard.org/files/sample-rss-2.xml"</span>);
+</span>    Document&lt;RssFeed&gt; doc = parser.parse(url.openStream());
+    RssFeed rssFeed = doc.getRoot();
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"Title: "</span> + rssFeed.getTitle());
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"Description: "</span> + rssFeed.getSubtitle() + <span class="code-quote">"\n"</span>);
+    <span class="code-object">int</span> itemCount = 0;
+    <span class="code-keyword">for</span> (Entry entry : rssFeed.getEntries()) {
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"Item "</span> + ++itemCount + <span class="code-quote">":"</span>);
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"\tTitle: "</span> + entry.getTitle());
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"\tPublish Date: "</span> + entry.getPublished());
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"\tDescription: "</span> + entry.getContent());
+    }
+} </pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+</tbody></table>
+
+<p>The following code example demonstrates the consuming of RSS documents using Apache Wink.</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Apache Wink  - Click on link to Download - <a href="attachments/2852765/3113139.java">ConsumeRssUsingWink.java</a> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+<span class="code-keyword">public</span> <span class="code-keyword">static</span> void main(<span class="code-object">String</span>[] args) {
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"Consuming RSS Documents using Apache Wink...\n"</span>);
+    RestClient client = <span class="code-keyword">new</span> RestClient();
+    <span class="code-object">String</span> url = <span class="code-quote">"http:<span class="code-comment">//www.rssboard.org/files/sample-rss-2.xml"</span>;
+</span>    Resource resource = client.resource(url);
+    RssFeed rss = resource.accept(MediaType.APPLICATION_XML).get(RssFeed.class);
+    RssChannel channel = rss.getChannel();
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"Title: "</span> + channel.getTitle());
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"Description: "</span> + channel.getDescription() + <span class="code-quote">"\n"</span>);
+    <span class="code-object">int</span> itemCount = 0;
+    <span class="code-keyword">for</span> (RssItem item : channel.getItems()) {
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"Item "</span> + ++itemCount + <span class="code-quote">":"</span>);
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"\tTitle: "</span> + item.getTitle());
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"\tPublish Date: "</span> + item.getPubDate());
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"\tDescription: "</span> + item.getDescription());
+    }
+}
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+</tbody></table>
+
+<hr />
+<h3><a name="AppendixA-FeedsSupport-4%29ProducingRSSDocuments"></a>4) Producing RSS Documents</h3>
+
+<h4><a name="AppendixA-FeedsSupport-ApacheAbdera"></a>Apache Abdera</h4>
+<p>Apache Abdera version 0.4 does not support RSS write.</p>
+
+<h4><a name="AppendixA-FeedsSupport-ApacheWink"></a>Apache Wink</h4>
+<p>Same as in <a href="#AppendixA-FeedsSupport-2%29b%29ProducingAtomDocumentstheJAXRSway">2&#41; b&#41; Producing Atom Documents &#45; the JAX&#45;RS way</a>. However the resource method now returns an RssFeed object instead of AtomFeed object.</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Apache Wink  - Click on link to Download - <a href="attachments/2852765/3113137.zip">ProduceRss_Wink_Elegant.zip</a> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+@Path(<span class="code-quote">"/getRss"</span>)
+<span class="code-keyword">public</span> class ProduceRss {
+    @GET
+    @Produces(MediaType.APPLICATION_XML)
+    <span class="code-keyword">public</span> Rss getRss() {
+        RssFeed rss = <span class="code-keyword">new</span> RssFeed();
+
+        RssChannel channel = <span class="code-keyword">new</span> RssChannel();
+        channel.setTitle(<span class="code-quote">"Liftoff News"</span>);
+        channel.setLink(<span class="code-quote">"http:<span class="code-comment">//liftoff.msfc.nasa.gov"</span>);
+</span>        channel.setDescription(<span class="code-quote">"Liftoff to Space Exploration."</span>);
+        channel.setPubDate(<span class="code-keyword">new</span> Date().toString());
+
+        RssItem item = <span class="code-keyword">new</span> RssItem();
+        item.setTitle(<span class="code-quote">"Star City"</span>);
+        item.setLink(<span class="code-quote">"http:<span class="code-comment">//liftoff.msfc.nasa.gov/news/2003/news-starcity.asp"</span>);
+</span>        item.setDescription(<span class="code-quote">"How <span class="code-keyword">do</span> Americans get ready to work with Russians aboard the International Space Station?"</span>);
+
+        channel.getItem().add(item);
+        rss.setChannel(channel);
+        <span class="code-keyword">return</span> rss;
+    }
+}
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+</tbody></table>
+
+<hr />
+<h3><a name="AppendixA-FeedsSupport-5%29WritingAtomPublishingProtocol%28APP%29Server"></a>5) Writing Atom Publishing Protocol (APP) Server</h3>
+<p>The following steps explain how to implement an APP server as described in the following beautiful article by James Snell: <a href="http://www.ibm.com/developerworks/library/x-atompp1/">http://www.ibm.com/developerworks/library/x-atompp1/</a></p>
+
+<h4><a name="AppendixA-FeedsSupport-ApacheAbdera"></a>Apache Abdera</h4>
+
+<ol>
+	<li>Open the Eclipse development environment and create a "Dynamic Web Project".</li>
+	<li>Add Apache Abdera &amp; its dependent JARs under Java EE Module Dependencies.</li>
+	<li>Add the following CollectionAdapter and Provider classes under src/myPackage directory: <a href="attachments/2852765/4456457.java">APP_CollectionAdapter.java</a> <a href="attachments/2852765/4456455.java">APP_ContentProvider.java</a></li>
+	<li>Add org.apache.abdera.protocol.server.servlet.AbderaServlet into web.xml and point the following init paramters to the classes added above.
+<br clear="all" />
+org.apache.abdera.protocol.server.Provider
+<br clear="all" />
+org.apache.abdera.protocol.server.CollectionAdapter
+<br clear="all" />
+<a href="attachments/2852765/4456456.xml">APP_Server_Abdera_web.xml</a></li>
+	<li>Add the following index.jsp which has help on how to perform the APP operations: <a href="attachments/2852765/4456458.jsp">APP_Server_Abdera_index.jsp</a></li>
+	<li>Deploy and run the application.</li>
+</ol>
+
+
+<p>Final WAR &#45;&gt; <a href="attachments/2852765/4456454.zip">APP_Server_Abdera.zip</a> (add Apache Abdera &amp; its dependent JARs under APP_Server_Abdera\WEB-INF\lib and re-zip it as WAR).</p>
+
+<h4><a name="AppendixA-FeedsSupport-ApacheWink"></a>Apache Wink</h4>
+
+<ol>
+	<li>Open the Eclipse development environment and create a "Dynamic Web Project".</li>
+	<li>Add Apache Wink &amp; its dependent JARs under Java EE Module Dependencies.</li>
+	<li>Add the following Resource class under src/myPackage directory: <a href="attachments/2852765/4456460.java">EntriesCollection.java</a></li>
+	<li>Add org.apache.wink.server.internal.servlet.RestServlet into web.xml and specify the path of above Resource class in it's init-param. <a href="attachments/2852765/4456462.xml">APP_Server_Wink_web.xml</a> <a href="attachments/2852765/4456461">APP_Server_Wink_application</a></li>
+	<li>Add the following index.jsp which has help on how to perform the APP operations: <a href="attachments/2852765/4456459.jsp">APP_Server_Wink_index.jsp</a></li>
+	<li>Deploy and run the application.</li>
+</ol>
+
+
+<p>Final WAR &#45;&gt; <a href="attachments/2852765/4456452.zip">APP_Server_Wink.zip</a> (add Apache Wink &amp; its dependent JARs under APP_Server_Wink\WEB-INF\lib and re-zip it as WAR)</p>
+
+<h4><a name="AppendixA-FeedsSupport-References"></a>References</h4>
+
+<ul>
+	<li>Apache Wink's "SimpleDefects" example: <a href="http://svn.apache.org/repos/asf/incubator/wink/tags/wink-0.1-incubating/wink-examples/apps/SimpleDefects/src/main/java/org/apache/wink/example/simpledefects/resources/DefectsResource.java">http://svn.apache.org/repos/asf/incubator/wink/tags/wink-0.1-incubating/wink-examples/apps/SimpleDefects/src/main/java/org/apache/wink/example/simpledefects/resources/DefectsResource.java</a></li>
+	<li>Abdera Feed Sample shipped with IBM WebSphere Feature Pack for Web 2.0 <a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/index.jsp?topic=/com.ibm.ajax.feed.samples.help/docs/GettingStarted_useage.html">http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/index.jsp?topic=/com.ibm.ajax.feed.samples.help/docs/GettingStarted_useage.html</a></li>
+	<li>Abdera Server Implementation Guide &#45;&gt; <a href="http://cwiki.apache.org/ABDERA/server-implementation-guide.html">http://cwiki.apache.org/ABDERA/server-implementation-guide.html</a></li>
+	<li>Abdera Collection Adapter Implementation Guide &#45;&gt; <a href="http://cwiki.apache.org/ABDERA/collection-adapter-implementation-guide.html">http://cwiki.apache.org/ABDERA/collection-adapter-implementation-guide.html</a></li>
+</ul>
+
+
+<hr />
+<h3><a name="AppendixA-FeedsSupport-6%29WritingAtomPublishingProtocol%28APP%29Client"></a>6) Writing Atom Publishing Protocol (APP) Client</h3>
+
+<p>In order to write an Atom Publishing Protocol client refer to the following examples.</p>
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Important Note</b><br />Make sure that the APP_Server_Abdera.war and the APP_Server_Wink.war provided in the previous example are deployed before running these examples.</td></tr></table></div>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Apache Abdera - Click on link to Download - <a href="attachments/2852765/4751362.java">APP_Client_Abdera.java</a><br clear="all" /> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 1. Acessing Service Document: <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+Document&lt;Service&gt; introspection = abderaClient.get(SERVICE_URL).getDocument();
+Service service = introspection.getRoot();
+List&lt;Workspace&gt; workspaces = service.getWorkspaces();
+<span class="code-keyword">for</span> (Workspace workspace : workspaces) {
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"\t"</span> + workspace.getTitle());
+    List&lt;Collection&gt; collections = workspace.getCollections();
+    <span class="code-keyword">for</span> (Collection collection : collections) {
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"\t"</span> + collection.getTitle() + <span class="code-quote">"\t:\t"</span> + collection.getHref());
+    }
+    <span class="code-object">System</span>.out.print(<span class="code-quote">"\n"</span>);
+}
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 2. Getting a Feed
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+RequestOptions opts = <span class="code-keyword">new</span> RequestOptions();
+opts.setContentType(<span class="code-quote">"application/atom+xml;type=feed"</span>);
+ClientResponse response = abderaClient.get(FEED_URL, opts);
+Feed feed = (Feed)response.getDocument().getRoot();
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 3. Posting an entry to a Feed <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+RequestOptions opts = <span class="code-keyword">new</span> RequestOptions();
+opts.setContentType(<span class="code-quote">"application/atom+xml;type=entry"</span>);
+ClientResponse response = abderaClient.post(FEED_URL, newEntry, opts);
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 4. Putting a change to an Entry <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+RequestOptions opts = <span class="code-keyword">new</span> RequestOptions();
+opts.setContentType(<span class="code-quote">"application/atom+xml;type=entry"</span>);
+ClientResponse response = abderaClient.put(ENTRY_URL, changedEntry.getDocument(), opts);
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 5. Getting an Entry <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+RequestOptions opts = <span class="code-keyword">new</span> RequestOptions();
+opts.setContentType(<span class="code-quote">"application/atom+xml;type=entry"</span>);
+ClientResponse response = abderaClient.get(ENTRY_URL, opts);
+Entry entry = (Entry)response.getDocument().getRoot();
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 6. Deleting an Entry <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+ClientResponse response = abderaClient.delete(ENTRY_URL);
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+</tbody></table>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Apache Wink - Click on link to Download - <a href="attachments/2852765/4751361.java">APP_Client_Wink.java</a><br clear="all" /> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 1. Acessing Service Document: <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+Resource resource = restClient.resource(SERVICE_URL);
+AppService service = resource.accept(MediaTypeUtils.ATOM_SERVICE_DOCUMENT).get(AppService.class);
+List&lt;AppWorkspace&gt; workspaces = service.getWorkspace();
+<span class="code-keyword">for</span> (AppWorkspace workspace : workspaces) {
+    <span class="code-object">System</span>.out.println(<span class="code-quote">"\t"</span> + workspace.getTitle().getValue());
+    List&lt;AppCollection&gt; collections = workspace.getCollection();
+    <span class="code-keyword">for</span> (AppCollection collection : collections) {
+        <span class="code-object">System</span>.out.println(<span class="code-quote">"\t"</span> + collection.getTitle().getValue()
+            + <span class="code-quote">"\t:\t"</span>
+            + collection.getHref());
+    }
+    <span class="code-object">System</span>.out.print(<span class="code-quote">"\n"</span>);
+}
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 2. Getting a Feed <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+Resource feedResource = restClient.resource(FEED_URL);
+AtomFeed feed = feedResource.accept(MediaType.APPLICATION_ATOM_XML).get(AtomFeed.class);
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 3. Posting an entry to a Feed <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+Resource feedResource = restClient.resource(FEED_URL);
+ClientResponse response =
+    feedResource.contentType(MediaType.APPLICATION_ATOM_XML).post(newEntry);
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 4. Putting a change to an Entry <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+Resource feedResource = restClient.resource(ENTRY_URL);
+ClientResponse response =
+    feedResource.contentType(MediaType.APPLICATION_ATOM_XML).put(changedEntry);
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 5. Getting an Entry <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+Resource feedResource = restClient.resource(ENTRY_URL);
+AtomEntry atomEntry = feedResource.accept(MediaType.APPLICATION_ATOM_XML).get(AtomEntry.class);
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class='confluenceTd'> &nbsp;&nbsp;&nbsp; 6. Deleting an Entry <br clear="all" />
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+Resource feedResource = restClient.resource(ENTRY_URL);
+ClientResponse response = feedResource.delete();
+</pre>
+</div></div></td>
+</tr>
+<tr>
+</tr>
+</tbody></table>
+<hr />
+
+				    					    <br/>
+                        <div class="tabletitle">
+                            <a name="attachments">Attachments:</a>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113127.java">ConsumeAtomUsingWink.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113128.xml">ProduceAtomUsingAbdera_web.xml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113129.java">ConsumeAtomUsingAbdera.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113130.java">ProduceAtomUsingAbdera.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113131">application</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113132.xml">ProduceAtomUsingWink_web.xml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113133.xml">ProduceAtomWinkElegant_web.xml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113134.java">ProduceAtomUsingWink.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113135.java">ProduceAtom.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113136.java">ConsumeRssUsingAbdera.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113137.zip">ProduceRss_Wink_Elegant.zip</a> (application/zip)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113138.zip">ProduceAtom_Wink_Elegant.zip</a> (application/zip)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/3113139.java">ConsumeRssUsingWink.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456452.zip">APP_Server_Wink.zip</a> (application/x-zip-compressed)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456454.zip">APP_Server_Abdera.zip</a> (application/x-zip-compressed)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456455.java">APP_ContentProvider.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456456.xml">APP_Server_Abdera_web.xml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456457.java">APP_CollectionAdapter.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456458.jsp">APP_Server_Abdera_index.jsp</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456459.jsp">APP_Server_Wink_index.jsp</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456460.java">EntriesCollection.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456461">APP_Server_Wink_application</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4456462.xml">APP_Server_Wink_web.xml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4751361.java">APP_Client_Wink.java</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/2852765/4751362.java">APP_Client_Abdera.java</a> (application/octet-stream)
+                                <br/>
+                                                    </div>
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>

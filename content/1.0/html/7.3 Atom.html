@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : 7.3 Atom</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : 7.3 Atom
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 15, 2009 by <font color="#0050B2">shivakumar</font>.
+				    </div>
+
+				    <h2><a name="7.3Atom-AtomSyndicationFormatOverview"></a>Atom Syndication Format Overview</h2>
+
+<p>Atom is an XML-based document format that describes lists of related information known as "feeds".  Feeds are composed of a number of items, known as "entries", each with an extensible set of attached metadata.  For example, each entry has a title. The primary use case that Atom addresses is the syndication of Web content such as weblogs and news headlines to Web sites as well as directly to user agents.</p>
+
+<h3><a name="7.3Atom-DataModel"></a>Data Model</h3>
+
+<p>Apache Wink provides an Atom Syndication Format data model for consuming and producing Atom Feeds and Atom Entries (application/atom+xml). All of the model classes are located under the org.apache.wink.common.model.atom and org.apache.wink.common.model.synd packages.</p>
+
+
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td><b>Important Note</b><br />The Atom Syndication Format data model can also be used to produce Atom Feeds and Atom Entries in HTML (text/html) and JSON (application/json) formats. For more details regarding HTML see section HTML (TBD). For JSON format see section (TBD)</td></tr></table></div>
+
+
+<h4><a name="7.3Atom-AtomFeedSupport"></a>Atom Feed Support</h4>
+
+<p>The following table shows the Atom Feed data models and the representations in which it can be serialized and de-serialized.</p>
+
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>&nbsp;</th>
+<th class='confluenceTh'> Supported </th>
+<th class='confluenceTh'> Media Types <br clear="all" /> </th>
+<th class='confluenceTh'> Data Model <br clear="all" /> </th>
+<th class='confluenceTh'> Provider registration <br clear="all" /> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Read <br clear="all" /> </td>
+<td class='confluenceTd'> Yes <br clear="all" /> </td>
+<td class='confluenceTd'> application/atom+xml <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .atom.AtomFeed <br clear="all" />
+<br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .synd.SyndFeed <br clear="all" /> </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Write <br clear="all" /> </td>
+<td class='confluenceTd'> Yes </td>
+<td class='confluenceTd'> application/atom+xml <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .atom.AtomFeed <br clear="all" />
+<br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .synd.SyndFeed <br clear="all" /> </td>
+<td class='confluenceTd'> Not required. Registered by default </td>
+</tr>
+</tbody></table>
+
+
+
+
+
+<h4><a name="7.3Atom-AtomEntrySupport"></a>Atom Entry Support</h4>
+
+<p>The following table shows the Atom Entry data models and the representations in which it can be serialized and de-serialized.</p>
+
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>&nbsp;</th>
+<th class='confluenceTh'> Supported </th>
+<th class='confluenceTh'> Media Types <br clear="all" /> </th>
+<th class='confluenceTh'> Data Model <br clear="all" /> </th>
+<th class='confluenceTh'> Provider registration <br clear="all" /> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Read <br clear="all" /> </td>
+<td class='confluenceTd'> Yes <br clear="all" /> </td>
+<td class='confluenceTd'> application/atom+xml <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .atom.AtomEntry <br clear="all" />
+<br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .synd.SyndEntry </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Write <br clear="all" /> </td>
+<td class='confluenceTd'> Yes </td>
+<td class='confluenceTd'> application/atom+xml <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .atom.AtomEntry <br clear="all" />
+<br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .synd.SyndEntry </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+</tbody></table>
+
+
+
+
+
+<h3><a name="7.3Atom-Examples"></a>Examples</h3>
+
+<p>The following code example demonstrates reading and writing of Atom Feeds&nbsp; and Atom Entries.</p>
+
+
+<h4><a name="7.3Atom-ProducingAtomFeed"></a>Producing Atom Feed</h4>
+
+<p>The following code example demonstrates the creation of an Atom Feed.</p>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+    @GET
+    @Produces(MediaType.APPLICATION_ATOM_XML)
+    <span class="code-keyword">public</span> AtomFeed getFeed() {
+        AtomFeed feed = <span class="code-keyword">new</span> AtomFeed();
+        feed.setId(<span class="code-quote">"http:<span class="code-comment">//example.com/atomfeed"</span>);
+</span>        feed.setTitle(<span class="code-keyword">new</span> AtomText(<span class="code-quote">"Example"</span>));
+        feed.setUpdated(<span class="code-keyword">new</span> Date());
+        AtomLink link1 = <span class="code-keyword">new</span> AtomLink();
+        ...
+
+        <span class="code-keyword">return</span> feed;
+    }
+}
+</pre>
+</div></div>
+
+
+<h4><a name="7.3Atom-ConsumingAtomFeed"></a>Consuming Atom Feed</h4>
+
+<p>The following code example demonstrates the consumption of an Atom Feed.</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+    @POST
+    @Consumes(MediaType.APPLICATION_ATOM_XML)
+    <span class="code-keyword">public</span> void setFeed(AtomFeed feed) {
+        ...
+
+        <span class="code-keyword">return</span>;
+    }
+</pre>
+</div></div>
+
+<h4><a name="7.3Atom-ProducingAtomEntry"></a>Producing Atom Entry</h4>
+
+<p>The following code example demonstrates the creation of an Atom Entry.</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+    @GET
+    @Produces(MediaType.APPLICATION_ATOM_XML)
+    <span class="code-keyword">public</span> AtomEntry getEntry() {
+        AtomEntry entry = <span class="code-keyword">new</span> AtomEntry();
+        entry.setId(<span class="code-quote">"http:<span class="code-comment">//example.com/entry"</span>);
+</span>        entry.setTitle(<span class="code-keyword">new</span> AtomText(<span class="code-quote">"Web Demo"</span>));
+        entry.getLinks().add(link2);
+        entry.setUpdated(<span class="code-keyword">new</span> Date());
+        entry.setPublished(<span class="code-keyword">new</span> Date());
+        ...
+        <span class="code-keyword">return</span> entry;
+    }
+</pre>
+</div></div>
+
+<h4><a name="7.3Atom-ConsumingAtomEntry"></a>Consuming Atom Entry</h4>
+
+<p>The following code example demonstrates the consumption of an Atom Entry.</p>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">
+    @POST
+    @Consumes(MediaType.APPLICATION_ATOM_XML)
+    <span class="code-keyword">public</span> void setEntry(AtomEntry entry) {
+        ...
+
+        <span class="code-keyword">return</span>;
+   }
+</pre>
+</div></div>
+
+
+
+
+
+<h2><a name="7.3Atom-"></a></h2>
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>

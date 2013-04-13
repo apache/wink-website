@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : 6.3 Input and Output Stream Adapters</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : 6.3 Input and Output Stream Adapters
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 13, 2009 by <font color="#0050B2">michael</font>.
+				    </div>
+
+				    <h2><a name="6.3InputandOutputStreamAdapters-InputandOutputStreamAdapters"></a>Input and Output Stream Adapters</h2>
+
+<p>The Apache Wink Client provides the ability to manipulate raw Http input and output entity streams through the InputStreamAdapter and the OutputStreamAdapter interfaces. This is useful for modifying the input and output streams, regardless of the actual entity, for example when adding compression capabilities.<br/>
+The adapt() method of the output stream adapter is called before the request headers are committed, in order to allow the adapter to manipulate them.</p>
+
+<p>The adapt() method of the input stream adapter is called after the response status code and the headers are received in order to allow the adapter to behave accordingly.</p>
+
+<h3><a name="6.3InputandOutputStreamAdapters-StreamAdaptersExample"></a>Stream Adapters Example</h3>
+
+<p>The following example demonstrates how to implement input and output adapters.</p>
+
+<h3><a name="6.3InputandOutputStreamAdapters-GzipHandler"></a>Gzip Handler</h3>
+
+<p>The following code snippet is an example of adding a input and output adapters in the Gzip handler.</p>
+
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-xml">public class GzipHandler implements ClientHandler {
+   public ClientResponse handle(ClientRequest request,
+                                HandlerContext context) {
+        request.getHeaders().add(<span class="code-quote">"Accept-Encoding"</span>, <span class="code-quote">"gzip"</span>);
+        context.addInputStreamAdapter(new GzipInputAdapter());
+        context.addOutputStreamAdapter(new GzipOutputAdapter());
+        return context.doChain(request);
+  }}
+</pre>
+</div></div>
+
+<h4><a name="6.3InputandOutputStreamAdapters-Explanation"></a>Explanation</h4>
+
+<p>The Gzip handler creates instances of the <b>GzipInputAdapter</b> and the <b>GzipOutputAdapter</b> and adds them to the stream adapters of the current request by invoking the <b>addInputStreamAdapter()</b> method and the <b>addOutputStreamAdapter()</b> method on the HandlerContext instance.</p>
+
+<h3><a name="6.3InputandOutputStreamAdapters-GzipInputStreamAdapter"></a>Gzip Input Stream Adapter</h3>
+
+<p>The following code snippet is an example of an implementation of a Gzip input stream adapter.</p>
+
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-xml">class GzipInputAdapter implements InputStreamAdapter{
+        public InputStream adapt(InputStream is,
+                                 ClientResponse response) {
+      String header = response.getHeaders().getFirst(<span class="code-quote">"Content-Encoding"</span>);
+      if (header != null &amp;&amp; header.equalsIgnoreCase(<span class="code-quote">"gzip"</span>)) {
+        return new GZIPInputStream(is);
+      }
+      return is;
+   }}
+</pre>
+</div></div>
+
+<h4><a name="6.3InputandOutputStreamAdapters-Explanation"></a>Explanation</h4>
+
+<p>The Gzip input stream adapter is responsible for wrapping the input stream with the Gzip input stream.</p>
+
+<h3><a name="6.3InputandOutputStreamAdapters-GzipOutputStreamAdapter"></a>Gzip Output Stream Adapter</h3>
+
+<p>The following code snippet is an example of an implementation of a Gzip output stream adapter.</p>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-xml">class GzipOutputAdapter implements OutputStreamAdapter {
+    public OutputStream adapt(OutputStream os,
+                              ClientRequest request) {
+        request.getHeaders().add(<span class="code-quote">"Content-Encoding"</span>, <span class="code-quote">"gzip"</span>);
+        return new GZIPOutputStream(os);
+    }}
+</pre>
+</div></div>
+
+<h4><a name="6.3InputandOutputStreamAdapters-Explanation"></a>Explanation</h4>
+
+<p>The Gzip output stream adapter is responsible for wrapping the output stream with the Gzip output stream. </p>
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>

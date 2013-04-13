@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Apache Wink : 7.8 MultiPart</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Apache Wink : 7.8 MultiPart
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Oct 14, 2009 by <font color="#0050B2">michael</font>.
+				    </div>
+
+				    <h1><a name="7.8MultiPart-MultiPart"></a>MultiPart</h1>
+
+<p>Apache Wink provides a MultiPart data model and providers for producing and consuming multipart messages (multipart/&#42; ). All of the model classes are located under the org.apache.wink.common.model.multipart package distributed with the wink-common jar.</p>
+
+<p>The data model can be used with the wink-server module or with the wink-client module.</p>
+
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>&nbsp;</th>
+<th class='confluenceTh'> Supported </th>
+<th class='confluenceTh'> Media Types <br clear="all" /> </th>
+<th class='confluenceTh'> Data Model <br clear="all" /> </th>
+<th class='confluenceTh'> Provider registration <br clear="all" /> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Read <br clear="all" /> </td>
+<td class='confluenceTd'> Yes <br clear="all" /> </td>
+<td class='confluenceTd'> multipart/&#42; <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .multipart.InMultiPart <br clear="all" />
+<br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .multipart<br clear="all" />
+ .BufferedInMultiPart <br clear="all" /> </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Write <br clear="all" /> </td>
+<td class='confluenceTd'> Yes </td>
+<td class='confluenceTd'> multipart/&#42; <br clear="all" /> </td>
+<td class='confluenceTd'> org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .multipart.OutMultiPart<br clear="all" />
+ <br clear="all" />
+org.apache.wink <br clear="all" />
+.common.model<br clear="all" />
+ .multipart<br clear="all" />
+ .BufferedOutMultiPart <br clear="all" /> </td>
+<td class='confluenceTd'> Not required. Registered by default <br clear="all" /> </td>
+</tr>
+</tbody></table>
+
+<h2><a name="7.8MultiPart-SerializationandDeserialization"></a>Serialization and De-serialization</h2>
+
+<p>The serialization and de-serialization of a multipart message is performed by the multipart providers. The serialization and de-serialization of the parts that make up the multipart message is performed as if each part is a separate message and in accordance with the JAX-RS specification. This means that every part is serialized and de-serialized using the appropriate provider that matches the binding class and content media type of that specific part.</p>
+
+<h2><a name="7.8MultiPart-MainClasses"></a>Main Classes</h2>
+
+<p>The multipart data model is comprised of the following main classes:</p>
+
+<ul>
+	<li><b>InMultiPart</b> &#45; is used for de-serialization of an incoming multipart message.</li>
+	<li><b>InPart</b> &#45; represents a single part contained in an incoming multipart message.</li>
+	<li><b>OutMultiPart</b> &#45; is used for serialization of an outgoing multipart message.</li>
+	<li><b>OutPart</b> &#45; represents a single part contained in an outgoing multipart message.</li>
+</ul>
+
+
+
+<h2><a name="7.8MultiPart-StreamingMultipart"></a>Streaming Multipart</h2>
+
+<p>The base multipart classes are designed to handle multipart messages without buffering the data in order to avoid possible memory issues. This means that the data is accessible only once by the use of an iterator.</p>
+
+<h2><a name="7.8MultiPart-BufferingMultipart"></a>Buffering Multipart</h2>
+
+<p>The BufferedInMultiPart and BufferedOutMultiPart classes are used to handle multipart messages where the complete message is buffered in the memory, allowing random and multiple access of the data. These classes are suitable for situations where the multipart message is small.</p>
+
+<h2><a name="7.8MultiPart-Examples"></a>Examples</h2>
+
+<p>The following examples illustrate the usage of the multipart data model.</p>
+
+
+<h3><a name="7.8MultiPart-MultipartConsumption"></a>Multipart Consumption</h3>
+
+<p>The following example illustrates the usage of a streaming multipart message.</p>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">@Path(<span class="code-quote">"files"</span>)
+@POST
+@Produces( MediaType.TEXT_PLAIN)
+@Consumes( MediaTypeUtils.MULTIPART_FORM_DATA)
+<span class="code-keyword">public</span> <span class="code-object">String</span> uploadFiles(InMultiPart inMP) <span class="code-keyword">throws</span> IOException {
+    <span class="code-keyword">while</span> (inMP.hasNext()) {
+        InPart part = inMP.next();
+        MultivaluedMap&lt;<span class="code-object">String</span>, <span class="code-object">String</span>&gt; heades = part.getHeaders();
+        <span class="code-object">String</span> CDHeader = heades.getFirst(<span class="code-quote">"Content-Disposition"</span>);
+        InputStream is = part.getBody(InputStream.class, <span class="code-keyword">null</span>);
+        <span class="code-comment">// use the input stream to read the part body
+</span>    }
+}
+</pre>
+</div></div>
+
+<p>&#42; Detailed example of the MultiPart implementation can be seen at the MultiPart example.</p>
+
+
+
+<h3><a name="7.8MultiPart-BufferedMultipartConsumption"></a>Buffered Multipart Consumption</h3>
+
+<p>The following example illustrates the usage of a buffering multipart message.</p>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<pre class="code-java">@Path(<span class="code-quote">"users"</span>)
+@POST
+@Consumes( {<span class="code-quote">"multipart/mixed"</span>})
+<span class="code-keyword">public</span> BufferedOutMultiPart addUsers(BufferedInMultiPart inMP) <span class="code-keyword">throws</span> IOException {
+    List&lt;InPart&gt; parts = inMP.getParts();
+    <span class="code-keyword">for</span> (InPart p : parts) {
+        User u = p.getBody(User.class, <span class="code-keyword">null</span>);
+	<span class="code-comment">// use the user object retrieved from the part body
+</span>
+    }
+}
+
+</pre>
+</div></div>
+<p>&#42; Detailed example of the MultiPart implementation can be seen at the MultiPart example.</p>
+
+				    
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="http://cwiki.apache.org/confluence/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 11, 2009 06:57</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>
