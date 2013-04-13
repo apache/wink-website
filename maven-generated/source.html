@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. 
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Source Repository</title>
+    <meta name="description" content="Apache Wink -- Source Repository">
+    <meta name="author" content="dev@wink.apache.org">
+
+    <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <META name="Keywords" content="Apache Wink JSR-237 REST JavaEE6" />
+    <META name="Owner" content="dev@wink.apache.org" />
+    <META name="Robots" content="index, follow" />
+    <META name="Security" content="Public" />
+    <META name="DC.Rights" content="Copyright &copy; 2009-2013, The Apache Software Foundation" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/wink.png">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-ipad-retina.png" />
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner fill">
+          <div class="container">
+            <!--<a class="brand" href="index.html"><img src="images/favicon.ico" width="15%" height="15%"/></a>-->
+
+            <ul class="nav">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li class="active"><a href="news.html">News</a></li>
+              <li class="active"><a href="downloads.html">Downloads</a></li>
+              <li class="active"><a href="documentation.html">Documentation</a></li>
+              <li class="active"><a href="community.html">Community</a></li>
+              <li class="active"><a href="source.html">Source</a></li>
+              <li class="active"><a href="faq.html">FAQ</a></li>
+              <li class="active"><a href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+              <li class="active"><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
+              <li class="active"><a href="privacy.html">Privacy</a></li>
+            </ul>
+
+
+            <!-- Google CSE Search Box Begins  -->
+              <FORM class="navbar-form pull-right" id="searchbox_007756850371322559056:un2ixevjhis" action="http://www.google.com/cse">
+                <INPUT type="hidden" name="cx" value="007756850371322559056:un2ixevjhis">
+                <INPUT type="hidden" name="cof" value="FORID:0">
+                <INPUT name="q" type="text" placeholder="Search">
+              </FORM>
+              <!--<SCRIPT type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_007756850371322559056:un2ixevjhis"></SCRIPT>-->
+              <!-- Google CSE Search Box Ends -->
+        </div><!--/container -->
+      </div><!--/navbar-inner -->
+    </div><!--/navbar -->
+    
+
+    
+    <div class="container" id="content">
+      <h1>Apache Wink Source Repository<a name="source_repository"></a></h1>
+
+<hr>
+
+<h3>Overview<a name="Overview"></a></h3>
+
+<div class="row">
+    <div class="span10">
+
+        <p>This project uses <a class="externalLink" href="http://subversion.apache.org/">Subversion</a> to manage its source code. Instructions on Subversion use can be found at <a class="externalLink" href="http://svnbook.red-bean.com/">http://svnbook.red-bean.com/</a>.</p>
+    </div>
+
+</div>
+
+<hr>
+
+<h3>Web Access<a name="web_access"></a></h3>
+
+<div class="row">
+    <div class="span10">
+        <p>The following is a link to the online source repository.</p>
+        <pre><a class="externalLink" href="http://svn.apache.org/viewvc/wink/trunk">http://svn.apache.org/viewvc/wink/trunk</a></pre>
+    </div>
+</div>
+
+<hr>
+
+<h3>Anonymous Access<a name="anonymous_access"></a></h3>
+
+<div class="row">
+    <div class="span10">
+        <p>The source can be checked out anonymously from SVN with this command:</p>
+        <pre>$ svn checkout http://svn.apache.org/repos/asf/wink/trunk wink</pre>
+    </div>
+</div>
+
+<hr>
+
+<h3>Developer Access<a name="developer_access"></a></h3>
+
+<div class="row">
+    <div class="span10">
+        <p>Everyone can access the Subversion repository via HTTP, but Committers must checkout the Subversion repository via HTTPS.</p>
+        <pre>$ svn checkout https://svn.apache.org/repos/asf/wink/trunk wink</pre>
+        <p>To commit changes to the repository, execute the following command to commit your changes (svn will prompt you for your password)</p>
+        <pre>$ svn commit --username your-username -m &quot;A message&quot;</pre>
+    </div>
+</div>
+
+<hr>
+
+<h3>Access from behind a firewall<a name="access_from_behind_a_firewall"></a></h3>
+
+<div class="row">
+    <div class="span10">
+        <p>For those users who are stuck behind a corporate firewall which is blocking HTTP access to the Subversion repository, you can try to access it via the developer connection:</p>
+        <pre>$ svn checkout https://svn.apache.org/repos/asf/wink/trunk wink</pre>
+    </div>
+</div>
+
+<hr>
+
+<h3>Access through a proxy<a name="access_through_a_proxy"></a></h3>
+
+<div class="row">
+    <div class="span10">
+        <p>The Subversion client can go through a proxy, if you configure it to do so. First, edit your &quot;servers&quot; configuration file to indicate which proxy to use. The file's location depends on your operating system. On Linux or Unix it is located in the directory &quot;~/.subversion&quot;. On Windows it is in &quot;%APPDATA%\Subversion&quot;. (Try &quot;echo %APPDATA%&quot;, note this is a hidden directory.)</p>
+        <br/>
+        <p>There are comments in the file explaining what to do. If you don't have that file, get the latest Subversion client and run any command; this will cause the configuration directory and template files to be created.</p>
+        <p>Example: Edit the 'servers' file and add something like:</p>
+
+        <pre>[global]
+http-proxy-host = your.proxy.name
+http-proxy-port = 3128</pre>
+    </div>
+
+</div>
+
+<hr>
+    </div> <!-- /container/content -->
+    
+
+
+    <hr>
+
+    <div class="container">
+      <footer>
+        <div class="xright">
+        Copyright &copy; 2009-2013 <a href="http://www.apache.org/">The Apache Software Foundation</a>. All Rights Reserved.Licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.</br>
+        Apache and the Apache feather logo are trademarks of The Apache Software Foundation. Other names may be trademarks of their respective owners.</br>
+        </p>
+    </footer>
+  </div> <!-- /container/footer -->
+
+
+  <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/jquery/jquery-1.9.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

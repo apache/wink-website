@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License. 
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Frequently Asked Questions</title>
+    <meta name="description" content="Apache Wink -- Frequently Asked Questions">
+    <meta name="author" content="dev@wink.apache.org">
+
+    <META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <META name="Keywords" content="Apache Wink JSR-237 REST JavaEE6" />
+    <META name="Owner" content="dev@wink.apache.org" />
+    <META name="Robots" content="index, follow" />
+    <META name="Security" content="Public" />
+    <META name="DC.Rights" content="Copyright &copy; 2009-2013, The Apache Software Foundation" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/wink.png">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-ipad-retina.png" />
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner fill">
+          <div class="container">
+            <!--<a class="brand" href="index.html"><img src="images/favicon.ico" width="15%" height="15%"/></a>-->
+
+            <ul class="nav">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li class="active"><a href="news.html">News</a></li>
+              <li class="active"><a href="downloads.html">Downloads</a></li>
+              <li class="active"><a href="documentation.html">Documentation</a></li>
+              <li class="active"><a href="community.html">Community</a></li>
+              <li class="active"><a href="source.html">Source</a></li>
+              <li class="active"><a href="faq.html">FAQ</a></li>
+              <li class="active"><a href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+              <li class="active"><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
+              <li class="active"><a href="privacy.html">Privacy</a></li>
+            </ul>
+
+
+            <!-- Google CSE Search Box Begins  -->
+              <FORM class="navbar-form pull-right" id="searchbox_007756850371322559056:un2ixevjhis" action="http://www.google.com/cse">
+                <INPUT type="hidden" name="cx" value="007756850371322559056:un2ixevjhis">
+                <INPUT type="hidden" name="cof" value="FORID:0">
+                <INPUT name="q" type="text" placeholder="Search">
+              </FORM>
+              <!--<SCRIPT type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_007756850371322559056:un2ixevjhis"></SCRIPT>-->
+              <!-- Google CSE Search Box Ends -->
+        </div><!--/container -->
+      </div><!--/navbar-inner -->
+    </div><!--/navbar -->
+    
+
+    
+    <div class="container" id="content">
+      <h1>Frequently Asked Questions</h1>
+
+<hr>
+
+<div class="row">
+    <div class="span10">
+        <p><strong>General</strong></p>
+        <ol>
+            <li><a href="#sdk-examples">Where can I find examples for using Wink?</a></li>
+            <li><a href="#sdk-spring">Does Wink have an integration with spring? Can I expose my REST services using Spring Remoting?</a></li>
+            <li><a href="#sdk-struts">Is there an integration with Struts?</a></li>
+            <li><a href="#sdk-struts-usage">Can Wink be used in the same WAR with Struts?</a></li>
+            <li><a href="#sdk-tested-with-other-clients">Have you tested consuming REST resources developed using Wink from a REST client developed using other tools?</a></li>
+            <li><a href="#sdk-query-parameters">Does Wink support query parameters?</a></li>
+            <li><a href="#sdk-ide-plugin">Are there any plans for developing an IDE plugin wrapper for Wink?</a></li>
+        </ol>
+
+        <p><strong>Building Apache Wink</strong></p>
+        <ol>
+            <li><a href="#maven-version">What version of Maven is used to build Wink?</a></li>
+            <li><a href="#maven-sources">Where can I read about Maven?</a></li>
+            <li><a href="#build-oom">I am getting an OutOfMemoryException when performing a full build</a></li>
+            <li><a href="#build-offline">Can I build the sources if I am not connected to the network?</a></li>
+            <li><a href="#build-tests">Some tests fail during the build. Where can I see what happened?</a></li>
+        </ol>
+    </div>
+
+</div>
+
+<hr>
+
+<h3>General<a name="General"></a></h3>
+
+<div class="row">
+    <div class="span10">
+
+        <p><strong><a name="sdk-examples">Where can I find examples for using Wink?</a></strong></p>
+        <p> 
+            Wink distributions comes bundled with several examples ilustarting how to use the server and client.<br/>
+            All the examples are located in the <tt>Wink/examples</tt> directory of the distribution zip.
+        </p>
+        <hr/>
+
+        <p><strong><a name="sdk-spring">Does Wink have an integration with spring? Can I expose my REST services using Spring Remoting?</a></strong></p>
+        <p> 
+            Yes, it provides an extension module with the Spring integration. 
+            However, Wink doesn't use Spring Remoting.
+        </p>
+        <hr/>
+
+        <p><strong><a name="sdk-struts">Is there an integration with Struts?</a></strong></p>
+        <p> 
+            Wink does not have an integration with struts.
+        </p>
+        <hr/>
+
+        <p><strong><a name="sdk-struts-usage">Can Wink be used in the same WAR with Struts?</a></strong></p>
+        <p> 
+            Yes, Wink and the code you develop over it can be used inside any WAR.
+        </p>
+        <hr/>
+
+        <p><strong><a name="sdk-tested-with-other-clients">Have you tested consuming REST resources developed using Wink from a REST client developed using other tools?</a></strong></p>
+        <p> 
+            Sure. We have tested it from variety of clients including IE, Firefox, Outlook, Apache Abdera, Sun Rome, etc.
+        </p>
+        <hr/>
+
+        <p><strong><a name="sdk-query-parameters">Does Wink support query parameters?</a></strong></p>
+        <p> 
+            Absolutely.
+        </p>
+        <hr />
+
+        <p><strong><a name="sdk-ide-plugin">Are there any plans for developing an IDE plugin wrapper for Wink?</a></strong></p>
+        <p> 
+            We are considering this option for the Eclipse IDE.
+        </p>
+
+    </div>
+
+</div>
+
+<hr>
+
+<h3>Building the Apache Wink<a name="building_the_apache_wink"></a></h3>
+
+<div class="row">
+    <div class="span10">
+        <p><strong><a name="maven-version">What version of Maven is used to build Wink?</a></strong></p>
+        <p> 
+            Wink is built using Maven 2, version 2.0.9.
+        </p>
+        <hr/>
+
+        <p><strong><a name="maven-sources">Where can I read about Maven?</a></strong></p>
+        <p> 
+            Maven site: <a class="externalLink" href="http://maven.apache.org">http://maven.apache.org</a><br /></br>
+            Maven FAQ: <a class="externalLink" href="http://docs.codehaus.org/display/MAVENUSER/FAQs-1">http://docs.codehaus.org/display/MAVENUSER/FAQs-1</a>
+        </p>
+        <hr/>
+
+        <p><strong><a name="build-oom">I am getting an OutOfMemoryException when performing a full build</a></strong></p>
+        <p> 
+            If you are getting OutOfMemoryException when attempting a full
+            build, you may try increasing the max heap and the PermGen space sizes. 
+            Either export a MAVEN_OPTS variable in your shell or add it to the original mvn script. 
+            <br /></br>
+        </p>
+        <pre>MAVEN_OPTS=-Xmx512m -XX:MaxPermSize=256m</pre>
+        <hr/>
+
+        <p><strong><a name="build-offline">Can I build the sources if I am not connected to the network?</a></strong></p>
+        <p> 
+            If you know your downloads are up-to-date, you can use the offline option 
+            which may speed up your build considerably depending on network latency:
+        </p>
+        <pre>mvn -o</pre>
+        <hr/>
+
+        <p><strong><a name="build-tests">Some tests fail during the build. Where can I see what happened?</a></strong></p>
+        <p> 
+            Surefire, which is the default Maven test runner, outputs all tests reports
+            as a set of xml and text files to the <tt>target/surefire-reports</tt> directory. 
+            Any test failure details and stack traces end up in those files, and not in the console. 
+            The output can be temporarily redirected to the console by adding the following option:
+        </p>
+        <pre>mvn -Dsurefire.useFile=false</pre>
+    </div>
+
+</div>
+    </div> <!-- /container/content -->
+    
+
+
+    <hr>
+
+    <div class="container">
+      <footer>
+        <div class="xright">
+        Copyright &copy; 2009-2013 <a href="http://www.apache.org/">The Apache Software Foundation</a>. All Rights Reserved.Licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.</br>
+        Apache and the Apache feather logo are trademarks of The Apache Software Foundation. Other names may be trademarks of their respective owners.</br>
+        </p>
+    </footer>
+  </div> <!-- /container/footer -->
+
+
+  <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/jquery/jquery-1.9.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
