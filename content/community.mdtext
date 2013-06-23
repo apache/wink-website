@@ -41,26 +41,26 @@ Title: Community
 	    	</tr>
 	    	<tr>
 	        	<td>Users</td>
-	        	<td><a href="mailto:wink-user-subscribe@incubator.apache.org">Subscribe</a></td>
-	        	<td><a href="mailto:wink-user-unsubscribe@incubator.apache.org">Unsubscribe</a></td>
-	        	<td><a href="mailto:wink-user@incubator.apache.org">Post</a></td>
-	        	<td><a href="http://mail-archives.apache.org/mod_mbox/incubator-wink-user/">mail-archives.apache.org</a></td>
-	        	<td><a href="http://n2.nabble.com/Apache-Wink-Users-f3471013.html">n2.nabble.com</a></td>
+	        	<td><a href="mailto:user-subscribe@wink.apache.org">Subscribe</a></td>
+	        	<td><a href="mailto:user-unsubscribe@wink.apache.org">Unsubscribe</a></td>
+	        	<td><a href="mailto:user@wink.apache.org">Post</a></td>
+	        	<td><a href="http://mail-archives.apache.org/mod_mbox/wink-user/">mail-archives.apache.org</a></td>
+	        	<td><a href="http://apache-wink-users.3471013.n2.nabble.com/">n2.nabble.com</a></td>
 	    	</tr>
 	    	<tr>
 	        	<td>Development</td>
-	        	<td><a href="mailto:wink-dev-subscribe@incubator.apache.org">Subscribe</a></td>
-	        	<td><a href="mailto:wink-dev-unsubscribe@incubator.apache.org">Unsubscribe</a></td>
-	        	<td><a href="mailto:wink-dev@incubator.apache.org">Post</a></td>
-	        	<td><a href="http://mail-archives.apache.org/mod_mbox/incubator-wink-dev/">mail-archives.apache.org</a></td>
-	        	<td><a href="http://n2.nabble.com/Apache-Wink-Dev-f3470905.html">n2.nabble.com</a></td>
+	        	<td><a href="mailto:dev-subscribe@wink.apache.org">Subscribe</a></td>
+	        	<td><a href="mailto:dev-unsubscribe@wink.apache.org">Unsubscribe</a></td>
+	        	<td><a href="mailto:dev@wink.apache.org">Post</a></td>
+	        	<td><a href="http://mail-archives.apache.org/mod_mbox/wink-dev/">mail-archives.apache.org</a></td>
+	        	<td><a href="http://apache-wink-dev.3470905.n2.nabble.com/">n2.nabble.com</a></td>
 	    	</tr>
 		    <tr>
 		        <td>Commits</td>
-		        <td><a href="mailto:wink-commits-subscribe@incubator.apache.org">Subscribe</a></td>
-		        <td><a href="mailto:wink-commits-unsubscribe@incubator.apache.org">Unsubscribe</a></td>
-		        <td><a href="mailto:wink-commits@incubator.apache.org">Post</a></td>
-		        <td><a href="http://mail-archives.apache.org/mod_mbox/incubator-wink-commits/">mail-archives.apache.org</a></td>
+		        <td><a href="mailto:commits-subscribe@wink.apache.org">Subscribe</a></td>
+		        <td><a href="mailto:commits-unsubscribe@wink.apache.org">Unsubscribe</a></td>
+		        <td><a href="mailto:commits@wink.apache.org">Post</a></td>
+		        <td><a href="http://mail-archives.apache.org/mod_mbox/wink-commits/">mail-archives.apache.org</a></td>
 		        <td>-</td>
 		    </tr>
 		</table>
