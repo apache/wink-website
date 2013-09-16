@@ -15,7 +15,7 @@ Title: Downloads
 
 <hr>
 
-<h2>Download Apache Wink 1.3.0</h2>
+<h2>Download Apache Wink 1.4.0</h2>
 
 
 <div class="row">
@@ -26,36 +26,36 @@ Title: Downloads
     	</tr>
 
     	<tr>
-    		<td>Wink-1.3.0 (tar.gz)</td><td><a href="http://www.apache.org/dyn/closer.cgi/wink/1.3.0/apache-wink-1.3.0.tar.gz">tar.gz</a></td><td><a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0.tar.gz.md5">MD5</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0.tar.gz.sha1">SHA-1</a>  </td><td> <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0.tar.gz.asc">ASC</a> </td>
+    		<td>Wink-1.4.0 (tar.gz)</td><td><a href="http://www.apache.org/dyn/closer.cgi/wink/1.4.0/apache-wink-1.4.tar.gz">tar.gz</a></td><td><a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4.tar.gz.md5">MD5</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4.tar.gz.sha1">SHA-1</a>  </td><td> <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4.tar.gz.asc">ASC</a> </td>
     	</tr>
 
     	<tr>
-    		<td> Wink-1.3.0 (zip) </td><td> <a href="http://www.apache.org/dyn/closer.cgi/wink/1.3.0/apache-wink-1.3.0.zip">zip</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0.zip.md5">MD5</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0.zip.sha1">SHA-1</a> </td><td> <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0.zip.asc">ASC</a> </td>
+    		<td> Wink-1.4.0 (zip) </td><td> <a href="http://www.apache.org/dyn/closer.cgi/wink/1.4.0/apache-wink-1.4.zip">zip</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4.zip.md5">MD5</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4.zip.sha1">SHA-1</a> </td><td> <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4.zip.asc">ASC</a> </td>
     	</tr>
 
     	<tr>
-    		<td> Wink-1.3.0 (Source tar.gz) </td><td> <a href="http://www.apache.org/dyn/closer.cgi/wink/1.3.0/apache-wink-1.3.0-src.tar.gz">tar.gz</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0-src.tar.gz.md5">MD5</a>  </td><td> <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0-src.tar.gz.sha1">SHA-1</a> </td><td> <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0-src.tar.gz.asc">ASC</a> </td>
+    		<td> Wink-1.4.0 (Source tar.gz) </td><td> <a href="http://www.apache.org/dyn/closer.cgi/wink/1.4.0/apache-wink-1.4-src.tar.gz">tar.gz</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4-src.tar.gz.md5">MD5</a>  </td><td> <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4-src.tar.gz.sha1">SHA-1</a> </td><td> <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4-src.tar.gz.asc">ASC</a> </td>
     	</tr>
 
     	<tr>
-    		<td> Wink-1.3.0 (Source zip) </td><td> <a href="http://www.apache.org/dyn/closer.cgi/wink/1.3.0/apache-wink-1.3.0-src.zip">zip</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0-src.zip.md5">MD5</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0-src.zip.sha1">SHA-1</a> </td><td> <a href="http://www.apache.org/dist/wink/1.3.0/apache-wink-1.3.0-src.zip.asc">ASC</a> </td>
+    		<td> Wink-1.4.0 (Source zip) </td><td> <a href="http://www.apache.org/dyn/closer.cgi/wink/1.4.0/apache-wink-1.4-src.zip">zip</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4-src.zip.md5">MD5</a> </td><td>  <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4-src.zip.sha1">SHA-1</a> </td><td> <a href="http://www.apache.org/dist/wink/1.4.0/apache-wink-1.4-src.zip.asc">ASC</a> </td>
     	</tr>
 
     	<tr>
-    		<td> Release Notes </td><td> <a href="1.3.0/release_notes.html">1.3.0</a> </td><td> </td><td> </td><td> </td></tr><tr class="a"><td> KEYS </td><td> <a href="http://svn.apache.org/repos/asf/wink/tags/wink-1.3.0/KEYS">KEYS</a> </td><td> </td><td> </td><td> </td>
+    		<td> Release Notes </td><td> <a href="1.4.0/release_notes.html">1.4.0</a> </td><td> </td><td> </td><td> </td></tr><tr class="a"><td> KEYS </td><td> <a href="http://svn.apache.org/repos/asf/wink/tags/wink-1.4.0/KEYS">KEYS</a> </td><td> </td><td> </td><td> </td>
     	</tr>
     	</table>
 
 		<p>Instructions for checking hashes and signatures is indicated on the <a href="http://www.apache.org/info/verification.html">Verifying Apache Software Foundation Releases</a> page.</p>
 		<p>You can also retrieve the source files from our svn repository by typing :</p>
 
-		<pre>svn co http://svn.apache.org/repos/asf/wink/tags/wink-1.3.0/</pre>
+		<pre>svn co http://svn.apache.org/repos/asf/wink/tags/wink-1.4.0/</pre>
 
 		<p>Instructions for checking hashes and signatures is indicated on the <a href="http://www.apache.org/info/verification.html">Verifying Apache Software Foundation Releases</a> page.</p>
 
 		<p>You can also retrieve the source files from our svn repository by typing :</p>
 
-		<pre>svn co http://svn.apache.org/repos/asf/wink/tags/wink-1.3.0/</pre>
+		<pre>svn co http://svn.apache.org/repos/asf/wink/tags/wink-1.4.0/</pre>
 
         <h4> Using Maven </h4>
 
@@ -69,14 +69,14 @@ Title: Downloads
         <pre>&lt;dependency&gt;
     &lt;groupId&gt;org.apache.wink&lt;/groupId&gt;
     &lt;artifactId&gt;wink-server&lt;/artifactId&gt;
-    &lt;version&gt;1.3.0&lt;/version&gt;
+    &lt;version&gt;1.4.0&lt;/version&gt;
 &lt;/dependency&gt;</pre>
 
         <strong>Client:</strong>
         <pre>&lt;dependency&gt;
     &lt;groupId&gt;org.apache.wink&lt;/groupId&gt;
     &lt;artifactId&gt;wink-client&lt;/artifactId&gt;
-    &lt;version&gt;1.3.0&lt;/version&gt;
+    &lt;version&gt;1.4.0&lt;/version&gt;
 &lt;/dependency&gt;</pre>
     </div>
 </div>
