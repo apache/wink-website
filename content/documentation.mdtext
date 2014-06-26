@@ -6,10 +6,10 @@ Title: Documentation
 
 <div class="row">
     <div class="span10">
-        <h3>Apache Wink 1.3.0 <a name="Wink_1.3.0"></a></h3>
+        <h3>Apache Wink 1.4.0 <a name="Wink_1.4.0"></a></h3>
         <ul>
-            <li>User Guide <a href="./1.3.0/Apache_Wink_User_Guide.pdf">PDF</a> </li>
-            <li><a href="./1.3.0/api/index.html">API</a> (Javadoc)</li>
+            <li>User Guide <a href="./1.4.0/Apache_Wink_User_Guide.pdf">PDF</a> </li>
+            <li><a href="./1.4.0/api/index.html">API</a> (Javadoc)</li>
         </ul>
 
         <h3>Wiki<a name="Wiki"></a></h3>
@@ -38,6 +38,11 @@ Title: Documentation
     	<tr>
     		<th><b>Release</b></th><th><b>User Guide</b></th><th><b>API</b></th>
     	</tr>
+        <tr>
+            <td>Wink 1.3.0</td>
+            <td><a href="./documentation/1.3.0/Apache_Wink_User_Guide.pdf">PDF</a></td>
+            <td><a href="./documentation/1.3.0/api/index.html">API Javadoc</a></td>
+        </tr>        
         <tr>
             <td>Wink 1.2.1</td>
             <td><a href="./documentation/1.2.1/Apache_Wink_User_Guide.pdf">PDF</a></td>
