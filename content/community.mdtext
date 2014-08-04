@@ -79,7 +79,7 @@ Title: Community
 <div class="row">
     <div class="span10">
         <h4>Bug Reports<a name="Bug_Reports"></a></h4>
-        <p>Found bug? Enter an issue in the <a href="./issue-tracking.html">Issue Tracker</a>.</p>
+        <p>Found bug? Enter an issue in the <a href="https://issues.apache.org/jira/browse/WINK">Issue Tracker</a>.</p>
         <p>Before submitting an issue, please:</p>
         <ul>
             <li>Verify that the bug does in fact exist.</li>
