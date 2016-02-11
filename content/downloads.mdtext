@@ -51,12 +51,6 @@ Title: Downloads
 
 		<pre>svn co http://svn.apache.org/repos/asf/wink/tags/wink-1.4.0/</pre>
 
-		<p>Instructions for checking hashes and signatures is indicated on the <a href="http://www.apache.org/info/verification.html">Verifying Apache Software Foundation Releases</a> page.</p>
-
-		<p>You can also retrieve the source files from our svn repository by typing :</p>
-
-		<pre>svn co http://svn.apache.org/repos/asf/wink/tags/wink-1.4.0/</pre>
-
         <h4> Using Maven </h4>
 
         <p>We strongly encourage our users to configure a Maven repository mirror closer to their location, please read <a href="http://maven.apache.org/guides/mini/guide-mirror-settings.html">How to Use Mirrors for Repositories</a>.
