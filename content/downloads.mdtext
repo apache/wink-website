@@ -9,7 +9,7 @@ Title: Downloads
     <div class="span10">
        <p>Apache Wink is distributed in several formats for your convenience.</p>
        <p>You will be prompted for a mirror - if the file is not found on yours, please be patient, as it may take 24 hours to reach all mirrors.</p>
-       <p>Apache Wink is distributed under the <a href="http://maven.apache.org/license.html">Apache License, version 2.0</a>.</p>
+       <p>Apache Wink is distributed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.</p>
     </div>
 </div>
 
